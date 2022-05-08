@@ -1,79 +1,109 @@
 <template>
   <div class="home">
     <div class="container">
-      <div class="row justify-content-center">
-        <div class="col-lg-6 col-sm-12 col-xs-12">
+      <!-- Person component -->
+      <Person :persons="persons" @image-source="imageUrlFor"/>
 
-          <!-- person card -->
-          <div v-for="person in persons">
-            <div class="card mb-3" style="max-width: 540px;">
-              <div class="row g-0">
-                <div class="col-md-4">
-                  <img :src="imageUrlFor(person.image).width(480)" class="img-fluid rounded-start" :alt="person.name">
-                </div>
-                <div class="col-md-8">
-                  <div class="card-body">
-                    <h5 class="card-title">{{person.name}}</h5>
-                    <p class="card-text text-justify"> <strong>{{person.bio[0].children[0].text}}</strong>  <br> {{person.bio[1].children[0].text}}</p>
-                    <p class="card-text"><small class="text-muted"></small>
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-        </div>
-      </div>
+      <!-- Projectt component -->
+      <Project :projects="projects"/>
     </div>
   </div>
 </template>
 
 <script>
-  import sanity from "../client";
-  import imageUrlBuilder from "@sanity/image-url";
+  import {Person, Project} from '@/components'
 
-  const imageBuilder = imageUrlBuilder(sanity);
+  import sanity from '@/client'
 
-  const query = `*[_type == "person"]{
+  const person = `*[_type == "person"]{
     _id,
     name,
-    slug,
+    contactInfo,
     image,
+    excerpt,
     bio
-  }[0...50]`;
+  }[0...50]`
+
+  const project = `*[_type == "sampleProject"] | order(_createdAt asc) {
+    _id,
+    title,
+    slug,
+    startedAt,
+    endedAt,
+    mainImage,
+    excerpt,
+    body
+  }[0...50]`
+
 
   export default {
     name: 'HomeView',
-    data() {
+    components: {
+      Person,
+      Project
+    },
+    data(){
       return {
-        loading: true,
         persons: [],
+        projects: [],
         error: null
       }
     },
 
     created(){
-      this.fetchData()
+      this.personData(),
+      this.projectData()
     },
 
     methods: {
-      imageUrlFor(source) {
-        return imageBuilder.image(source);
+      personData(){
+        this.error = this.persons = null
+        sanity.fetch(person)
+        .then((persons) =>{
+          this.persons = persons
+        },(error) => {this.error = error})
       },
-      fetchData() {
-        this.error = this.persons = null;
-        this.loading = true;
-        sanity.fetch(query).then(
-          (persons) => {
-            this.loading = false;
-            this.persons = persons;
-          },
-          (error) => {
-            this.error = error;
-          }
-          )
+      projectData(){
+        this.error = this.projects = null
+        sanity.fetch(project)
+        .then((projects) => {
+          console.log(projects)
+          this.projects = projects
+        }, (err) => {this.error = error})
       }
     }
   }
 </script>
+
+<style lang="css">
+  .contact__info a{
+    text-decoration: none;
+  }
+  .contact__info .list-group{
+    text-align: left;
+  }
+  .modal .modal-body{
+    text-align: left;
+  }
+  .card .card-title{
+    text-transform: capitalize;
+    font-weight: 600;
+  }
+  .truncate {
+    display: -webkit-box;
+    -webkit-line-clamp: var(--line-clamp, 8);
+    -webkit-box-orient: vertical;
+    word-break: var(--word-break, "none");
+    overflow: hidden;
+    hyphens: auto;
+    text-align: var(--align, left);
+    --is-single-line: 1 - Clamp(0, Calc(var(--line-clamp) - 1), var(--line-clamp));
+    --delay: Calc(-1s * (var(--is-single-line, 1) - 1));
+    animation: states 1s var(--delay) paused;
+    @keyframes states {
+      0% {
+        word-break: break-all;
+      }
+    }
+  }
+</style>
