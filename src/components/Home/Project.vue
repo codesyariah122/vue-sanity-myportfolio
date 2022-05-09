@@ -1,10 +1,10 @@
 <template>
 	<div>
 		<div class="row justify-content-center mt-5">
-			<div class="col-lg-12">
+			<div class="col-lg-12 col-sm-12">
 
 				<div class="row">
-					<div v-for="project in projects" class="col-md-4">
+					<div v-for="project in projects" class="col-md-4 col-sm-12 mb-3">
 						<div class="card" style="width: 18rem;">
 							<img :src="imageUrlFor(project.mainImage)" class="card-img-top" :alt="project.mainImage.caption">
 							<div class="card-body">
