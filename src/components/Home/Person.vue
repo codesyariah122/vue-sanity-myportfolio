@@ -50,12 +50,12 @@
 															</a>
 														</li>
 														<li class="list-group-item">
-															<a :href="`https://www.linkedin.com/in/${person.contactInfo.linkedin}`" target="_blank">
+															<a :href="`https://www.linkedin.com/in/${person.contactInfo.linkedIn}`" target="_blank">
 																<i class="fab fa-fw fa-lg fa-linkedin"></i> {{person.name}}
 															</a>
 														</li>
 														<li class="list-group-item">
-															<a :href="`https://twitter.com/${person.contactInfo.linkedin}`" target="_blank">
+															<a :href="`https://twitter.com/${person.contactInfo.twitter}`" target="_blank">
 																<i class="fab fa-fw fa-lg fa-twitter"></i> {{person.contactInfo.twitter}}
 															</a>
 														</li>

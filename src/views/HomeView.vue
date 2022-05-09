@@ -91,7 +91,7 @@
   }
   .truncate {
     display: -webkit-box;
-    -webkit-line-clamp: var(--line-clamp, 8);
+    -webkit-line-clamp: var(--line-clamp, 5);
     -webkit-box-orient: vertical;
     word-break: var(--word-break, "none");
     overflow: hidden;
