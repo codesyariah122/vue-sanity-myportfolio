@@ -22,16 +22,21 @@
 									<div class="modal-dialog">
 										<div class="modal-content">
 											<div class="modal-header">
-												<h5 class="modal-title text-capitalize font-weight-bold" id="staticBackdropLabel">
+												<h5 class="modal-title text-capitalize fw-bold" id="staticBackdropLabel">
 													{{detail.title}}
 												</h5>
 												<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 											</div>
 											<div class="modal-body">
 												<img :src="img" class="card-img-top mb-3" >
-												<article v-for="body in detail.body">
-													<p v-for="item in body.children">
-														{{item.text}}
+												<small>
+													<strong>
+														<i class="fas fa-fw fa-calendar-day"></i> Started : {{date(detail.startedAt)}} - <span v-if="detail._id !== 'e8564894-e9ec-4a45-b622-18d22a1b709a'"> Ended : {{date(detail.endedAt)}}</span>
+														<span v-else>Now</span>
+													</strong>
+												</small>
+												<article class="mt-3"  v-for="body in detail.body">
+													<p v-for="item in body.children" v-html="item.text">
 													</p>
 												</article>
 											</div>
@@ -56,6 +61,8 @@
 
 	const imageBuilder = imageUrlBuilder(sanity)
 
+	import moment from 'moment'
+
 	export default {
 		props: ['projects'],
 		data(){
@@ -72,6 +79,10 @@
 			showDetail(data, img){
 				this.detail = data
 				this.img = this.imageUrlFor(img)
+			},
+
+			date(val){
+				return moment(val).format("LL")
 			}
 		}
 	}

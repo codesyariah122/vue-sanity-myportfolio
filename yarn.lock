@@ -2540,6 +2540,11 @@ detect-node@^2.0.4:
   resolved "https://registry.yarnpkg.com/detect-node/-/detect-node-2.1.0.tgz#c9c70775a49c3d03bc2c06d9a73be550f978f8b1"
   integrity sha512-T0NIuQpnTvFDATNuHN5roPwSBG83rFsuO+MXXH9/3N1eFbn4wcPjttvjMLEPWJ0RGUYgQE7cGgS3tNxbqCGM7g==
 
+device-detector-js@2.2.7:
+  version "2.2.7"
+  resolved "https://registry.yarnpkg.com/device-detector-js/-/device-detector-js-2.2.7.tgz#ce1c72dfc67bb13af3cafbf0bfae33f5e52a4a0e"
+  integrity sha512-I8kyGYv5c92bqO8oJehCOPubebBMwkSMnAr3IJDkpRLyXmIHasGqfA5MCwud17B4vn8FP4pgV3BJFZuQv8s4zQ==
+
 dir-glob@^3.0.1:
   version "3.0.1"
   resolved "https://registry.yarnpkg.com/dir-glob/-/dir-glob-3.0.1.tgz#56dbf73d992a4a93ba1584f4534063fd2e41717f"
@@ -4045,6 +4050,11 @@ module-alias@^2.2.2:
   version "2.2.2"
   resolved "https://registry.yarnpkg.com/module-alias/-/module-alias-2.2.2.tgz#151cdcecc24e25739ff0aa6e51e1c5716974c0e0"
   integrity sha512-A/78XjoX2EmNvppVWEhM2oGk3x4lLxnkEA4jTbaK97QKSDjkIoOsKQlfylt/d3kKKi596Qy3NP5XrXJ6fZIC9Q==
+
+moment@^2.29.3:
+  version "2.29.3"
+  resolved "https://registry.yarnpkg.com/moment/-/moment-2.29.3.tgz#edd47411c322413999f7a5940d526de183c031f3"
+  integrity sha512-c6YRvhEo//6T2Jz/vVtYzqBzwvPT95JBQ+smCytzf7c50oMZRsR/a4w88aD34I+/QVSfnoAnSBFPJHItlOMJVw==
 
 mrmime@^1.0.0:
   version "1.0.0"
@@ -5770,6 +5780,13 @@ vary@~1.1.2:
   version "1.1.2"
   resolved "https://registry.yarnpkg.com/vary/-/vary-1.1.2.tgz#2299f02c6ded30d4a5961b0b9f74524a18f634fc"
   integrity sha1-IpnwLG3tMNSllhsLn3RSShj2NPw=
+
+vue-device-detector-js@^1.0.2:
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/vue-device-detector-js/-/vue-device-detector-js-1.0.2.tgz#0d1cc45a0bcf0724bf13b8fbd056e1e52b4b4444"
+  integrity sha512-mRELSbKOGK9umhLpkk4zch5AvT0YVwY9pUg9XPn1oB2PqOW0d/VcZdXPGdVGsGVeWKn7StEiAmxj9RM/+outEg==
+  dependencies:
+    device-detector-js "2.2.7"
 
 vue-hot-reload-api@^2.3.0:
   version "2.3.4"
