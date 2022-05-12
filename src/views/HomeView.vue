@@ -1,6 +1,13 @@
 <template>
   <div class="home">
-    <div class="container">
+    <div v-if="loading" class="container mt-5">
+      <div class="d-flex justify-content-center">
+        <div class="spinner-grow text-primary" role="status" style="width: 3rem; height: 3rem;">
+          <span class="visually-hidden">Loading...</span>
+        </div>
+      </div>
+    </div>
+    <div v-else class="container">
       <!-- Person component -->
       <Person :persons="persons" @image-source="imageUrlFor"/>
 
@@ -46,7 +53,8 @@
       return {
         persons: [],
         projects: [],
-        error: null
+        error: null,
+        loading: true
       }
     },
 
@@ -57,10 +65,14 @@
 
     methods: {
       personData(){
+        this.loading = true
         this.error = this.persons = null
         sanity.fetch(person)
         .then((persons) =>{
           this.persons = persons
+          setTimeout(() => {
+            this.loading=false
+          }, 1500)
         },(error) => {this.error = error})
       },
       projectData(){
@@ -85,13 +97,14 @@
   .modal .modal-body{
     text-align: left;
   }
+  
   .card .card-title{
     text-transform: capitalize;
     font-weight: 600;
   }
   .truncate {
     display: -webkit-box;
-    -webkit-line-clamp: var(--line-clamp, 5);
+    -webkit-line-clamp: var(--line-clamp, 4);
     -webkit-box-orient: vertical;
     word-break: var(--word-break, "none");
     overflow: hidden;

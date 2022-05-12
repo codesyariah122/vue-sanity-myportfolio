@@ -2,10 +2,12 @@
 	<div>
 		<div class="row justify-content-center mt-5">
 			<div class="col-lg-12 col-sm-12">
-
+				<h3>Project Lists</h3>
+			</div>
+			<div class="col-lg-12 col-sm-12">
 				<div class="row">
 					<div v-for="project in projects" class="col-md-4 col-sm-12 mb-3">
-						<div class="card" style="width: 18rem;">
+						<div class="card">
 							<img :src="imageUrlFor(project.mainImage)" class="card-img-top" :alt="project.mainImage.caption">
 							<div class="card-body">
 								<h5 class="card-title">
@@ -43,7 +45,6 @@
 										</div>
 									</div>
 								</div>
-
 							</div>
 						</div>
 					</div>
