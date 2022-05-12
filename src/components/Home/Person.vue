@@ -60,6 +60,11 @@
 															</a>
 														</li>
 														<li class="list-group-item">
+															<a :href="`https://github.com/${person.contactInfo.github}`">
+																<i class="fab fa-fw fa-lg fa-github"></i> {{person.contactInfo.github}}
+															</a>
+														</li>
+														<li class="list-group-item">
 															<a :href="`https://web.whatsapp.com/send?phone=${person.contactInfo.phone}&text&app_absent=0`" target="_blank">
 																<i class="fab fa-fw fa-lg fa-whatsapp"></i> {{person.contactInfo.phone}}
 															</a>
