@@ -1,5 +1,5 @@
 <template>
-  <div class="home">
+  <div>
     <div v-if="loading" class="container mt-5">
       <div class="d-flex justify-content-center">
         <div class="spinner-grow text-primary" role="status" style="width: 3rem; height: 3rem;">
@@ -7,7 +7,7 @@
         </div>
       </div>
     </div>
-    <div v-else class="container">
+    <div v-else>
       <!-- Person component -->
       <Person :persons="persons" @image-source="imageUrlFor"/>
 
@@ -87,36 +87,3 @@
   }
 </script>
 
-<style lang="css">
-  .contact__info a{
-    text-decoration: none;
-  }
-  .contact__info .list-group{
-    text-align: left;
-  }
-  .modal .modal-body{
-    text-align: left;
-  }
-  
-  .card .card-title{
-    text-transform: capitalize;
-    font-weight: 600;
-  }
-  .truncate {
-    display: -webkit-box;
-    -webkit-line-clamp: var(--line-clamp, 4);
-    -webkit-box-orient: vertical;
-    word-break: var(--word-break, "none");
-    overflow: hidden;
-    hyphens: auto;
-    text-align: var(--align, left);
-    --is-single-line: 1 - Clamp(0, Calc(var(--line-clamp) - 1), var(--line-clamp));
-    --delay: Calc(-1s * (var(--is-single-line, 1) - 1));
-    animation: states 1s var(--delay) paused;
-    @keyframes states {
-      0% {
-        word-break: break-all;
-      }
-    }
-  }
-</style>
