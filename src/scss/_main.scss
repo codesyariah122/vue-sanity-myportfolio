@@ -1,96 +1,57 @@
-* {
-	margin: 0;
-	padding: 0;
-	box-sizing: border-box;
-}
-
 body {
-	font-family: "Poppins", sans-serif;
+	background-color: #eeeeee;
 }
 
-
-.container {
-	width: 100%;
-	height: 100vh;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	background-color: $primaryBackground;
-	.card {
-		margin-top: -25rem!important;
-		width: 550px;
-		height: 450px;
-		background-color: $white;
-		display: flex;
-		flex-direction: column;
-		border-radius: 10px;
-		padding-top: 25px;
-		cursor: pointer;
-		justify-content: space-between;
-		padding-bottom: 15px;
+.card__profile-home{
+	margin-top: 2rem;
+	.social__link{	
+		.list-group{
+			.list-group-item{
+				border: none;
+				background-color: transparent!important;
+			}
+		}
 	}
-
-	.card-header {
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		// margin-top: -1.5rem;
-	}
-	.avatar {
-		width: 200px;
-		height: 200px;
-		position: relative;
-	}
-
-	.user-online-indicator {
-		width: 15px;
-		height: 15px;
-		background-color: #53f45a;
-		position: absolute;
-		bottom: 10px;
-		right: 35px;
-		border-radius: 50%;
-		z-index: 4;
-	}
-
-	.avatar img {
+	img {
 		width: 100%;
 		height: 100%;
-		object-fit: cover;
-		border-radius: 50%;
 	}
 
-	.profile-name h1 {
-		font-size: 28px;
-		font-weight: 500;
-	}
-	.profile-role {
-		color: #6d6d6d;
+	.bg-black {
+		background: #000;
 	}
 
-	.card-footer {
-		width: 85%;
-		height: 90px;
-		margin: 0 auto;
-		display: flex;
-		align-items: center;
+	.skill-block {
+		width: 30%;
 	}
 
-	.social-buttons {
-		width: 100%;
-		display: flex;
-		align-items: center;
-		justify-content: center;
+	@media (min-width: 991px) and (max-width:1200px) {
+		.skill-block {
+			padding: 32px !important;
+		}
 	}
 
-	.social-buttons button {
-		width: 40px;
-		height: 40px;
-		border: 1px solid transparent;
-		border-radius: 50%;
-		font-size: 23px;
-		margin: 0 20px;
+	@media (min-width: 1200px) {
+		margin-top: 7rem;
+		.social__link{	
+			.list-group{
+				margin-top: -1.5rem;
+				margin-bottom: -3rem;
+				.list-group-item{
+					border: none;
+					background-color: transparent!important;
+					a{
+						font-size:18px!important;
+					}
+				}
+			}
+		}
+		.skill-block {
+			padding: 33px !important;
+		}
 	}
+
+
 	.truncate {
 		display: -webkit-box;
 		-webkit-line-clamp: var(--line-clamp, 4);

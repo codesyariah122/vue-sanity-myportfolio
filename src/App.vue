@@ -18,8 +18,8 @@
     text-align: center;
     color: #2c3e50;
     place-content: center;
-    background:  $primaryBackground;
-    height: auto;
+    background:  $secondaryBackground;
+    height: 100vh;
   }
 
   nav {

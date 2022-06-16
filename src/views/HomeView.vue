@@ -9,7 +9,7 @@
     </div>
     <div v-else>
       <!-- Person component -->
-      <Person :persons="persons" @image-source="imageUrlFor"/>
+      <Person :persons="persons" @image-source="imageUrlFor" :skills="skills"/>
 
       <!-- Projectt component -->
       <Project :projects="projects"/>
@@ -25,10 +25,19 @@
   const person = `*[_type == "person"]{
     _id,
     name,
+    slug,
+    jobdesk,
     contactInfo,
     image,
     excerpt,
     bio
+  }[0...50]`
+
+  const skill = `*[_type == "skillProgramming"]{
+    _id,
+    title,
+    percentage,
+    MainImage
   }[0...50]`
 
   const project = `*[_type == "sampleProject"] | order(_createdAt asc) {
@@ -53,6 +62,7 @@
       return {
         persons: [],
         projects: [],
+        skills: [],
         error: null,
         loading: true
       }
@@ -60,7 +70,8 @@
 
     created(){
       this.personData(),
-      this.projectData()
+      this.projectData(),
+      this.skillProgramming()
     },
 
     methods: {
@@ -79,8 +90,17 @@
         this.error = this.projects = null
         sanity.fetch(project)
         .then((projects) => {
-          console.log(projects)
+          // console.log(projects)
           this.projects = projects
+        }, (err) => {this.error = error})
+      },
+
+      skillProgramming(){
+        this.error = this.skills = null
+        sanity.fetch(skill)
+        .then((skills) => {
+          console.log(skills)
+          this.skills = skills
         }, (err) => {this.error = error})
       }
     }
