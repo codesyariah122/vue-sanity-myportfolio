@@ -9,20 +9,23 @@
     </div>
     <div v-else>
       <!-- Person component -->
-      <Person :persons="persons" @image-source="imageUrlFor" :skills="skills"/>
+      <Person :persons="persons" @image-source="imageUrlFor" :skills="skills" />
 
       <!-- Projectt component -->
-      <Project :projects="projects"/>
+      <Project :projects="projects" />
     </div>
   </div>
 </template>
 
 <script>
-  import {Person, Project} from '@/components'
+  import {
+    Person,
+    Project
+  } from '@/components'
 
   import sanity from '@/client'
 
-  const person = `*[_type == "person"]{
+  const person = `*[_type == "person"] {
     _id,
     name,
     slug,
@@ -33,7 +36,7 @@
     bio
   }[0...50]`
 
-  const skill = `*[_type == "skillProgramming"]{
+  const skill = `*[_type == "skillProgramming"] | order(_createdAt asc) {
     _id,
     title,
     percentage,
@@ -59,7 +62,7 @@
       Person,
       Project
     },
-    data(){
+    data() {
       return {
         persons: [],
         projects: [],
@@ -69,42 +72,47 @@
       }
     },
 
-    created(){
+    created() {
       this.personData(),
       this.projectData(),
       this.skillProgramming()
     },
 
     methods: {
-      personData(){
+      personData() {
         this.loading = true
         this.error = this.persons = null
         sanity.fetch(person)
-        .then((persons) =>{
+        .then((persons) => {
           this.persons = persons
           setTimeout(() => {
-            this.loading=false
+            this.loading = false
           }, 1500)
-        },(error) => {this.error = error})
+        }, (error) => {
+          this.error = error
+        })
       },
-      projectData(){
+      projectData() {
         this.error = this.projects = null
         sanity.fetch(project)
         .then((projects) => {
           // console.log(projects)
           this.projects = projects
-        }, (err) => {this.error = error})
+        }, (err) => {
+          this.error = error
+        })
       },
 
-      skillProgramming(){
+      skillProgramming() {
         this.error = this.skills = null
         sanity.fetch(skill)
         .then((skills) => {
           console.log(skills)
           this.skills = skills
-        }, (err) => {this.error = error})
+        }, (err) => {
+          this.error = error
+        })
       }
     }
   }
-</script>
-
+  </script>

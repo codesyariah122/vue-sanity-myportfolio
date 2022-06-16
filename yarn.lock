@@ -3514,6 +3514,11 @@ is-interactive@^1.0.0:
   resolved "https://registry.yarnpkg.com/is-interactive/-/is-interactive-1.0.0.tgz#cea6e6ae5c870a7b0a0004070b7b587e0252912e"
   integrity sha512-2HvIEKRoqS62guEC+qBjpvRubdX910WCMuJTZ+I9yvqKU2/12eSL549HMwtabb4oupdj2sMP50k+XJfB/8JE6w==
 
+is-mobile@^2.2.2:
+  version "2.2.2"
+  resolved "https://registry.yarnpkg.com/is-mobile/-/is-mobile-2.2.2.tgz#f6c9c5d50ee01254ce05e739bdd835f1ed4e9954"
+  integrity sha512-wW/SXnYJkTjs++tVK5b6kVITZpAZPtUrt9SF80vvxGiF/Oywal+COk1jlRkiVq15RFNEQKQY31TkV24/1T5cVg==
+
 is-module@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/is-module/-/is-module-1.0.0.tgz#3258fb69f78c14d5b815d664336b4cffb6441591"
@@ -5841,6 +5846,14 @@ vue-template-es2015-compiler@^1.9.0:
   version "1.9.1"
   resolved "https://registry.yarnpkg.com/vue-template-es2015-compiler/-/vue-template-es2015-compiler-1.9.1.tgz#1ee3bc9a16ecbf5118be334bb15f9c46f82f5825"
   integrity sha512-4gDntzrifFnCEvyoO8PqyJDmguXgVPxKiIxrBKjIowvL9l+N66196+72XVYR8BBf1Uv1Fgt3bGevJ+sEmxfZzw==
+
+vue3-mobile-detection@^1.0.5:
+  version "1.0.5"
+  resolved "https://registry.yarnpkg.com/vue3-mobile-detection/-/vue3-mobile-detection-1.0.5.tgz#1c1fb5c1e87358907ebbdcacf6f51cf9fa9ceaba"
+  integrity sha512-Zbr7lvmqYNfO5dnnwYedQSxfOnCK1oakPGWkZtBaLz3uqcF3aREl1PL1iEkqf9tOuogsJ9iCX91igQKjv06aFg==
+  dependencies:
+    is-mobile "^2.2.2"
+    vue "^3.0.0"
 
 vue@^3.0.0, vue@^3.2.13:
   version "3.2.33"

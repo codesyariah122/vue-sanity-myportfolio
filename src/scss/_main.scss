@@ -1,73 +1,78 @@
 body {
-	background-color: #eeeeee;
+  background-color: #eeeeee;
 }
 
-.card__profile-home{
-	margin-top: 2rem;
-	.social__link{	
-		.list-group{
-			.list-group-item{
-				border: none;
-				background-color: transparent!important;
-			}
-		}
-	}
-	img {
-		width: 100%;
-		height: auto;
-	}
+.card__profile-home {
+  margin-top: 2rem;
+  .profile__info {
+    margin-top:-2rem;
+    margin-bottom: 1rem;
+  }
+  .social__link {
+    margin-top:-3rem;
+    .list-group {
+      .list-group-item {
+        border: none;
+        background-color: transparent!important;
+      }
+    }
+  }
+  img {
+    width: 100%;
+    height: auto;
+  }
 
-	.bg-black {
-		background: #000;
-	}
+  .bg-black {
+    background: $secondaryBackground;
+  }
 
-	.skill-block {
-		width: 30%;
-	}
+  .skill-block {
+    width: 30%;
+  }
 
-	@media (min-width: 991px) and (max-width:1200px) {
-		.skill-block {
-			padding: 32px !important;
-		}
-	}
+  @media (min-width: 991px) and (max-width:1200px) {
+    .skill-block {
+      padding: 32px !important;
+    }
+  }
 
-	@media (min-width: 1200px) {
-		margin-top: 2rem;
-		.social__link{	
-			.list-group{
-				margin-top: -1.5rem;
-				margin-bottom: -3rem;
-				.list-group-item{
-					border: none;
-					background-color: transparent!important;
-					a{
-						font-size:18px!important;
-					}
-				}
-			}
-		}
-		.skill-block {
-			padding: 33px !important;
-			text-align: left!important;
-		}
-	}
+  @media (min-width: 1200px) {
+    margin-top: 2rem;
+    .social__link {
+      .list-group {
+        margin-top: -1.5rem;
+        margin-bottom: -3rem;
+        .list-group-item {
+          border: none;
+          background-color: transparent!important;
+          a {
+            font-size:18px!important;
+          }
+        }
+      }
+    }
+    .skill-block {
+      padding: 33px !important;
+      text-align: left!important;
+    }
+  }
 
 
-	.truncate {
-		display: -webkit-box;
-		-webkit-line-clamp: var(--line-clamp, 4);
-		-webkit-box-orient: vertical;
-		word-break: var(--word-break, "none");
-		overflow: hidden;
-		hyphens: auto;
-		text-align: var(--align, left);
-		--is-single-line: 1 - Clamp(0, Calc(var(--line-clamp) - 1), var(--line-clamp));
-		--delay: Calc(-1s * (var(--is-single-line, 1) - 1));
-		animation: states 1s var(--delay) paused;
-		@keyframes states {
-			0% {
-				word-break: break-all;
-			}
-		}
-	}
+  .truncate {
+    display: -webkit-box;
+    -webkit-line-clamp: var(--line-clamp, 4);
+    -webkit-box-orient: vertical;
+    word-break: var(--word-break, "none");
+    overflow: hidden;
+    hyphens: auto;
+    text-align: var(--align, left);
+    --is-single-line: 1 - Clamp(0, Calc(var(--line-clamp) - 1), var(--line-clamp));
+    --delay: Calc(-1s * (var(--is-single-line, 1) - 1));
+    animation: states 1s var(--delay) paused;
+    @keyframes states {
+      0% {
+        word-break: break-all;
+      }
+    }
+  }
 }
