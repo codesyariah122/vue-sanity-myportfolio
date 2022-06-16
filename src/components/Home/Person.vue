@@ -1,7 +1,7 @@
 <template>
 	<div class="container card__profile-home">
 		<div v-for="person in persons" class="row no-gutters">
-			<div class="col-md-4 col-lg-4">
+			<div class="col-md-4 col-lg-4 avatar">
 				<picture>
 					<source :srcset="imageUrlFor(person.image)" media="(min-width:1000px)">
 					<source :srcset="imageUrlFor(person.image)" media="(min-width:750px)">
@@ -13,7 +13,7 @@
 			<div class="col-md-8 col-lg-8">
 				<div class="d-flex flex-column">
 					<div class="d-flex flex-row justify-content-between align-items-center p-5 bg-dark text-white">
-						<h3 class="display-5">
+						<h3 class="display-5 profile-name">
 							{{person.name}}
 						</h3>
 						<div class="social__link">
@@ -52,23 +52,20 @@
 					</div>
 
 					<div class="d-flex flex-row text-white">
-						<div class="p-4 bg-primary text-center skill-block">
-							<h4>90%</h4>
-							<h6>Bootstrap</h6>
-						</div>
-						<div class="p-3 bg-success text-center skill-block">
-							<h4>70%</h4>
-							<h6>Jquery</h6>
-						</div>
-						<div class="p-3 bg-warning text-center skill-block">
-							<h4>80%</h4>
-							<h6>HTML</h6>
-						</div>
-						<div class="p-3 bg-danger text-center skill-block">
-							<h4>75%</h4>
-							<h6>PHP</h6>
+						<div class="col-lg-12">
+							<div v-for="(key, index) in skills" class="row justify-content-start mb-2">
+								<div class="col-md-2">
+									{{key.title}}
+								</div>
+								<div class="col-md-8">
+									<div class="progress">
+										<div class="progress-bar" role="progressbar" :style="`width: ${key.percentage}%;`" :aria-valuenow="key.percentage" aria-valuemin="0" aria-valuemax="100">{{key.percentage}}%</div>
+									</div>
+								</div>
+							</div>
 						</div>
 					</div>
+
 				</div>
 			</div>
 		</div>
@@ -114,7 +111,7 @@
 
 				console.log("New");
 
-				tl.from(".card", {
+				tl.from(".card__profile-home", {
 					stagger: 0.2,
 					opacity: 0,
 					x: -20,
@@ -136,13 +133,13 @@
 					opacity: 0,
 					y: 20,
 				})
-				tl.from(".profile-role",{
+				tl.from(".key-block",{
 					stagger: 0.2,
 					opacity: 0,
 					y: 20,
 				})
 
-				tl.from(".social-buttons",{
+				tl.from(".social__link",{
 					stagger: 0.2,
 					opacity: 0,
 				})

@@ -37,7 +37,8 @@
     _id,
     title,
     percentage,
-    MainImage
+    color,
+    mainImage
   }[0...50]`
 
   const project = `*[_type == "sampleProject"] | order(_createdAt asc) {

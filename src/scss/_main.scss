@@ -14,7 +14,7 @@ body {
 	}
 	img {
 		width: 100%;
-		height: 100%;
+		height: auto;
 	}
 
 	.bg-black {
@@ -48,6 +48,7 @@ body {
 		}
 		.skill-block {
 			padding: 33px !important;
+			text-align: left!important;
 		}
 	}
 
