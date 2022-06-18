@@ -19,7 +19,7 @@
           </div>
         </article>
       </div>
-      <div class="col-md-8 col-lg-8 col-sm-12 profile__board">
+      <div class="col-md-8 col-lg-8 col-sm-8 profile__board">
         <div class="row justify-content-start profile__info bg-dark">
           <div class="col-md-6 mt-3">
             <div class="row">
@@ -56,7 +56,7 @@
                   </li>
                   <li class="list-group-item">
                     <a :href="`https://web.whatsapp.com/send?phone=${person.contactInfo.phone}&text&app_absent=0`" target="_blank">
-                      <i class="fab fa-fw fa-lg fa-whatsapp text-success"></i>
+                      <i class="fab fa-fw fa-lg fa-whatsapp-square text-success"></i>
                     </a>
                   </li>
                   <li class="list-group-item">
@@ -72,7 +72,7 @@
               <ul class="list-group list-group-horizontal">
                 <li class="list-group-item">
                   <a :href="`mailto:${person.contactInfo.email}`" target="_blank">
-                    <i class="far fa-fw fa-lg fa-envelope-open text-warning"></i>
+                    <i class="fas fa-fw fa-lg fa-paper-plane text-warning"></i>
                   </a>
                 </li>
                 <li class="list-group-item">
@@ -87,7 +87,7 @@
                 </li>
                 <li class="list-group-item">
                   <a :href="`https://web.whatsapp.com/send?phone=${person.contactInfo.phone}&text&app_absent=0`" target="_blank">
-                    <i class="fab fa-fw fa-lg fa-whatsapp text-success"></i>
+                    <i class="fab fa-fw fa-lg fa-whatsapp-square text-success"></i>
                   </a>
                 </li>
                 <li class="list-group-item">
@@ -108,10 +108,11 @@
 
           <div class="row text-white mt-3">
             <div v-for="(key, index) in skills" class="col-md-4">
-              <div :class="`${$isMobile ? 'row justify-content-start' : 'row justify-content-center'} mb-3 key-block`">
+              <div :class="`${$isMobile ? 'row justify-content-start' : 'row justify-content-center'} mb-3 key__block`">
                 <div class="col-md-6">
                   <!-- <img :src="imageUrlFor(key.mainImage)" :style="`${key.title === 'nodejs' || key.title === 'express js' || key.title === 'mongodb' ? 'width:60px;' : 'width:33px;'}`"> -->
-                  <img :src="imageUrlFor(key.mainImage)" style="width:45px;">
+                  <!-- {{key.title}} -->
+                  <img :src="imageUrlFor(key.mainImage)" :style="`width:45px; margin-left:${key.percentage}%;`">
                 </div>
                 <div class="col-md-8 mt-2">
                   <div class="progress">
@@ -205,7 +206,7 @@
           opacity: 0,
           x: -25,
         })
-        tl.from(".key-block", {
+        tl.from(".key__block", {
           stagger: 0.2,
           opacity: 0,
           y: 20,

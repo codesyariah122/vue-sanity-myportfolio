@@ -7,17 +7,28 @@
       color: $white;
       margin-top: 2rem;
     }
-  }
-  .social__link {
-    margin-top:2rem;
-    margin-bottom: 3rem;
-    .list-group {
-      .list-group-item {
-        border: none;
-        background-color: transparent!important;
-        a {
-          font-size:21px!important;
+    .social__link {
+      margin-top:2rem;
+      margin-bottom: 3rem;
+      .list-group {
+        .list-group-item {
+          border: none;
+          background-color: transparent!important;
+          a {
+            font-size:21px!important;
+          }
         }
+      }
+    }
+  }
+  .skill__block {
+    border-radius: 13px!important;
+    margin-top: 2rem!important;
+    padding: 30px !important;
+    text-align: left!important;
+    .key__block {
+      img{
+        filter: drop-shadow(0 0 0.55rem crimson);
       }
     }
   }
@@ -26,7 +37,8 @@
     width: 350px;
     height: 450px;
     color: $bgCardImage;
-    background-size: contain;
+    background-size: cover;
+    filter: brightness(90%);
     border-radius: 13px;
     overflow: hidden;
     cursor: pointer;
@@ -85,14 +97,17 @@
     }
   }
 
-  .skill-block {
-    border-radius: 13px!important;
-    width: 30%;
-  }
 
   @media (min-width: 991px) and (max-width:1200px) {
-    .skill-block {
+    .skill__block {
+      border-radius: 13px!important;
+      width: 30%;
       padding: 32px !important;
+      .key__block {
+        img{
+          filter: drop-shadow(0 0 0.55rem crimson);
+        }
+      }
     }
   }
 
@@ -102,7 +117,8 @@
       width: 350px;
       height: 450px;
       color: $bgCardImage;
-      background-size: contain;
+      background-size: cover;
+      filter: brightness(90%);
       border-radius: 13px;
       overflow: hidden;
       cursor: pointer;
@@ -152,7 +168,7 @@
       }
       &:hover .card__content{
         transform: translateY(0);
-        height: 230px;
+        height: 290px;
       }
 
       &:hover .card__description{
@@ -186,6 +202,11 @@
         margin-top: 2rem!important;
         padding: 30px !important;
         text-align: left!important;
+        .key__block {
+          img{
+            filter: drop-shadow(0 0 0.55rem crimson);
+          }
+        }
       }
     }
   }
