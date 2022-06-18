@@ -27,7 +27,11 @@
       text-align: center;
       color: #2c3e50;
       place-content: center;
-      background: $secondaryBackground;
+      // background: $secondaryBackground;
+      background-color: $bgApp;
+      background-image:  linear-gradient(30deg, #373c41 12%, transparent 12.5%, transparent 87%, #373c41 87.5%, #373c41), linear-gradient(150deg, #373c41 12%, transparent 12.5%, transparent 87%, #373c41 87.5%, #373c41), linear-gradient(30deg, #373c41 12%, transparent 12.5%, transparent 87%, #373c41 87.5%, #373c41), linear-gradient(150deg, #373c41 12%, transparent 12.5%, transparent 87%, #373c41 87.5%, #373c41), linear-gradient(60deg, #373c4177 25%, transparent 25.5%, transparent 75%, #373c4177 75%, #373c4177), linear-gradient(60deg, #373c4177 25%, transparent 25.5%, transparent 75%, #373c4177 75%, #373c4177);
+      background-size: 20px 35px;
+      background-position: 0 0, 0 0, 10px 18px, 10px 18px, 0 0, 10px 18px;
       height: 100vh;
     }
     nav {
@@ -36,9 +40,11 @@
       a {
         font-weight: bold;
         color: $white;
+        text-decoration: none;
 
         &.router-link-exact-active {
           color: $active;
+          text-decoration: underline overline;
         }
       }
     }
