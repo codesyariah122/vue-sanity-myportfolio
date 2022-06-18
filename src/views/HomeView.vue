@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div v-if="loading" class="container mt-5">
+    <div v-if="loading" class="container mt-5 mb-5">
       <div class="d-flex justify-content-center">
         <div class="spinner-grow text-primary" role="status" style="width: 3rem; height: 3rem;">
           <span class="visually-hidden">Loading...</span>

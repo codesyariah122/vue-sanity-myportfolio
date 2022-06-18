@@ -12,6 +12,8 @@
     "@sanity/client": "^3.3.0",
     "@sanity/image-url": "^1.0.1",
     "bootstrap": "^5.1.3",
+    "dotenv": "^16.0.1",
+    "dotenv-expand": "^8.0.3",
     "jquery": "^3.6.0",
     "mdb-vue-ui-kit": "^1.13.0",
     "moment": "^2.29.3",
