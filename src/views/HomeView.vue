@@ -1,9 +1,17 @@
 <template>
   <div>
-    <div v-if="loading" class="container mt-5 mb-5">
+    <div v-if="loading" class="container loader__page">
       <div class="d-flex justify-content-center">
-        <div class="spinner-grow text-primary" role="status" style="width: 3rem; height: 3rem;">
-          <span class="visually-hidden">Loading...</span>
+        <div class="spinner-grow text-primary" role="status" :style="`${$isMobile ? 'width: 7rem; height: 7rem;' : 'width: 3rem; height: 3rem;'}`">
+          <span class="visually-hidden">Loading...</span> <br>
+        </div>
+      </div>
+
+      <div class="row justify-content-center mt-3">
+        <div class="col-lg-12 col-sm-12">          
+          <h3 class="text-white"> 
+            I Love ☕
+          </h3>
         </div>
       </div>
     </div>
@@ -116,3 +124,10 @@
     }
   }
   </script>
+
+  <style lang="scss">
+    .loader__page{
+      margin-top: 15rem!important;
+      height: 100vh;
+    }
+  </style>

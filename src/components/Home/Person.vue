@@ -7,7 +7,7 @@
       <div class="col-md-4 col-lg-4">
         <article class="card__avatar" :style="`background: url(${imageUrlFor(person.image)}) center no-repeat;`">
           <div class="card__content">          
-            <h3 class="card__title"> {{person.name}} </h3>
+            <!-- <h3 class="card__title"> {{person.name}} </h3> -->
             <span class="card__subtitle"> {{person.image.caption}} </span>
             <p class="card__description truncate"> 
               <strong>
@@ -40,8 +40,8 @@
               <div class="col-sm-12">
                 <ul class="list-group list-group-horizontal">
                   <li class="list-group-item">
-                    <a :href="`mailto:${person.contactInfo.email}`" target="_blank">
-                      <i class="far fa-fw fa-lg fa-envelope-open text-warning"></i>
+                     <a :href="`mailto:${person.contactInfo.email}`" target="_blank">
+                      <i class="fas fa-fw fa-lg fa-paper-plane text-warning"></i>
                     </a>
                   </li>
                   <li class="list-group-item">
