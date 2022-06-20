@@ -6,7 +6,7 @@
 			</div>
 			<div class="content">
 				<div>
-					<div><b>Codesyariah122</b><a href="https://github.com/codesyariah122">Github</a><a href="https://codesyariah122.github.io">Blog</a><a href="#">Youtube</a><a href="#">Company</a><a href="#">Website</a></div>
+					<div><b>Codesyariah122</b><a href="https://github.com/codesyariah122">Github</a><a href="https://codesyariah122.github.io">Blog</a><a href="#">Youtube</a></div>
 				</div>
 				<div :style="`${$isMobile() ? 'margin-top: 8rem;' : ''}`">
 					<a class="image" href="@/assets/logo.png" target="_blank">
@@ -76,9 +76,11 @@
 				animation:bubble-size var(--time, 4s) ease-in infinite var(--delay, 0s),
 				bubble-move var(--time, 4s) ease-in infinite var(--delay, 0s);
 				transform:translate(-50%, 100%);
+				margin-left: -6rem;
 			}
 		}
 		.content {
+			width: 100%!important;
 			z-index: 2;
 			display:grid;
 			grid-template-columns: 1fr auto;
