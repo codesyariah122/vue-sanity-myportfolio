@@ -3,9 +3,32 @@
     .profile__board {
       margin-bottom: 1rem;
       .profile__info{
+        background-color: $secondaryBackground!important;
         border-radius: 13px!important;
         color: $white;
         margin-top: 2rem;
+        .showcase {
+          width: 100%;
+          height: 10vh;
+          position: relative;
+          video {
+            width: 100%;
+            height: 80%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            margin-left: 1rem;
+            object-fit: cover;
+          }
+          .profile-name{
+            width: 108%;
+            height: 80%;
+            background-color: $secondaryBackground;
+            font-size: 61px;
+            color: #fff!important;
+            mix-blend-mode: darken;
+          }
+        }
       }
       .social__link {
         margin-top:2rem;
@@ -22,6 +45,7 @@
       }
     }
     .skill__block {
+      background-color: $secondaryBackground!important;
       border-radius: 13px!important;
       margin-top: 2rem!important;
       padding: 30px !important;
