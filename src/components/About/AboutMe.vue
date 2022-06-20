@@ -13,8 +13,9 @@
 
 	import moment from 'moment'
 
+
 	export default {
-		props: ['projects'],
+		props: ['persons'],
 		data(){
 			return{
 				detail: {},

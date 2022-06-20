@@ -1,77 +1,86 @@
 <template>
-  <div class="about">
-    <h1>This is an about page</h1>
-    <pre>
-      {{blogs}}
-    </pre>
-
+  <div class="about__view">
+    <!-- Projectt component -->
+    <AboutMe :persons="persons" />
   </div>
 </template>
 
 <script>
+  import {
+    AboutMe
+  } from '@/components'
+
   import sanity from '@/client'
 
-  const blog = `*[_type == "post"]|order(created_at desc){
-    _id,
-    title,
-    "slug": slug.current,
-    "author": author->name,
-    mainImage,
-    categories,
-    publishedAt,
-    body
-  }[0...50]`
-
-  const author = `*[_type == "author"]{
+  const person = `*[_type == "person"] {
     _id,
     name,
     slug,
+    jobdesk,
+    contactInfo,
     image,
+    aboutImage,
+    excerpt,
     bio
+  }[0...50]`
+
+  const project = `*[_type == "sampleProject"] | order(_createdAt asc) {
+    _id,
+    title,
+    slug,
+    startedAt,
+    endedAt,
+    mainImage,
+    excerpt,
+    body
   }[0...50]`
 
 
   export default {
     name: 'AboutView',
-    
+    components: {
+      AboutMe
+    },
     data(){
       return {
-        blogs: [],
-        authors: [],
+        projects: [],
+        persons: [],
         error: null,
         loading: true
       }
     },
 
     created(){
-      this.blogData(),
-      this.authorData()
+      this.personData(),
+      this.projectData()
     },
 
     methods: {
-      blogData(){
+      personData() {
         this.loading = true
-        this.error = this.blogs = null
-        sanity.fetch(blog)
-        .then((blogs) =>{
-          console.log(blogs)
-          this.blogs = blogs
+        this.error = this.persons = null
+        sanity.fetch(person)
+        .then((persons) => {
+          this.persons = persons
           setTimeout(() => {
-            this.loading=false
+            this.loading = false
           }, 1500)
-        },(error) => {this.error = error})
+        }, (error) => {
+          this.error = error
+        })
       },
-
-      authorData(){
-        this.loading = true
-        this.error = this.authors = null
-        sanity.fetch(author)
-        .then((authors) =>{
-          this.authors = authors
+      projectData() {
+        this.error = this.projects = null
+        sanity.fetch(project)
+        .then((projects) => {
+          console.log(projects)
+          this.projects = projects
           setTimeout(() => {
-            this.loading=false
+            this.loading = false
           }, 1500)
-        },(error) => {this.error = error})
+        }, (err) => {
+          this.error = error
+        })
       }
     }
   }

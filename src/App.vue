@@ -23,49 +23,4 @@
 <style lang="scss">
   @import "@/scss/_variables.scss";
   @import "@/scss/_main.scss";
-
-  #app {
-    font-family: Avenir, Helvetica, Arial, sans-serif;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    text-align: center;
-    color: #2c3e50;
-    place-content: center;
-    // background: $secondaryBackground;
-    background-color: $bgApp;
-    background-image:  linear-gradient(30deg, #373c41 12%, transparent 12.5%, transparent 87%, #373c41 87.5%, #373c41), linear-gradient(150deg, #373c41 12%, transparent 12.5%, transparent 87%, #373c41 87.5%, #373c41), linear-gradient(30deg, #373c41 12%, transparent 12.5%, transparent 87%, #373c41 87.5%, #373c41), linear-gradient(150deg, #373c41 12%, transparent 12.5%, transparent 87%, #373c41 87.5%, #373c41), linear-gradient(60deg, #373c4177 25%, transparent 25.5%, transparent 75%, #373c4177 75%, #373c4177), linear-gradient(60deg, #373c4177 25%, transparent 25.5%, transparent 75%, #373c4177 75%, #373c4177);
-    background-size: 20px 35px;
-    background-position: 0 0, 0 0, 10px 18px, 10px 18px, 0 0, 10px 18px;
-    height: auto;
-
-    @media (min-width: 1200px) {
-      font-family: Avenir, Helvetica, Arial, sans-serif;
-      -webkit-font-smoothing: antialiased;
-      -moz-osx-font-smoothing: grayscale;
-      text-align: center;
-      color: #2c3e50;
-      place-content: center;
-      // background: $secondaryBackground;
-      background-color: $bgApp;
-      background-image:  linear-gradient(30deg, #373c41 12%, transparent 12.5%, transparent 87%, #373c41 87.5%, #373c41), linear-gradient(150deg, #373c41 12%, transparent 12.5%, transparent 87%, #373c41 87.5%, #373c41), linear-gradient(30deg, #373c41 12%, transparent 12.5%, transparent 87%, #373c41 87.5%, #373c41), linear-gradient(150deg, #373c41 12%, transparent 12.5%, transparent 87%, #373c41 87.5%, #373c41), linear-gradient(60deg, #373c4177 25%, transparent 25.5%, transparent 75%, #373c4177 75%, #373c4177), linear-gradient(60deg, #373c4177 25%, transparent 25.5%, transparent 75%, #373c4177 75%, #373c4177);
-      background-size: 20px 35px;
-      background-position: 0 0, 0 0, 10px 18px, 10px 18px, 0 0, 10px 18px;
-      height: 100vh;
-    }
-    nav {
-      padding: 30px;
-
-      a {
-        font-weight: bold;
-        color: $white;
-        text-decoration: none;
-
-        &.router-link-exact-active {
-          color: $active;
-          text-decoration: underline overline;
-        }
-      }
-    }
-  }
-
 </style>

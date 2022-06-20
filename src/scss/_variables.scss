@@ -1,6 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap");
 $white: #fff;
 $black: #000;
+$cardBackground: #212529;
 $primaryBackground: #bacad9;
 $secondaryBackground: #000;
 $bgApp:#040404;
@@ -9,3 +10,4 @@ $active: lightslategray;
 $bgCardImage: #a18a56;
 $cardTextColor: #6A515E;
 $cardHoverBg:#333231;
+$boxShadow: $cardBackground;

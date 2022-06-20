@@ -1,34 +1,18 @@
 <template>
-  <div>
+  <div class="home__view">
     <div v-if="loading" class="container loader__page">
-      <div class="d-flex justify-content-center">
-        <div class="spinner-grow text-primary" role="status" :style="`${$isMobile ? 'width: 7rem; height: 7rem;' : 'width: 3rem; height: 3rem;'}`">
-          <span class="visually-hidden">Loading...</span> <br>
-        </div>
-      </div>
-
-      <div class="row justify-content-center mt-3">
-        <div class="col-lg-12 col-sm-12">          
-          <h3 class="text-white"> 
-            I Love ☕
-          </h3>
-        </div>
-      </div>
+      <Loading/>
     </div>
     <div v-else>
       <!-- Person component -->
       <Person :persons="persons" @image-source="imageUrlFor" :skills="skills" />
-
-      <!-- Projectt component -->
-      <Project :projects="projects" />
     </div>
   </div>
 </template>
 
 <script>
   import {
-    Person,
-    Project
+    Person, Loading
   } from '@/components'
 
   import sanity from '@/client'
@@ -52,28 +36,16 @@
     mainImage
   }[0...50]`
 
-  const project = `*[_type == "sampleProject"] | order(_createdAt asc) {
-    _id,
-    title,
-    slug,
-    startedAt,
-    endedAt,
-    mainImage,
-    excerpt,
-    body
-  }[0...50]`
-
 
   export default {
     name: 'HomeView',
     components: {
       Person,
-      Project
+      Loading
     },
     data() {
       return {
         persons: [],
-        projects: [],
         skills: [],
         error: null,
         loading: true
@@ -82,7 +54,6 @@
 
     created() {
       this.personData(),
-      this.projectData(),
       this.skillProgramming()
     },
 
@@ -97,16 +68,6 @@
             this.loading = false
           }, 1500)
         }, (error) => {
-          this.error = error
-        })
-      },
-      projectData() {
-        this.error = this.projects = null
-        sanity.fetch(project)
-        .then((projects) => {
-          // console.log(projects)
-          this.projects = projects
-        }, (err) => {
           this.error = error
         })
       },
