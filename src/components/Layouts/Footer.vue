@@ -76,7 +76,7 @@
 				animation:bubble-size var(--time, 4s) ease-in infinite var(--delay, 0s),
 				bubble-move var(--time, 4s) ease-in infinite var(--delay, 0s);
 				transform:translate(-50%, 100%);
-				margin-left: -6rem;
+				margin-left: -3.5rem;
 			}
 		}
 		.content {
@@ -129,7 +129,7 @@
 			width:var(--size, 4rem);
 			height:var(--size, 4rem);
 		}
-		100% {
+		80% {
 			width:0rem;
 			height:0rem;
 		}
