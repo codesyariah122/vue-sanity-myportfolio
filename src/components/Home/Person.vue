@@ -1,8 +1,8 @@
 <template>
   <div class="container card__profile-home">
-    <!-- <pre>
-      {{persons}}
-    </pre> -->
+    <!-- {{
+      $isMobile() ? 'Yah ini Mobile' : 'No ini Desktop'
+    }} -->
     <div v-for="person in persons" class="row no-gutters">
       <div class="col-md-4 col-lg-4">
         <article class="card__avatar" :style="`background: url(${imageUrlFor(person.image)}) center no-repeat;`">
@@ -28,11 +28,8 @@
                 <h3 class="display-5 profile-name">
                   {{person.name}}
                 </h3>
-              </div>
-              <div class="col-md-12">                    
-                <div class="col-md-12">
-                  {{person.jobdesk}}
-                </div>
+
+                <p class="profile-jobdesk">{{person.jobdesk}}</p>
               </div>
             </div>
           </div>

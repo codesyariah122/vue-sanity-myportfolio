@@ -137,7 +137,7 @@
       }
     }
 
-    @media (min-width: 1200px) {
+    @media (min-width: 992px) {
       .card__avatar{
         position: relative;
         width: 350px;
@@ -210,6 +210,8 @@
           height: 15vh;
           background-color: $secondaryBackground!important;
           box-shadow: 5px 3px 2px 1px $boxShadow;
+          margin-left: 4rem;
+          width: 100%;
           .showcase {
             width: 100%;
             height: 10vh;
@@ -220,20 +222,25 @@
               position: absolute;
               top: 0;
               left: 0;
-              margin-left: 1rem;
+              margin-left: .8rem;
               object-fit: cover;
             }
             .profile-name{
-              width: 108%;
+              width: 110%;
               height: 80%;
               background-color: $secondaryBackground;
-              font-size: 61px;
+              font-size: 50px;
               color: #fff!important;
               mix-blend-mode: darken;
+            }
+            .profile-jobdesk{
+              margin-top:-.3rem;
+              font-size: 12px;
             }
           }
           .social__link {
             margin-top: 2.5rem;
+            margin-left: -1.7rem;
             .list-group {
               margin-top: -1.5rem;
               margin-bottom: -3rem;
@@ -253,6 +260,8 @@
           margin-top: 2rem!important;
           padding: 30px !important;
           text-align: left!important;
+          margin-left: 4rem;
+          width: 100%;
           .key__block {
             img{
               filter: drop-shadow(0 0 0.55rem crimson);

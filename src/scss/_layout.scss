@@ -103,7 +103,7 @@ nav {
 		bottom:var(--distance, 10rem);
 	}
 }
-@media (min-width: 1200px) {
+@media (min-width: 992px) {
 	.footer {
 		margin-top: 1rem;
 		z-index: 1;
@@ -113,6 +113,7 @@ nav {
 		grid-area: footer;
 		min-height:12rem;
 		.bubbles {
+			width: 97%;
 			position: absolute;
 			top:0;
 			left:0;
