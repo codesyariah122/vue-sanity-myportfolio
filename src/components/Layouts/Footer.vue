@@ -9,8 +9,8 @@
 					<div><b>Codesyariah122</b><a href="https://github.com/codesyariah122">Github</a><a href="https://codesyariah122.github.io">Blog</a><a href="#">Youtube</a></div>
 				</div>
 				<div :style="`${$isMobile() ? 'margin-top: 8rem;' : ''}`">
-					<a class="image" href="@/assets/logo.png" target="_blank">
-						<img src="@/assets/logo.png" width="70">
+					<a class="image" :href="require('@/assets/logo.png')" target="_blank">
+						<img :src="require('@/assets/logo.png')" width="70">
 					</a>
 					<p>©{{year}} codesyariah122</p>
 				</div>
