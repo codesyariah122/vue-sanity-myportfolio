@@ -1,4 +1,15 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap");
+:root {
+  --size: 3vmin;
+  --white: #fff;
+  --blue: #3051f1;
+  --purple: #c92bb7;
+  --red: #f73344;
+  --orange: #fa8e37;
+  --yellow: #fcdf8f;
+  --yellow_to: #fbd377;
+}
+
 $white: #fff;
 $black: #000;
 $cardBackground: #212529;
@@ -11,3 +22,10 @@ $bgCardImage: #a18a56;
 $cardTextColor: #6A515E;
 $cardHoverBg:#333231;
 $boxShadow: $cardBackground;
+$blue: #3051f1;
+$purple: #c92bb7;
+$red: #f73344;
+$orange: #fa8e37;
+$yellow: #fcdf8f;
+$yellow_to: #fbd377;
+$whatsappBg: #3AC371;

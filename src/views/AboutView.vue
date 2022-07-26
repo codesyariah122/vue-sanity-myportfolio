@@ -1,7 +1,7 @@
 <template>
   <div class="about__view">
     <!-- Projectt component -->
-    <AboutMe :persons="persons" />
+    <AboutMe :persons="persons" :projects="projects"/>
   </div>
 </template>
 

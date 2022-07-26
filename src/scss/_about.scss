@@ -1,0 +1,62 @@
+.card__profile-about{}
+.card__project-about{}
+
+@media (min-width: 991px) and (max-width:1200px) {}
+
+@media (min-width: 992px) {
+	.card__profile-about{
+		background-color: $secondaryBackground;
+		.col__profile{
+			margin-left: -8rem;
+			margin-top: 3rem;
+			margin-bottom: 7rem;
+			.card__avatars{
+				perspective: 500px;
+				margin-left: 5rem;
+				.card__content{
+					width: 350px;
+					height: 430px;
+					background-size: cover;
+					border:5px solid rgba(255, 255, 255, .25);
+					border-radius: 4px;
+					position: relative;
+					transform-style: preserve-3d;
+					will-change: transform;
+					transition: transform .5s;
+					&:hover{
+						transform: translateZ(10px)
+						rotateX(20deg) rotateY(30deg);
+					}
+					.card__content-title{
+						color: $white;
+						position: absolute;
+						top: 50%;
+						right: -65px;
+						transform: translateY(-50%);
+						transition: transform .5s;
+						font-size:1.3rem;
+					}
+				}
+				.card__content:hover .card__content-title{
+					transform: translateZ(50px);
+				}
+			}
+			.card__profiles{
+				text-align: justify;
+				font-weight: 600;
+				color:$white;
+			}
+		}
+	}
+	.card__project-about{
+		margin-top: 2rem;
+		background-color: $secondaryBackground;
+		.col__profile{
+			margin-top: 3rem;
+			margin-bottom: 7rem;
+			.card__project{
+
+			}
+		}
+	}
+}
