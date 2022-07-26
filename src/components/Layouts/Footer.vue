@@ -10,7 +10,7 @@
 				</div>
 				<div :style="`${$isMobile() ? 'margin-top: 8rem;' : ''}`">
 					<a class="image" href="/assets/logo.png" target="_blank">
-						<img src="@/assets/logo.png" width="70">
+						<img src="/assets/logo.png" width="70">
 					</a>
 					<p>©{{year}} codesyariah122</p>
 				</div>
