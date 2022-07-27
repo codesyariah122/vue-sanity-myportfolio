@@ -90,5 +90,6 @@
     .loader__page{
       margin-top: 15rem!important;
       height: 100vh;
+      text-align: center;
     }
   </style>

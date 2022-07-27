@@ -6,37 +6,48 @@
 				<blockquote>Berikut beberapa project yang saya kerjakan di periode 2020 s/d 2022</blockquote>
 			</div>
 			<div v-for="project in projects" class="col-md-4 col__project">
-
+				<!-- <pre>
+					{{project.excerpt}}
+				</pre> -->
 				<br>
-				<div class="game">
+				<div class="game" 
+				@mouseenter="hover = true"
+				@mouseleave="hover = false">
 					<div class="rank">2</div>
 					<div class="front">
 						<img :src="`${imageUrlFor(project.mainImage.asset._ref)}`" alt="game">
-						<h3 class="name">
-							<div v-for="category in project.categories">
-								{{categoryData(category._ref) ? categoryTitle : false}}
-							</div>
+						<h3 v-if="hover"  class="name text-capitalize">
+							{{project.title}}
 						</h3>
+
+						<div v-else v-for="cat in project.categories">
+							<div v-for="category in categories">
+								<h3 class="name" v-if="cat._ref === category._id">
+									{{category.title}}
+								</h3>
+							</div>
+						</div>
+						
 						<div class="status">
-							<p class="viewers">132.5k</p>
+							<p class="viewers">Members</p>
 							<div class="streamers">
 								<img src="https://randomuser.me/api/portraits/men/32.jpg" alt="">
 							</div>
 						</div>
 					</div>
 					<div class="back">
-						<div class="streaming-info">
-							<p class="game-stat">174.4k <span>Watching</span></p>
-							<p class="game-stat">3,172<span>Streams</span></p>
+						<div v-for="excerpt in project.excerpt" class="streaming-info">
+							<p class="game-stat truncate">
+								{{excerpt.children[0].text}}
+							</p>
 						</div>
-						<button class="btn">See more streams</button>
+						<button class="btn">See Detail</button>
 						<div class="streamers">
 							<div class="streamer">
 								<div class="icon">
 									<img src="https://randomuser.me/api/portraits/men/32.jpg" alt="">
 								</div>
 								<p class="name">gamer 1</p>
-								<p class="number">18k</p>
 							</div>
 						</div>
 					</div>
@@ -56,14 +67,27 @@
 
 	import moment from 'moment'
 
+	const category = `*[_type == "category"]{
+		_id,
+		title,
+		description
+	}[0...50]`
+
 	export default{
-		props: ['projects', 'categories'],
+		props: ['projects'],
 		data(){
 			return{
 				detail: {},
 				img: '',
-				categoryTitle: ''
+				error: null,
+				categories: [],
+				categoryTitle: '',
+				hover: false
 			}
+		},
+
+		mounted(){
+			this.setupCategory()
 		},
 
 		methods: {
@@ -80,12 +104,14 @@
 				return moment(val).format("LL")
 			},
 
-			categoryData(ref=''){
-				const find = this.categories.find(d => d._id === ref)
-				if(find){
-					this.categoryTitle = find.title
-					return true
-				}
+			setupCategory() {
+				this.error = this.categories = null
+				sanity.fetch(category)
+				.then((categories) => {
+					this.categories = categories
+				}, (err) => {
+					this.error = err
+				})
 			}
 		}
 	}

@@ -69,8 +69,7 @@
 
     created(){
       this.personData(),
-      this.projectData(),
-      this.categoryProject()
+      this.projectData()
     },
 
     methods: {
@@ -95,16 +94,6 @@
           setTimeout(() => {
             this.loading = false
           }, 1500)
-        }, (err) => {
-          this.error = err
-        })
-      },
-
-      categoryProject() {
-        this.error = this.categories = null
-        sanity.fetch(category)
-        .then((categories) => {
-          this.categories = categories
         }, (err) => {
           this.error = err
         })

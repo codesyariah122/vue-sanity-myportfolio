@@ -4,7 +4,7 @@
 		background-color: $secondaryBackground;
 		.col__profile{
 			margin-top: 3rem;
-			margin-bottom: 7rem;
+			margin-bottom: 3rem;
 			.card__profiles{
 				text-align: justify;
 				font-weight: 600;
@@ -47,7 +47,23 @@
 		.col__project{
 			margin-top:1rem;
 			margin-bottom: 5rem;
-
+			.truncate {
+				display: -webkit-box;
+				-webkit-line-clamp: var(--line-clamp, 4);
+				-webkit-box-orient: vertical;
+				word-break: var(--word-break, "none");
+				overflow: hidden;
+				hyphens: auto;
+				text-align: var(--align, left);
+				--is-single-line: 1 - Clamp(0, Calc(var(--line-clamp) - 1), var(--line-clamp));
+				--delay: Calc(-1s * (var(--is-single-line, 1) - 1));
+				animation: states 1s var(--delay) paused;
+				@keyframes states {
+					0% {
+						word-break: break-all;
+					}
+				}
+			}
 			.game{
 				margin-left: 3.5rem;
 				img{
@@ -84,13 +100,17 @@
 				}
 				.name{
 					margin:0.75em 0;
-					font-size: 19px;
+					margin-top: 1rem;
+					font-size: 18px;
 					color: $white;
 				}
 				.status{
 					display:flex;
 					justify-content:space-between;
 					align-items:center;  
+					.viewers{
+						color: $white!important;
+					}
 				}
 				.streamers img{
 					border:1px solid var(--clr-dark);
@@ -116,12 +136,17 @@
 				align-items:center;
 				gap:1em;
 				.streaming-info{
-					columns:2;
+					columns:1;
 					column-rule:1px solid rgba(255,255,255,0.6); 
 				}
 				.game-stat{
-					font-size:1.2rem;
+					font-size:.7rem;
 					text-align:center;
+					color: $white;
+					font-weight: 500;
+					word-spacing: 2px;
+					letter-spacing: 2px;
+
 					span{
 						display:block;
 						font-size:.8rem;
@@ -144,13 +169,17 @@
 				border-radius:12px;
 			}
 			.game:hover {
+				margin-bottom: 4rem;
 				z-index: 1;
 				.front{
 					transform:translateY(-25%) scale(.8);
 					.name{
 						animation:gameName 150ms forwards;
-						font-size: 21px;
+						font-size: 23px;
+						letter-spacing: 1px;
+						word-spacing: 2px;
 						color: $white;
+						font-weight: 800;
 					}
 					.status{
 						opacity:0;
@@ -159,7 +188,8 @@
 				.back{
 					opacity:1;
 					.streamers{
-						width:100%;
+						width:250px;
+						margin-top: -35px;
 						justify-content:space-between;
 					}
 					.streamer{
@@ -338,7 +368,10 @@
 				.status{
 					display:flex;
 					justify-content:space-between;
-					align-items:center;  
+					align-items:center; 
+					.viewers{
+						color: $white!important;
+					}
 				}
 				.streamers img{
 					border:1px solid var(--clr-dark);
