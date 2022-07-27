@@ -54,12 +54,12 @@
                 </li>
                 <li class="list-group-item">
                   <a :href="`https://instagram.com/${person.contactInfo.instagram}`" target="_blank">
-                    <i class="fab fa-fw fa-lg fa-instagram text-info"></i>
+                    <i class="instagram"></i>
                   </a>
                 </li>
                 <li class="list-group-item">
                   <a :href="`https://web.whatsapp.com/send?phone=${person.contactInfo.phone}&text&app_absent=0`" target="_blank">
-                    <i class="fab fa-fw fa-lg fa-whatsapp-square text-success"></i>
+                    <i class="fab fa-fw fa-lg fa-whatsapp"></i>
                   </a>
                 </li>
                 <li class="list-group-item">

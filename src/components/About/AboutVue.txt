@@ -1,0 +1,164 @@
+<div class="card__project-about">
+	<div v-for="project in projects" class="row no-gutters">
+		<div class="col-lg-12 col-sm-12 col__profile">
+			<pre class="text-white">
+				{{project}}
+			</pre>
+		</div>
+	</div>
+</div>
+
+
+<div class="box">
+	<div class="card">
+		<div class="imgBx">
+			<img src="https://images.unsplash.com/photo-1532123675048-773bd75df1b4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60" alt="images">
+		</div>
+		<div class="details">
+			<h2>SomeOne Famous<br><span>Director</span></h2>
+		</div>
+	</div>
+
+	<section class="card__avatars">
+		<figure class="card__content" :style="`background: url(${imageUrlFor(person.image)}) center no-repeat;`">
+			<figcaption class="card__content-title">
+				{{person.name}}
+			</figcaption>
+		</figure>
+		<blockquote class="text-white">
+			{{person.image.alt}}
+		</blockquote>
+	</section>
+
+
+
+
+
+	.box__avatar{
+		width: 1200px;
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+		grid-gap: 15px;
+		margin: 0 auto;
+	}
+	.card{
+		position: relative;
+		width: 300px;
+		height: 350px;
+		background: #fff;
+		margin: 0 auto;
+		border-radius: 4px;
+		box-shadow:0 2px 10px rgba(0,0,0,.2);
+	}
+	.card:before,
+	.card:after
+	{
+		content:"";
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		border-radius: 4px;
+		background: #fff;
+		transition: 0.5s;
+		z-index:-1;
+	}
+	.card:hover:before{
+		transform: rotate(20deg);
+		box-shadow: 0 2px 20px rgba(0,0,0,.2);
+	}
+	.card:hover:after{
+		transform: rotate(10deg);
+		box-shadow: 0 2px 20px rgba(0,0,0,.2);
+	}
+	.card .imgBx{
+		position: absolute;
+		top: 10px;
+		left: 10px;
+		bottom: 10px;
+		right: 10px;
+		background: #222;
+		transition: 0.5s;
+		z-index: 1;
+	}
+	
+	.card:hover .imgBx
+	{
+		bottom: 80px;
+	}
+
+	.card .imgBx img{
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+	}
+
+	.card .details{
+		position: absolute;
+		left: 10px;
+		right: 10px;
+		bottom: 10px;
+		height: 60px;
+		text-align: center;
+	}
+
+	.card .details h2{
+		margin: 0;
+		padding: 0;
+		font-weight: 600;
+		font-size: 20px;
+		color: #777;
+		text-transform: uppercase;
+	} 
+
+	.card .details h2 span{
+		font-weight: 500;
+		font-size: 16px;
+		color: #f38695;
+		display: block;
+		margin-top: 5px;
+	} 
+
+
+
+	.card__avatars{
+		perspective: 500px;
+		margin-left: 5rem;
+		.card__content{
+			width: 350px;
+			height: 430px;
+			background-size: cover;
+			border:5px solid rgba(255, 255, 255, .25);
+			border-radius: 4px;
+			position: relative;
+			transform-style: preserve-3d;
+			will-change: transform;
+			transition: transform .5s;
+			&:hover{
+				transform: translateZ(10px)
+				rotateX(20deg) rotateY(30deg);
+			}
+			.card__content-title{
+				color: $white;
+				position: absolute;
+				top: 50%;
+				right: -65px;
+				transform: translateY(-50%);
+				transition: transform .5s;
+				font-size:1.3rem;
+			}
+		}
+		.card__content:hover .card__content-title{
+			transform: translateZ(50px);
+		}
+
+		.card__profiles{
+			text-align: left;
+			font-weight: 600;
+			color:$white;
+		}
+	}
