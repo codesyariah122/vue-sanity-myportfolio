@@ -7,7 +7,7 @@
 			</div>
 			<div v-for="project in projects" class="col-md-4 col__project">
 				<!-- <pre>
-					{{project.excerpt}}
+					{{project.members}}
 				</pre> -->
 				<br>
 				<div class="game" 
@@ -16,6 +16,7 @@
 					<div class="rank">2</div>
 					<div class="front">
 						<img :src="`${imageUrlFor(project.mainImage.asset._ref)}`" alt="game">
+
 						<h3 v-if="hover"  class="name text-capitalize">
 							{{project.title}}
 						</h3>
@@ -31,7 +32,13 @@
 						<div class="status">
 							<p class="viewers">Members</p>
 							<div class="streamers">
-								<img src="https://randomuser.me/api/portraits/men/32.jpg" alt="">
+								<br>
+								<!-- <img v-for="member in project.members" :src="`${imageUrlFor(member.image)}`" alt=""> -->
+								<div v-for="person in persons">
+									<div v-for="member in project.members">
+										<img v-if="member.person._ref === person._id" :src="`${imageUrlFor(person.image)}`">
+									</div>
+								</div>
 							</div>
 						</div>
 					</div>
@@ -43,11 +50,11 @@
 						</div>
 						<button class="btn">See Detail</button>
 						<div class="streamers">
-							<div class="streamer">
-								<div class="icon">
-									<img src="https://randomuser.me/api/portraits/men/32.jpg" alt="">
+							<div v-for="person in persons" class="streamer">
+								<div v-for="member in project.members">
+									<img v-if="member.person._ref === person._id" :src="`${imageUrlFor(person.image)}`">
+									<p v-if="member.person._ref === person._id" class="name">{{person.name}}</p>
 								</div>
-								<p class="name">gamer 1</p>
 							</div>
 						</div>
 					</div>
@@ -73,8 +80,9 @@
 		description
 	}[0...50]`
 
+
 	export default{
-		props: ['projects'],
+		props: ['projects',  'persons'],
 		data(){
 			return{
 				detail: {},

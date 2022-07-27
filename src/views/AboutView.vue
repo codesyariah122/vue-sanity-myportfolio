@@ -7,7 +7,7 @@
       </div>
       <!-- Project Content -->
       <div class="card__project-about">
-        <Project :projects="projects" :categories="categories"/>
+        <Project :projects="projects" :persons="persons"/>
       </div>
     </div>
   </div>
@@ -37,6 +37,7 @@
     title,
     slug,
     categories,
+    members,
     startedAt,
     endedAt,
     mainImage,
@@ -61,7 +62,6 @@
       return {
         projects: [],
         persons: [],
-        categories: [],
         error: null,
         loading: true
       }

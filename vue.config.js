@@ -1,4 +1,8 @@
 module.exports = {
+  pwa: {
+    name: "Liquid Measurement Converter",
+    themeColor: "#000"
+  },
   css: {
     loaderOptions: {
       sass: {

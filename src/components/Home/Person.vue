@@ -1,19 +1,15 @@
 <template>
   <div class="container card__profile-home">
-    <!-- {{
-      $isMobile() ? 'Yah ini Mobile' : 'No ini Desktop'
-    }} -->
-    <div v-for="person in persons" class="row no-gutters">
+    <div class="row no-gutters">
       <div class="col-md-4 col-lg-4">
-        <article class="card__avatar" :style="`background: url(${imageUrlFor(person.image)}) center no-repeat;`">
+        <article class="card__avatar" :style="`background: url(${imageUrlFor(persons[3].image)}) center no-repeat;`">
           <div class="card__content">          
-            <!-- <h3 class="card__title"> {{person.name}} </h3> -->
-            <span class="card__subtitle"> {{person.image.caption}} </span>
+            <span class="card__subtitle"> {{persons[3].image.caption}} </span>
             <p class="card__description truncate"> 
               <strong>
-                {{person.bio[0].children[0].text}}
+                {{persons[3].bio[0].children[0].text}}
               </strong> <br>
-              {{person.bio[1].children[0].text}}
+              {{persons[3].bio[1].children[0].text}}
             </p>
             <button class="btn btn-primary btn-sm rounded-pill btn-block btn__detail"><router-link to="/about">See Detail</router-link></button>
           </div>
@@ -26,10 +22,10 @@
               <div class="col-md-12 showcase">
                 <video src="@/assets/video.mp4" autoplay loop muted></video>               
                 <h3 class="display-5 profile-name">
-                  {{person.name}}
+                  {{persons[3].name}}
                 </h3>
 
-                <p class="profile-jobdesk">{{person.jobdesk}}</p>
+                <p class="profile-jobdesk">{{persons[3].jobdesk}}</p>
               </div>
             </div>
           </div>
@@ -38,32 +34,32 @@
               <div class="col-sm-12">
                 <ul class="list-group list-group-horizontal">
                   <li class="list-group-item">
-                   <a :href="`mailto:${person.contactInfo.email}`" target="_blank">
+                   <a :href="`mailto:${persons[3].contactInfo.email}`" target="_blank">
                     <i class="fas fa-fw fa-lg fa-paper-plane text-warning"></i>
                   </a>
                 </li>
                 <li class="list-group-item">
-                  <a :href="`https://www.linkedin.com/in/${person.contactInfo.linkedin}`" target="_blank">
+                  <a :href="`https://www.linkedin.com/in/${persons[3].contactInfo.linkedin}`" target="_blank">
                     <i class="fab fa-fw fa-lg fa-linkedin text-primary"></i>
                   </a>
                 </li>
                 <li class="list-group-item">
-                  <a :href="`https://twitter.com/${person.contactInfo.linkedin}`" target="_blank">
+                  <a :href="`https://twitter.com/${persons[3].contactInfo.linkedin}`" target="_blank">
                     <i class="fab fa-fw fa-lg fa-twitter text-info"></i>
                   </a>
                 </li>
                 <li class="list-group-item">
-                  <a :href="`https://instagram.com/${person.contactInfo.instagram}`" target="_blank">
+                  <a :href="`https://instagram.com/${persons[3].contactInfo.instagram}`" target="_blank">
                     <i class="instagram"></i>
                   </a>
                 </li>
                 <li class="list-group-item">
-                  <a :href="`https://web.whatsapp.com/send?phone=${person.contactInfo.phone}&text&app_absent=0`" target="_blank">
+                  <a :href="`https://web.whatsapp.com/send?phone=${persons[3].contactInfo.phone}&text&app_absent=0`" target="_blank">
                     <i class="fab fa-fw fa-lg fa-whatsapp"></i>
                   </a>
                 </li>
                 <li class="list-group-item">
-                  <a :href="`https://github.com/${person.contactInfo.github}`">
+                  <a :href="`https://github.com/${persons[3].contactInfo.github}`">
                     <i class="fab fa-fw fa-lg fa-github text-white"></i>
                   </a>
                 </li>
@@ -74,32 +70,32 @@
           <div v-else>
             <ul class="list-group list-group-horizontal">
               <li class="list-group-item">
-                <a :href="`mailto:${person.contactInfo.email}`" target="_blank">
+                <a :href="`mailto:${persons[3].contactInfo.email}`" target="_blank">
                   <i class="fas fa-fw fa-lg fa-paper-plane text-warning"></i>
                 </a>
               </li>
               <li class="list-group-item">
-                <a :href="`https://www.linkedin.com/in/${person.contactInfo.linkedin}`" target="_blank">
+                <a :href="`https://www.linkedin.com/in/${persons[3].contactInfo.linkedin}`" target="_blank">
                   <i class="fab fa-fw fa-lg fa-linkedin text-primary"></i>
                 </a>
               </li>
               <li class="list-group-item">
-                <a :href="`https://twitter.com/${person.contactInfo.linkedin}`" target="_blank">
+                <a :href="`https://twitter.com/${persons[3].contactInfo.linkedin}`" target="_blank">
                   <i class="fab fa-fw fa-lg fa-twitter text-info"></i>
                 </a>
               </li>
               <li class="list-group-item">
-                <a :href="`https://instagram.com/${person.contactInfo.instagram}`" target="_blank">
+                <a :href="`https://instagram.com/${persons[3].contactInfo.instagram}`" target="_blank">
                   <i class="instagram"></i>
                 </a>
               </li>
               <li class="list-group-item">
-                <a :href="`https://web.whatsapp.com/send?phone=${person.contactInfo.phone}&text&app_absent=0`" target="_blank">
+                <a :href="`https://web.whatsapp.com/send?phone=${persons[3].contactInfo.phone}&text&app_absent=0`" target="_blank">
                   <i class="fab fa-fw fa-lg fa-whatsapp"></i>
                 </a>
               </li>
               <li class="list-group-item">
-                <a :href="`https://github.com/${person.contactInfo.github}`">
+                <a :href="`https://github.com/${persons[3].contactInfo.github}`">
                   <i class="fab fa-fw fa-lg fa-github text-white"></i>
                 </a>
               </li>
@@ -118,8 +114,6 @@
           <div v-for="(key, index) in skills" class="col-md-4">
             <div :class="`${$isMobile ? 'row justify-content-start' : 'row justify-content-center'} mb-3 key__block`">
               <div class="col-md-6">
-                <!-- <img :src="imageUrlFor(key.mainImage)" :style="`${key.title === 'nodejs' || key.title === 'express js' || key.title === 'mongodb' ? 'width:60px;' : 'width:33px;'}`"> -->
-                <!-- {{key.title}} -->
                 <img :src="imageUrlFor(key.mainImage)" :style="`width:45px; margin-left:${key.percentage}%;`">
               </div>
               <div class="col-md-8 mt-2">

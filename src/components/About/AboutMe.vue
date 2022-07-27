@@ -1,18 +1,18 @@
 <template>
 	<div class="container">
-		<div v-for="person in persons" class="row no-gutters">
+		<div class="row no-gutters">
 			<div class="col-lg-12 col-sm-12 col__profile">
 				<div class="row justify-content-center">
 					<div class="col-md-6 col-sm-6">
 						<div class="box">
 							<div class="card">
 								<div class="imgBx">
-									<img :src="`${imageUrlFor(person.image)}`" alt="images"/>
+									<img :src="`${imageUrlFor(persons[3].image)}`" alt="images"/>
 								</div>
 								<div class="details">
-									<h2>{{person.name}}<br>
+									<h2>{{persons[3].name}}<br>
 										<span>
-											{{person.image.alt}}
+											{{persons[3].image.alt}}
 										</span>
 									</h2>
 								</div>
@@ -21,42 +21,42 @@
 					</div>
 					<div class="col-md-6 col-sm-6">
 						<div class="card__profiles">
-							<span v-html="person.bio[0].children[0].text"></span>
-							<blockquote v-for="text in person.bio[1].children">
+							<span v-html="persons[3].bio[0].children[0].text"></span>
+							<blockquote v-for="text in persons[3].bio[1].children">
 								<span v-if="text.text !== 'codesyariah122 Blog'">
 									{{text.text}}
 								</span>
 								<span v-else>
-									<a :href="person.bio[1].markDefs[0].href">
+									<a :href="persons[3].bio[1].markDefs[0].href">
 										{{text.text}}
 									</a>
 								</span>
 							</blockquote>
 
-							<span v-html="person.bio[2].children[0].text"></span>
+							<span v-html="persons[3].bio[2].children[0].text"></span>
 								<br>
-							<span v-html="person.bio[4].children[0].text"></span>
+							<span v-html="persons[3].bio[4].children[0].text"></span>
 
 							<ul class="list-group mb-3">
 								<div v-for="item in 9">
-									<li v-if="item > 5" class="list-group-item" v-html="person.bio[item].children[0].text"></li>
+									<li v-if="item > 5" class="list-group-item" v-html="persons[3].bio[item].children[0].text"></li>
 								</div>
 							</ul>
 
-							<span v-html="person.bio[12].children[0].text"></span>
+							<span v-html="persons[3].bio[12].children[0].text"></span>
 
 							<ul class="list-group mb-3">
 								<div v-for="item in 21">
-									<li v-if="item > 13" class="list-group-item" v-html="person.bio[item].children[0].text"></li>
+									<li v-if="item > 13" class="list-group-item" v-html="persons[3].bio[item].children[0].text"></li>
 								</div>
 							</ul>
 
 							<h5 class="mt-5">
-								{{person.bio[24].children[0].text}}
+								{{persons[3].bio[24].children[0].text}}
 							</h5>
 
 							<h3 class="mt-5">
-									{{person.bio[26].children[0].text}}
+									{{persons[3].bio[26].children[0].text}}
 							</h3>
 						</div>
 					</div>
