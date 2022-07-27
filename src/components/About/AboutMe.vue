@@ -22,9 +22,45 @@
 								</div>
 							</div>
 							<div class="col-md-6 col-sm-6">
-								<div v-for="bio in person.bio" class="card__profiles">
-									<article v-html="bio.children[0].text">
-									</article>
+								<div class="card__profiles">
+									<span v-html="person.bio[0].children[0].text"></span>
+									<blockquote v-for="text in person.bio[1].children">
+										<span v-if="text.text !== 'codesyariah122 Blog'">
+											{{text.text}}
+										</span>
+										<span v-else>
+											<a :href="person.bio[1].markDefs[0].href">
+												{{text.text}}
+											</a>
+										</span>
+									</blockquote>
+
+									<span v-html="person.bio[2].children[0].text"></span>
+									<br>
+									<span v-html="person.bio[4].children[0].text"></span>
+
+									<ul class="list-group mb-3">
+										<div v-for="item in 9">
+											<li v-if="item > 5" class="list-group-item" v-html="person.bio[item].children[0].text"></li>
+										</div>
+									</ul>
+
+									<span v-html="person.bio[12].children[0].text"></span>
+
+									<ul class="list-group mb-3">
+										<div v-for="item in 21">
+											<li v-if="item > 13" class="list-group-item" v-html="person.bio[item].children[0].text"></li>
+										</div>
+									</ul>
+
+									<h5 class="mt-5">
+										{{person.bio[24].children[0].text}}
+									</h5>
+
+									<h3 class="mt-5">
+										{{person.bio[26].children[0].text}}
+									</h3>
+
 								</div>
 							</div>
 						</div>

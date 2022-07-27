@@ -10,6 +10,20 @@
 			color:$white;
 			margin-left: 1rem;
 			width: 90%;
+
+			.list-group{
+				margin-top: 1rem;
+				.list-group-item{
+					font-size: 13px;
+					background-color: transparent;
+					color: $white;
+					border-top: 1px solid $white;
+					border-left-color: $white;
+					border-right-color: $white;
+					border-bottom-color: $white;
+					list-style: none;
+				}
+			}
 		}
 	}
 }
@@ -19,9 +33,7 @@
 	.col__profile{
 		margin-top: 3rem;
 		margin-bottom: 7rem;
-		.card__project{
-
-		}
+		width: 100%;
 	}
 }
 .card__project-about{}
@@ -72,6 +84,18 @@
 				color:$white;
 				margin-left: 5rem;
 				width: 100%;
+				.list-group{
+					margin-top: 1rem;
+					.list-group-item{
+						background-color: transparent;
+						color: $white;
+						border-top: 1px solid $white;
+						border-left-color: $white;
+						border-right-color: $white;
+						border-bottom-color: $white;
+						list-style: none;
+					}
+				}
 			}
 		}
 	}

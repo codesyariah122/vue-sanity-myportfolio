@@ -289,7 +289,7 @@
                 border: none;
                 background-color: transparent!important;
                 .instagram {
-                  width: 1em;
+                  width: 1.2em;
                   aspect-ratio: 1;
                   background: radial-gradient(
                     circle farthest-corner at 28% 100%,
@@ -326,7 +326,7 @@
                 .fa-whatsapp {
                   color:#fff;
                   background:
-                  linear-gradient($whatsappBg,$whatsappBg) 24% 74%/24% 21% no-repeat, radial-gradient($whatsappBg 49.9%,transparent 0)!important;
+                  linear-gradient($whatsappBg,$whatsappBg) 24% 74%/25% 33% no-repeat, radial-gradient($whatsappBg 49.9%,transparent 0)!important;
                 }
                 a {
                   font-size:var(--size)!important;
