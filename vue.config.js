@@ -1,6 +1,6 @@
 module.exports = {
   pwa: {
-    name: "Liquid Measurement Converter",
+    name: "Puji Ermanto || Coffee Again Script Again",
     themeColor: "#000"
   },
   css: {
