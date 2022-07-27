@@ -1,10 +1,12 @@
-body {
-  margin: 0px;
+html,body {
+    margin:0;
+    padding:0;
+    overflow-x:hidden;
 }
 
 nav {
 	padding: 30px;
-
+	text-align: center;
 	a {
 		font-weight: bold;
 		color: $white;
@@ -62,6 +64,9 @@ nav {
 		p {
 			margin:0;
 			font-size:.75rem;
+		}
+		.logo{
+			margin-top: 7rem!important;
 		}
 		>div {
 			display:flex;

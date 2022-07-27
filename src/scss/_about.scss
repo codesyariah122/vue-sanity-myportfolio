@@ -1,42 +1,217 @@
-.card__profile-about{
-	background-color: $secondaryBackground;
-	.col__profile{
-		margin-top: 3rem;
-		margin-bottom: 7rem;
-		width: 100%;
-		.card__profiles{
-			text-align: justify;
-			font-weight: 600;
-			color:$white;
-			margin-left: 1rem;
-			width: 90%;
 
-			.list-group{
-				margin-top: 1rem;
-				.list-group-item{
-					font-size: 13px;
-					background-color: transparent;
+.about__view{
+	.card__profile-about{
+		background-color: $secondaryBackground;
+		.col__profile{
+			margin-top: 3rem;
+			margin-bottom: 7rem;
+			.card__profiles{
+				text-align: justify;
+				font-weight: 600;
+				color:$white;
+				margin-left: 1rem;
+				width: 90%;
+
+				.list-group{
+					margin-top: 1rem;
+					.list-group-item{
+						font-size: 13px;
+						background-color: transparent;
+						color: $white;
+						border-top: 1px solid $white;
+						border-left-color: $white;
+						border-right-color: $white;
+						border-bottom-color: $white;
+						list-style: none;
+					}
+				}
+			}
+		}
+	}
+	.card__project-about{
+		margin-top: 2rem;
+		background-color: $secondaryBackground;
+
+		.col__header{
+			color: $white;
+			h2{
+				text-align: center;
+			}
+			blockquote{
+				margin-left: 1.3rem;
+				font-size: 14px;
+				word-spacing: 1px;
+				letter-spacing: 2px;
+			}
+		}
+		.col__project{
+			margin-top:1rem;
+			margin-bottom: 5rem;
+
+			.game{
+				margin-left: 3.5rem;
+				img{
+					max-width:100%;
+				}
+				.btn{
+					cursor:pointer;
+					padding:.5em 1em;
+					border:0;
+					background:var(--clr-secondary);
+					color:var(--clr-light);
+					font-weight:bold;
+					border-radius:12px;
+
+				}
+				position:relative;
+				width:12rem;
+
+			}
+			.streamers{
+				display:flex;
+				text-align:center;
+				img{
+					margin-top: -1.3rem;
+					width:2rem;
+					height:2rem;
+					border-radius:50%;
+				}
+			}
+			.front{
+				transition:200ms;
+				& > img{
+					border-radius:12px;
+				}
+				.name{
+					margin:0.75em 0;
+					font-size: 19px;
 					color: $white;
-					border-top: 1px solid $white;
-					border-left-color: $white;
-					border-right-color: $white;
-					border-bottom-color: $white;
-					list-style: none;
+				}
+				.status{
+					display:flex;
+					justify-content:space-between;
+					align-items:center;  
+				}
+				.streamers img{
+					border:1px solid var(--clr-dark);
+					&:nth-child(1){
+						z-index:1;
+						transform:translateX(15px);
+					}
+					&:nth-child(2){
+						transform:translateX(10px);
+					}
+
+				}
+			}
+
+			.back{
+				position:absolute;
+				top:56%;
+				left:0;
+				right:0;
+				opacity:0;
+				display:flex;
+				flex-direction:column;
+				align-items:center;
+				gap:1em;
+				.streaming-info{
+					columns:2;
+					column-rule:1px solid rgba(255,255,255,0.6); 
+				}
+				.game-stat{
+					font-size:1.2rem;
+					text-align:center;
+					span{
+						display:block;
+						font-size:.8rem;
+					}
+				}
+				.streamers{
+					display:flex;
+				}
+			}
+			.backgroundWrapper{
+				position:absolute;
+				top:3px;
+				left:0;
+				right:0;
+				bottom:0;
+				background:$cardHoverBg;
+				z-index:-1;
+				transform:scale(.2,.8);
+				opacity:0;
+				border-radius:12px;
+			}
+			.game:hover {
+				z-index: 1;
+				.front{
+					transform:translateY(-25%) scale(.8);
+					.name{
+						animation:gameName 150ms forwards;
+						font-size: 21px;
+						color: $white;
+					}
+					.status{
+						opacity:0;
+					}
+				}
+				.back{
+					opacity:1;
+					.streamers{
+						width:100%;
+						justify-content:space-between;
+					}
+					.streamer{
+						font-size:.9rem;
+					}
+					.name{
+						font-weight:bold;
+					}
+				}
+				.rank{
+					top:-35px;
+					right:-30px;
+				}
+				.backgroundWrapper{
+					transition:transform 200ms ease-in-out, opacity 100ms linear;
+					opacity:1;
+					transform:scale(1.4,1.2);
+				}
+			}
+
+			.rank{
+				position:absolute;
+				right:15px;
+				font-weight:bold;
+				font-size:1.12rem;
+				background:rgba(0,0,0,0.75);
+				padding:.5em .5em;
+				clip-path: polygon(100% 0%, 100% 100%, 50% 85%, 0 100%,0 0);
+				transition:250ms ease-in-out;
+			}
+
+			@keyframes gameName{
+				0%{
+					text-align:left;
+					opacity:1;
+				}
+				20%{
+					text-align:left;
+					opacity:0;
+				}
+				50%{
+					text-align:center;
+					opacity:0;
+				}
+				100%{
+					text-align:center;
+					opacity:1;
 				}
 			}
 		}
 	}
 }
-.card__project-about{
-	margin-top: 2rem;
-	background-color: $secondaryBackground;
-	.col__profile{
-		margin-top: 3rem;
-		margin-bottom: 7rem;
-		width: 100%;
-	}
-}
-.card__project-about{}
 
 @media (min-width: 991px) and (max-width:1200px) {}
 
@@ -80,13 +255,20 @@
 			}
 			.card__profiles{
 				text-align: justify;
-				font-weight: 600;
+				font-weight: 400;
 				color:$white;
 				margin-left: 5rem;
 				width: 100%;
+				blockquote{
+					letter-spacing: 2px;
+				}
+				span{
+					letter-spacing: 2px;
+				}
 				.list-group{
 					margin-top: 1rem;
 					.list-group-item{
+						font-size: 16px;
 						background-color: transparent;
 						color: $white;
 						border-top: 1px solid $white;
@@ -101,13 +283,181 @@
 	}
 	.card__project-about{
 		margin-top: 2rem;
+		margin-bottom: 5rem;
 		background-color: $secondaryBackground;
-		.col__profile{
-			margin-top: 3rem;
-			margin-bottom: 7rem;
-			.card__project{
-
+		.col__header{
+			color: $white;
+			blockquote{
+				word-spacing: 2px;
+				letter-spacing: 2px;
 			}
 		}
+		.col__project{
+			margin-top: 3rem;
+			margin-bottom: 5rem;
+
+			.game{
+				margin-left: 3.5rem;
+				img{
+					max-width:100%;
+				}
+				.btn{
+					cursor:pointer;
+					padding:.5em 1em;
+					border:0;
+					background:var(--clr-secondary);
+					color:var(--clr-light);
+					font-weight:bold;
+					border-radius:12px;
+
+				}
+				position:relative;
+				width:12rem;
+
+			}
+			.streamers{
+				display:flex;
+				text-align:center;
+				img{
+					margin-top: -1.3rem;
+					width:2rem;
+					height:2rem;
+					border-radius:50%;
+				}
+			}
+			.front{
+				transition:200ms;
+				& > img{
+					border-radius:12px;
+				}
+				.name{
+					margin:0.75em 0;
+					font-size: 19px;
+					color: $white;
+				}
+				.status{
+					display:flex;
+					justify-content:space-between;
+					align-items:center;  
+				}
+				.streamers img{
+					border:1px solid var(--clr-dark);
+					&:nth-child(1){
+						z-index:1;
+						transform:translateX(15px);
+					}
+					&:nth-child(2){
+						transform:translateX(10px);
+					}
+
+				}
+			}
+
+			.back{
+				position:absolute;
+				top:56%;
+				left:0;
+				right:0;
+				opacity:0;
+				display:flex;
+				flex-direction:column;
+				align-items:center;
+				gap:1em;
+				.streaming-info{
+					columns:2;
+					column-rule:1px solid rgba(255,255,255,0.6); 
+				}
+				.game-stat{
+					font-size:1.2rem;
+					text-align:center;
+					span{
+						display:block;
+						font-size:.8rem;
+					}
+				}
+				.streamers{
+					display:flex;
+				}
+			}
+			.backgroundWrapper{
+				position:absolute;
+				top:3px;
+				left:0;
+				right:0;
+				bottom:0;
+				background:$cardHoverBg;
+				z-index:-1;
+				transform:scale(.2,.8);
+				opacity:0;
+				border-radius:12px;
+			}
+			.game:hover {
+				z-index: 1;
+				.front{
+					transform:translateY(-25%) scale(.8);
+					.name{
+						animation:gameName 150ms forwards;
+						font-size: 21px;
+						color: $white;
+					}
+					.status{
+						opacity:0;
+					}
+				}
+				.back{
+					opacity:1;
+					.streamers{
+						width:100%;
+						justify-content:space-between;
+					}
+					.streamer{
+						font-size:.9rem;
+					}
+					.name{
+						font-weight:bold;
+					}
+				}
+				.rank{
+					top:-35px;
+					right:-30px;
+				}
+				.backgroundWrapper{
+					transition:transform 200ms ease-in-out, opacity 100ms linear;
+					opacity:1;
+					transform:scale(1.4,1.2);
+				}
+			}
+
+			.rank{
+				position:absolute;
+				right:15px;
+				font-weight:bold;
+				font-size:1.12rem;
+				background:rgba(0,0,0,0.75);
+				padding:.5em .5em;
+				clip-path: polygon(100% 0%, 100% 100%, 50% 85%, 0 100%,0 0);
+				transition:250ms ease-in-out;
+			}
+
+			@keyframes gameName{
+				0%{
+					text-align:left;
+					opacity:1;
+				}
+				20%{
+					text-align:left;
+					opacity:0;
+				}
+				50%{
+					text-align:center;
+					opacity:0;
+				}
+				100%{
+					text-align:center;
+					opacity:1;
+				}
+			}
+		}
+
 	}
 }

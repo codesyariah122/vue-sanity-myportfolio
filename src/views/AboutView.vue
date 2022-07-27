@@ -1,13 +1,21 @@
 <template>
   <div class="about__view">
-    <!-- Projectt component -->
-    <AboutMe :persons="persons" :projects="projects"/>
+    <div class="container">
+      <!-- Profile Content -->
+      <div class="card__profile-about">
+        <AboutMe :persons="persons" :projects="projects"/>
+      </div>
+      <!-- Project Content -->
+      <div class="card__project-about">
+        <Project :projects="projects" :categories="categories"/>
+      </div>
+    </div>
   </div>
 </template>
 
 <script>
   import {
-    AboutMe
+    AboutMe, Project
   } from '@/components'
 
   import sanity from '@/client'
@@ -28,6 +36,7 @@
     _id,
     title,
     slug,
+    categories,
     startedAt,
     endedAt,
     mainImage,
@@ -35,16 +44,24 @@
     body
   }[0...50]`
 
+  const category = `*[_type == "category"]{
+    _id,
+    title,
+    description
+  }[0...50]`
+
 
   export default {
     name: 'AboutView',
     components: {
-      AboutMe
+      AboutMe,
+      Project
     },
     data(){
       return {
         projects: [],
         persons: [],
+        categories: [],
         error: null,
         loading: true
       }
@@ -52,7 +69,8 @@
 
     created(){
       this.personData(),
-      this.projectData()
+      this.projectData(),
+      this.categoryProject()
     },
 
     methods: {
@@ -73,15 +91,25 @@
         this.error = this.projects = null
         sanity.fetch(project)
         .then((projects) => {
-          console.log(projects)
           this.projects = projects
           setTimeout(() => {
             this.loading = false
           }, 1500)
         }, (err) => {
-          this.error = error
+          this.error = err
+        })
+      },
+
+      categoryProject() {
+        this.error = this.categories = null
+        sanity.fetch(category)
+        .then((categories) => {
+          this.categories = categories
+        }, (err) => {
+          this.error = err
         })
       }
+
     }
   }
 </script>
