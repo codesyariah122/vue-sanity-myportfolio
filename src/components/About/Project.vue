@@ -5,7 +5,7 @@
 				<h2>Project</h2>
 				<blockquote>Berikut beberapa project yang saya kerjakan di periode 2020 s/d 2022</blockquote>
 			</div>
-			<div v-for="project in projects" class="col-md-4 col__project">
+			<div v-for="(project, idx) in projects" class="col-md-4 col__project">
 				<!-- <pre>
 					{{project.members}}
 				</pre> -->
@@ -13,7 +13,7 @@
 				<div class="game" 
 				@mouseenter="hover = true"
 				@mouseleave="hover = false">
-					<div class="rank">2</div>
+					<div class="rank">{{idx+=1}}</div>
 					<div class="front">
 						<img :src="`${imageUrlFor(project.mainImage.asset._ref)}`" alt="game">
 
