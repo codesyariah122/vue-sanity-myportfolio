@@ -6,9 +6,6 @@
 				<blockquote>Berikut beberapa project yang saya kerjakan di periode 2020 s/d 2022</blockquote>
 			</div>
 			<div v-for="(project, idx) in projects" class="col-md-4 col__project">
-				<!-- <pre>
-					{{project.members}}
-				</pre> -->
 				<br>
 				<div class="game" 
 				@mouseenter="hover = true"
@@ -53,7 +50,7 @@
 							<div v-for="person in persons" class="streamer">
 								<div v-for="member in project.members">
 									<img v-if="member.person._ref === person._id" :src="`${imageUrlFor(person.image)}`">
-									<p v-if="member.person._ref === person._id" class="name">{{person.name}}</p>
+									<p v-if="member.person._ref === person._id" class="name">{{person.image.alt === "Puji" ? "Me" : person.image.alt}}</p>
 								</div>
 							</div>
 						</div>

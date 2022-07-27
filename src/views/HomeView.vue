@@ -1,7 +1,7 @@
 <template>
   <div class="home__view">
     <div v-if="loading" class="container loader__page">
-      <Loading/>
+      <Loading :persons="persons"/>
     </div>
     <div v-else>
       <!-- Person component -->
@@ -66,7 +66,7 @@
           this.persons = persons
           setTimeout(() => {
             this.loading = false
-          }, 1500)
+          }, 2500)
         }, (error) => {
           this.error = error
         })

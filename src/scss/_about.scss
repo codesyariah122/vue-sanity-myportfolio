@@ -7,10 +7,14 @@
 			margin-bottom: 3rem;
 			.card__profiles{
 				text-align: justify;
-				font-weight: 600;
+				font-weight: 400;
 				color:$white;
 				margin-left: 1rem;
 				width: 90%;
+
+				blockquote{
+					color: $white;
+				}
 
 				.list-group{
 					margin-top: 1rem;
@@ -197,11 +201,13 @@
 					}
 					.name{
 						font-weight:bold;
+						color: $white;
 					}
 				}
 				.rank{
 					top:-35px;
 					right:-30px;
+					color: $white;
 				}
 				.backgroundWrapper{
 					transition:transform 200ms ease-in-out, opacity 100ms linear;
@@ -451,11 +457,13 @@
 					}
 					.name{
 						font-weight:bold;
+						color: $white;
 					}
 				}
 				.rank{
 					top:-35px;
 					right:-30px;
+					color: $white;
 				}
 				.backgroundWrapper{
 					transition:transform 200ms ease-in-out, opacity 100ms linear;

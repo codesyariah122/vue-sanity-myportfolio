@@ -1,5 +1,8 @@
 <template>
   <div class="about__view">
+    <div v-if="loading" class="container loader__page">
+      <Loading :persons="persons"/>
+    </div>
     <div class="container">
       <!-- Profile Content -->
       <div class="card__profile-about">
@@ -15,7 +18,7 @@
 
 <script>
   import {
-    AboutMe, Project
+    AboutMe, Project, Loading
   } from '@/components'
 
   import sanity from '@/client'
@@ -56,7 +59,8 @@
     name: 'AboutView',
     components: {
       AboutMe,
-      Project
+      Project,
+      Loading
     },
     data(){
       return {
@@ -81,7 +85,7 @@
           this.persons = persons
           setTimeout(() => {
             this.loading = false
-          }, 1500)
+          }, 2500)
         }, (error) => {
           this.error = error
         })
