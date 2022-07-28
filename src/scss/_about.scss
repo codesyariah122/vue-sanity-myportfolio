@@ -249,7 +249,15 @@
 	}
 }
 
-@media (min-width: 991px) and (max-width:1200px) {}
+@media (min-width: 991px) and (max-width:1200px) {
+	.card__profile-about{
+		.col__profile{
+			.card__profiles{
+				margin-left: 15rem!important;
+			}
+		}
+	}
+}
 
 @media (min-width: 992px) {
 	.card__profile-about{
@@ -293,7 +301,7 @@
 				text-align: justify;
 				font-weight: 400;
 				color:$white;
-				margin-left: 5rem;
+				margin-left: 5rem!important;
 				width: 100%;
 				blockquote{
 					letter-spacing: 2px;
@@ -381,7 +389,7 @@
 					}
 				}
 				.streamers img{
-					border:1px solid var(--clr-dark);
+					border:2px solid var(--clr-dark);
 					&:nth-child(1){
 						z-index:1;
 						transform:translateX(15px);

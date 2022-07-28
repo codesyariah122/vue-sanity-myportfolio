@@ -173,13 +173,20 @@
 
 
     @media (min-width: 991px) and (max-width:1200px) {
-      .skill__block {
-        border-radius: 13px!important;
-        width: 30%;
-        padding: 32px !important;
-        .key__block {
-          img{
-            filter: drop-shadow(0 0 0.55rem crimson);
+      .profile__board{
+        .profile__info{
+          .social__link {
+            margin-left: 3rem!important;
+          }
+          .skill__block {
+            border-radius: 13px!important;
+            width: 30%;
+            padding: 32px !important;
+            .key__block {
+              img{
+                filter: drop-shadow(0 0 0.55rem crimson);
+              }
+            }
           }
         }
       }
@@ -288,7 +295,7 @@
           }
           .social__link {
             margin-top: 2.5rem;
-            margin-left: -2.8rem;
+            margin-left: -1.5rem!important;
             .list-group {
               margin-top: -1.5rem;
               margin-bottom: -3rem;
