@@ -14,7 +14,7 @@
 			</div>
 			<div v-else class="col-lg-12 col-sm-12">
 				<h3 class="text-white"> 
-					{{persons.image.caption}} ☕
+					{{persons.aboutImage.alt}} ☕
 				</h3>
 			</div>
 

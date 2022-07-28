@@ -16,6 +16,9 @@
 					<div class="blocks">
 						<SanityBlocks :blocks="blocks" />
 					</div>
+
+					<!-- gallery project -->
+					<Gallery :detail="detail" @image-builder="imageUrlFor($event)"/>
 				</div>
 			</div>
 		</div>
@@ -27,11 +30,13 @@
 	import imageUrlBuilder from '@sanity/image-url'
 	const imageBuilder = imageUrlBuilder(sanity)
 	import { SanityBlocks } from "sanity-blocks-vue-component"
+	import {Gallery} from '@/components/Molecules'
 
 	export default {
 		props: ['detail', 'blocks'],
 		components: {
-			SanityBlocks
+			SanityBlocks,
+			Gallery
 		},
 
 		data(){

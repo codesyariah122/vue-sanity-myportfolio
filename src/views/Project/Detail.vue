@@ -1,8 +1,6 @@
 <template>
 	<div class="detail__project-view">
-		<div v-if="loading" class="container loader__page">
-			<Loading :persons="persons"/>
-		</div>
+		
 
 		<div class="container">
 			<!-- For Blocks -->
@@ -62,7 +60,7 @@
 			Detail
 		},
 
-		created(){
+		mounted(){
 			this.personData(),
 			this.DetailProject()
 		},
@@ -73,6 +71,7 @@
 				this.error = this.persons = null
 				sanity.fetch(person)
 				.then((persons) => {
+					console.log(persons)
 					this.persons = persons
 					setTimeout(() => {
 						this.loading = false
