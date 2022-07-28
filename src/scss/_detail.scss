@@ -1,0 +1,25 @@
+.detail__project-view{
+	.container{
+		.col__detail-project{
+
+		}
+	}
+}
+
+@media (min-width: 991px) and (max-width:1200px) {}
+
+@media (min-width: 992px) {
+	.detail__project-view{
+		.container{
+			.card__project-detail{
+				background-color: $secondaryBackground;
+				width: 100%;
+				.col__detail-project{
+					margin-left: -9rem;
+					margin-top: 3rem;
+					margin-bottom: 7rem;
+				}
+			}
+		}
+	}
+}

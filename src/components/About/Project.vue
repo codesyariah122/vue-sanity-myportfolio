@@ -45,7 +45,9 @@
 								{{excerpt.children[0].text}}
 							</p>
 						</div>
-						<button class="btn">See Detail</button>
+
+						<button @click="$router.push({path: `/project/${project.slug.current}`})" class="btn">See Detail</button>
+
 						<div class="streamers">
 							<div v-for="person in persons" class="streamer">
 								<div v-for="member in project.members">

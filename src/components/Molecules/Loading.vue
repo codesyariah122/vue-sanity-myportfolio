@@ -7,11 +7,17 @@
 		</div>
 
 		<div class="row justify-content-center mt-3">
-			<div class="col-lg-12 col-sm-12">      
+			<div v-if="persons[3]" class="col-lg-12 col-sm-12">      
 				<h3 class="text-white"> 
 					{{persons[3].image.caption}} ☕
 				</h3>
 			</div>
+			<div v-else class="col-lg-12 col-sm-12">
+				<h3 class="text-white"> 
+					{{persons.image.caption}} ☕
+				</h3>
+			</div>
+
 		</div>
 	</div>
 </template>
