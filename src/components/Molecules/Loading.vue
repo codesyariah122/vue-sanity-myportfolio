@@ -1,7 +1,7 @@
 <template>
 	<div>
 		<div class="d-flex justify-content-center">
-			<div class="spinner-grow text-primary" role="status" :style="`${$isMobile ? 'width: 7rem; height: 7rem;' : 'width: 3rem; height: 3rem;'}`">
+			<div class="spinner-grow text-danger" role="status" :style="`${$isMobile ? 'width: 7rem; height: 7rem;' : 'width: 3rem; height: 3rem;'}`">
 				<span class="visually-hidden">Loading...</span> <br>
 			</div>
 		</div>

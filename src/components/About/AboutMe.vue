@@ -94,6 +94,10 @@
 			}
 		},
 
+		mounted(){
+			this.gsapSetting()
+		},
+
 		methods: {
 			imageUrlFor(source){
 				return imageBuilder.image(source)
@@ -106,6 +110,51 @@
 
 			date(val){
 				return moment(val).format("LL")
+			},
+
+			gsapSetting() {
+				let tl = gsap.timeline();
+
+				console.log("Puji Was Here");
+
+				tl.from(".col__profile", {
+					stagger: 0.2,
+					opacity: 0,
+					x: -20,
+				})
+
+				tl.from(".box", {
+					stagger: 0.2,
+					opacity: 0,
+					x: -50
+				})
+
+				tl.from(".card", {
+					stagger: 0.2,
+					opacity: 0,
+					x: 50
+				})
+
+				tl.from(".imgBx", {
+					stagger: 0.7,
+					opacity: 0,
+					y: 20
+				})
+				tl.from(".card__profiles", {
+					stagger: 0.2,
+					opacity: 0,
+					y: 20
+				})
+				tl.from(".blockquote-footer", {
+					stagger: 0.2,
+					opacity: 0,
+					x: -25,
+				})
+				tl.from(".list-group", {
+					stagger: 0.2,
+					opacity: 0,
+					y: 20,
+				})
 			}
 		}
 	}

@@ -94,7 +94,8 @@
 		},
 
 		mounted(){
-			this.setupCategory()
+			this.setupCategory(),
+			this.gsapSetting()
 		},
 
 		methods: {
@@ -119,6 +120,25 @@
 				}, (err) => {
 					this.error = err
 				})
+			},
+
+			gsapSetting() {
+				let tl = gsap.timeline();
+
+				console.log("Puji Was Here");
+				setTimeout(() => {
+					tl.from(".col__header", {
+						stagger: 0.2,
+						opacity: 0,
+						x: -20,
+					})
+
+					tl.from(".col__project", {
+						stagger: 0.2,
+						opacity: 0,
+						x: -50
+					})
+				}, 3000)
 			}
 		}
 	}

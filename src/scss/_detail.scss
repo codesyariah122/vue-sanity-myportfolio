@@ -13,11 +13,17 @@
 		.container{
 			.card__project-detail{
 				background-color: $secondaryBackground;
+				box-shadow: 5px 7px 2px 1px $boxShadow;
+
 				width: 100%;
 				.col__detail-project{
 					margin-left: -9rem;
 					margin-top: 3rem;
 					margin-bottom: 7rem;
+
+					.content__project{
+						
+					}
 				}
 			}
 		}

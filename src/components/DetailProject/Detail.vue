@@ -2,8 +2,10 @@
 	<div class="container">
 		<div class="row no-gutters">
 			<div class="col-lg-12 col-sm-12 col__detail-project">
-				<div class="content">
-					
+				<div class="content__project">
+					<pre class="text-white">
+						{{detail}}
+					</pre>
 				</div>
 			</div>
 		</div>

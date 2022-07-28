@@ -73,7 +73,8 @@
 
     created(){
       this.personData(),
-      this.projectData()
+      this.projectData(),
+      this.gsapSetting()
     },
 
     methods: {
@@ -100,6 +101,24 @@
           }, 1500)
         }, (err) => {
           this.error = err
+        })
+      },
+
+      gsapSetting() {
+        let tl = gsap.timeline();
+
+        console.log("Puji Was Here");
+
+        tl.from(".card__profile-about", {
+          stagger: 0.2,
+          opacity: 0,
+          x: -20,
+        })
+
+        tl.from(".card__project-about", {
+          stagger: 0.2,
+          opacity: 0,
+          x: -50
         })
       }
 

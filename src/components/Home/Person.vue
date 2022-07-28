@@ -108,7 +108,7 @@
 
       <div class="row justify-content-start skill__block">
         <div class="text-capitalize p-3 text-center text-white">
-          <h5>tools or programming languages ​​that I have used</h5>
+          <h5>tools or programming languages that I have used</h5>
         </div>
 
         <div class="row text-white mt-3">
