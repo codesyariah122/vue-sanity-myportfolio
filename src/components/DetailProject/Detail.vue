@@ -2,10 +2,20 @@
 	<div class="container">
 		<div class="row no-gutters">
 			<div class="col-lg-12 col-sm-12 col__detail-project">
-				<div class="content__project">
-					<pre class="text-white">
-						{{detail}}
-					</pre>
+				<div v-if="error" class="error">
+					{{ error }}
+				</div>
+				<div v-else class="content__project">
+					<div v-if="detail.mainImage" class="bg__project" :style="`background-image: url(${imageUrlFor(detail.mainImage.asset)})`">
+						<div class="frosted-glass">
+							<h1 class="title">{{detail.title}}</h1>
+						</div>
+					</div>
+
+					<!-- Block contents here -->
+					<div class="blocks">
+						<SanityBlocks :blocks="blocks" />
+					</div>
 				</div>
 			</div>
 		</div>
@@ -19,7 +29,7 @@
 	import { SanityBlocks } from "sanity-blocks-vue-component"
 
 	export default {
-		props: ['detail'],
+		props: ['detail', 'blocks'],
 		components: {
 			SanityBlocks
 		},
