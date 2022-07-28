@@ -1,7 +1,7 @@
 module.exports = {
   pwa: {
-    name: "Puji Ermanto || Coffee Again Script Again",
-    themeColor: "#000",
+    name: "Puji Ermanto ☕",
+    themeColor: "#333231",
 
     icons: {
       favicon32: 'img/icons/favicon-32x32.png',

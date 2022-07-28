@@ -6,7 +6,10 @@
 			</div>
 			<div class="content">
 				<div>
-					<div><b>Codesyariah122</b><a href="https://github.com/codesyariah122">Github</a><a href="https://codesyariah122.github.io">Blog</a><a href="#">Youtube</a></div>
+					<div><b>Codesyariah122</b>
+						<a href="https://github.com/codesyariah122">Github</a>
+						<a href="https://codesyariah122.github.io">Blog</a>
+						<a href="https://www.youtube.com/channel/UChp6ghPwM6Du03X0Ko_nRcw">Youtube</a></div>
 				</div>
 				<div class="logo" :style="`${$isMobile() ? 'margin-top: 8rem;' : ''}`">
 					<a class="image" :href="require('@/assets/logo.png')" target="_blank">

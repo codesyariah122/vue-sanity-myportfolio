@@ -9,7 +9,8 @@
               <strong>
                 {{persons[3].bio[0].children[0].text}}
               </strong> <br>
-              {{persons[3].bio[1].children[0].text}}
+              {{persons[3].bio[2].children[0].text}}<br>
+              {{persons[3].bio[3].children[0].text}}
             </p>
             <button class="btn btn-primary btn-sm rounded-pill btn-block btn__detail"><router-link to="/about">See Detail</router-link></button>
           </div>

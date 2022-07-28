@@ -23,13 +23,15 @@
 						<div class="card__profiles">
 							<h3> {{persons[3].bio[0].children[0].text}} </h3>
 							<br>
-							<blockquote class="blockquote-footer text-italic" v-html="persons[3].bio[2].children[0].text"></blockquote>
+							<blockquote class="blockquote-footer text-italic">
+								{{persons[3].bio[2].children[0].text}} ...
+							</blockquote>
 							<blockquote v-for="text in persons[3].bio[3].children">
 								<span v-if="text.text !== 'codesyariah122 Blog'">
 									{{text.text}}
 								</span>
 								<span v-else>
-									<a :href="persons[3].bio[3].markDefs[0].href">
+									<a :href="persons[3].bio[3].markDefs[0].href" target="_blank">
 										{{text.text}}
 									</a>
 								</span>
