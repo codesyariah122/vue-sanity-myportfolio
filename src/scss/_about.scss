@@ -37,8 +37,10 @@
 		background-color: $secondaryBackground;
 		box-shadow: 5px 3px 2px 1px $boxShadow;
 
-		.col__header{
+		.col__header-about{
 			color: $white;
+			margin-left: -1rem;
+			margin-bottom: 1rem;
 			h2{
 				text-align: center;
 			}
@@ -86,6 +88,10 @@
 				}
 				position:relative;
 				width:12rem;
+
+				.rank{
+					color: coral;
+				}
 
 			}
 			.streamers{
@@ -333,7 +339,7 @@
 		background-color: $secondaryBackground;
 		box-shadow: 5px 7px 2px 1px $boxShadow;
 		
-		.col__header{
+		.col__header-about{
 			color: $white;
 			blockquote{
 				word-spacing: 2px;

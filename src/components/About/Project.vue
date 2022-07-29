@@ -1,7 +1,7 @@
 <template>
 	<div class="container">
 		<div class="row justify-content-center no-gutters">
-			<div class="col-md-12 col-sm-12 mt-5 col__header">
+			<div class="col-md-12 col-sm-12 mt-5 col__header-about">
 				<h2>Project</h2>
 				<blockquote>Berikut beberapa project yang saya kerjakan di periode 2020 s/d 2022</blockquote>
 			</div>

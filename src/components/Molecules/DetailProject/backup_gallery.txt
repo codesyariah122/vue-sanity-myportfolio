@@ -1,0 +1,98 @@
+<template>
+	<div class="container">
+		<div class="row justify-content-center">
+			<div class="col-lg-12 col-sm-12 col__header">
+				<h3>Project Galleries :</h3>
+				<blockquote class="mt-2 blockquote-footer">
+					Sedikit dokumentasi hasil kerja saya sebagai : <strong class="text-capitalize"> {{detail.title}} </strong>
+				</blockquote>
+			</div>
+
+			<div class="col-lg-12 text-white text-white">
+				<!-- <pre>
+					{{detail.imagesGallery}}
+				</pre> -->
+			</div>
+		</div>
+
+		<div class="gallery">
+			<div class="gallery__column">
+				<div v-for="gallery in detail.imagesGallery">
+					<!-- <pre>
+						{{Object.values(gallery)[3]}}
+					</pre> -->
+					<a :href="Object.values(gallery)[3]._ref" target="_blank" class="gallery__link">
+						<figure class="gallery__thumb">
+							<img :src="`${imageUrlFor(Object.values(gallery)[3])}`"  alt="Portrait by Jessica Felicio" class="gallery__image"/>
+							<figcaption class="gallery__caption">
+								{{gallery.caption}} <br>
+								{{gallery.alt}}
+							</figcaption>
+						</figure>
+					</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</template>
+
+<script>
+	import sanity from '@/client'
+	import imageUrlBuilder from '@sanity/image-url'
+	const imageBuilder = imageUrlBuilder(sanity)
+
+	export default{
+		props: ['detail'],
+
+		methods: {
+			imageUrlFor(source){
+				return imageBuilder.image(source);
+			}
+		}
+	}
+</script>
+
+----------------------------------------------------------
+
+
+<template>
+	<div class="container">
+
+		<div class="row justify-content-center">
+			<div class="col-lg-12 col-sm-12 col__header">
+				<h3>Project Galleries :</h3>
+				<blockquote class="mt-2 blockquote-footer">
+					Sedikit dokumentasi hasil kerja saya sebagai : <strong class="text-capitalize"> {{detail.title}} </strong>
+				</blockquote>
+			</div>
+
+			<div class="col-lg-12 col-sm-12 gallery__content">
+				<div class="container">
+					<div v-for="gallery in detail.imagesGallery" class="card__gallery">
+						<img :src="`${imageUrlFor(gallery.asset)}`">
+						<div class="card__head">
+							{{gallery.caption}}
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</div>
+</template>
+
+<script>
+	import sanity from '@/client'
+	import imageUrlBuilder from '@sanity/image-url'
+	const imageBuilder = imageUrlBuilder(sanity)
+
+	export default{
+		props: ['detail'],
+
+		methods: {
+			imageUrlFor(source){
+				return imageBuilder.image(source);
+			}
+		}
+	}
+</script>

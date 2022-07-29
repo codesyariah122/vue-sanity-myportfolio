@@ -14,6 +14,7 @@
     "bootstrap": "^5.1.3",
     "dotenv": "^16.0.1",
     "dotenv-expand": "^8.0.3",
+    "dotenv-webpack": "^8.0.0",
     "jquery": "^3.6.0",
     "mdb-vue-ui-kit": "^1.13.0",
     "moment": "^2.29.3",
@@ -24,6 +25,7 @@
     "sass-loader": "12.0.0",
     "vue": "^3.2.13",
     "vue-device-detector-js": "^1.0.2",
+    "vue-gallery-slideshow": "^1.5.2",
     "vue-router": "^4.0.3",
     "vue3-mobile-detection": "^1.0.5",
     "vuex": "^4.0.0"

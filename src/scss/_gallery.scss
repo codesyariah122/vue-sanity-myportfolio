@@ -1,65 +1,126 @@
 .col__header{
 	margin-top: 5rem;
-	margin-bottom: 3rem;
 	color: $white;
-	padding-left: 17rem;
+	margin-left: 21rem;
+	h3{
+		font-family: 'Poppins';
+	}
+
+	blockquote{
+		font-size: 13px;
+	}
 }
-.gallery {
-	margin-left: 15rem;
-	display: flex;
-	padding: 2px;
-	transition: .3s;
-	
-	&:hover &__image {
-		filter: grayscale(1);
-	}
-	
-	&__column {
-		display: flex;
-		flex-direction: column;
-		width: 80%;
-	}
-	
-	&__link {
-		margin: 2px;
-		overflow: hidden;
-		
-		&:hover {
-			.gallery__image {
-				filter: grayscale(0);
-			}
-			
-			.gallery__caption {
-				opacity: 1;
+
+.gallery__content{
+	.container{
+		margin-left: 9rem;
+
+		.grid-container {
+			columns: 5 200px;
+			column-gap: 1.5rem;
+			width: 90%;
+			margin: 0 auto;
+			div {
+				width: 150px;
+				margin: 0 1.5rem 1.5rem 0;
+				display: inline-block;
+				width: 100%;
+				border: solid 2px black;
+				padding: 5px;
+				box-shadow: 5px 5px 5px rgba(0,0,0,0.5);
+				border-radius: 5px;
+				transition: all .25s ease-in-out;
+				&:hover img {
+					filter: grayscale(0);
+				}
+				&:hover {
+					border-color: coral;
+				}
+				img {
+					width: 100%;
+					filter: grayscale(100%);
+					border-radius: 5px;
+					transition: all .25s ease-in-out;
+				}
+				h5{
+					padding-top: 10px;
+					text-align: center;
+				}
+				p {
+					margin: 5px 0;
+					padding: 0;
+					text-align: center;
+					font-size: 14px;
+				}
 			}
 		}
 	}
-	
-	&__thumb {
-		position: relative;
-	}
-	
-	&__image {
-		display: block;
-		width: 100%;
-		transition: .3s;
-		
-		&:hover {
-			transform: scale(1.1);
+}
+
+@media (min-width: 991px) and (max-width:1200px) {}
+
+@media (min-width: 992px) {
+
+	.col__header{
+		margin-top: 5rem;
+		margin-bottom: 1rem;
+		color: $white;
+
+		h3{
+			font-family: 'Poppins';
+			text-align: center;
+		}
+
+		blockquote{
+			text-align: center;
+			font-size: 13px;
 		}
 	}
-	
-	&__caption {
-		position: absolute;
-		bottom: 0;
-		left: 0;
-		padding: 25px 15px 15px;
-		width: 100%;
-		font-family: 'Raleway', sans-serif;
-		font-size: 16px;
-		color: white;
-		opacity: 0;
-		background: linear-gradient(0deg, rgba(0, 0, 0, .5) 0%, rgba(255, 255 ,255 , 0) 100%);
-		transition: .3s;
+	.gallery__content{
+		.container{
+			margin-left: 10rem;
+
+			.grid-container {
+				columns: 5 200px;
+				column-gap: 1.5rem;
+				width: 90%;
+				margin: 0 auto;
+				div {
+					width: 150px;
+					margin: 0 1.5rem 1.5rem 0;
+					display: inline-block;
+					width: 100%;
+					border: solid 2px black;
+					padding: 5px;
+					box-shadow: 5px 5px 5px rgba(0,0,0,0.5);
+					border-radius: 5px;
+					transition: all .25s ease-in-out;
+					&:hover img {
+						filter: grayscale(0);
+					}
+					&:hover {
+						border-color: coral;
+					}
+					img {
+						width: 100%;
+						filter: grayscale(100%);
+						border-radius: 5px;
+						transition: all .25s ease-in-out;
+					}
+					h5{
+						padding-top: 10px;
+						text-align: center;
+						font-family: 'Poppins';
+					}
+					p {
+						margin: 5px 0;
+						padding: 0;
+						text-align: center;
+						font-size: 14px;
+						font-family: 'Inconsolata';
+					}
+				}
+			}
+		}
 	}
 }

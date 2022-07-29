@@ -1,3 +1,5 @@
+const Dotenv = require('dotenv-webpack');
+
 module.exports = {
   pwa: {
     name: "Puji Ermanto ☕",
@@ -20,5 +22,12 @@ module.exports = {
         `
       }
     }
+  },
+
+  configureWebpack: {
+    plugins: [
+    new Dotenv()
+    ],
+    
   }
 };
