@@ -277,7 +277,7 @@
               position: absolute;
               top: 0;
               left: 0;
-              margin-left: .8rem;
+              margin-left: -.1rem;
               object-fit: cover;
             }
             .profile-name{
@@ -287,6 +287,7 @@
               font-size: 50px;
               color: #fff!important;
               mix-blend-mode: darken;
+              margin-left: -1.5rem;
             }
             .profile-jobdesk{
               margin-top:-.3rem;

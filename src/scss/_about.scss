@@ -30,6 +30,32 @@
 					}
 				}
 			}
+
+			.card__profiles-col2{
+				text-align: justify;
+				font-weight: 400;
+				color:$white;
+				margin-left: 1rem;
+				width: 90%;
+
+				blockquote{
+					color: $white;
+				}
+
+				.list-group{
+					margin-top: 1rem;
+					.list-group-item{
+						font-size: 13px;
+						background-color: transparent;
+						color: $white;
+						border-top: 1px solid $white;
+						border-left-color: $white;
+						border-right-color: $white;
+						border-bottom-color: $white;
+						list-style: none;
+					}
+				}
+			}
 		}
 	}
 	.card__project-about{

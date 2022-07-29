@@ -36,7 +36,11 @@
 									</a>
 								</span>
 							</blockquote>
+						</div>
+					</div>
 
+					<div class="col-md-12 col-sm-12" :style="`${$isMobile() ? '' :'margin-left: 21rem; margin-top: 2.5rem;'}`">
+						<div class="card__profiles-col2">
 							<span v-html="persons[3].bio[4].children[0].text"></span>
 							<br>
 							<span>
@@ -66,7 +70,6 @@
 							<blockquote class="blockquote-footer mt-5">
 								{{persons[3].aboutImage.alt}}
 							</blockquote>
-
 						</div>
 					</div>
 				</div>
