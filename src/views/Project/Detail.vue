@@ -1,8 +1,10 @@
 <template>
 	<div class="detail__project-view">
-		
+		<div v-if="loading" class="container loader__page">
+			<Loading :persons="persons"/>
+		</div>
 
-		<div class="container">
+		<div v-else class="container">
 			<!-- For Blocks -->
 			<div class="card__project-detail">
 				<Detail :detail="detail" :blocks="blocks"/>
@@ -60,7 +62,7 @@
 			Detail
 		},
 
-		mounted(){
+		created(){
 			this.personData(),
 			this.DetailProject()
 		},

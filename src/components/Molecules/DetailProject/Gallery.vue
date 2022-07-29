@@ -12,7 +12,7 @@
 			<div class="col-lg-12 col-sm-12 gallery__content text-white">
 				<div class="container">
 					<div class="grid-container">
-						<div v-for="image in detail.imagesGallery">
+						<div v-for="image in detail.imagesGallery" class="grid-wrapper">
 							<img class='grid-item grid-item-1' :src='`${imageUrlFor(image.asset)}`' alt=''>
 							<h5>{{image.caption}}</h5>
 							<p>"{{image.alt}}"</p>

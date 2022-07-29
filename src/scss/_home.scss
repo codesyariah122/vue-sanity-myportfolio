@@ -107,15 +107,15 @@
     }
     .card__avatar{
       position: relative;
-      width: 350px;
-      height: 450px;
+      width: 300px;
+      height: 400px;
       color: $bgCardImage;
       background-size: cover;
       filter: brightness(90%);
       border-radius: 13px;
       overflow: hidden;
       cursor: pointer;
-      margin-left: -.6rem;
+      margin-left: .3rem;
       .card__content{
         position: absolute;
         left:0;
