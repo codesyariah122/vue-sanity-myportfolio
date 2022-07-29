@@ -2,24 +2,24 @@
 	<div class="container">
 		<div class="row justify-content-center no-gutters">
 			<div class="col-md-12 col-sm-12 mt-5 col__header-about">
-				<h2>Formal Project</h2>
-				<blockquote>Berikut beberapa project yang saya kerjakan di periode 2020 s/d 2022</blockquote>
+				<h2>Free Project</h2>
+				<blockquote>Free project adalah list project yang saya kerjakan di luar project formal saya, dan ini biasanya saya lakukan dengan tujuan untuk belajar tools-tools atau teknik-teknik baru dalam dunia pemrogramman.</blockquote>
 			</div>
-			
-			<div v-for="(project, idx) in projects" class="col-md-4 col__project">
+
+			<div v-for="(indie, idx) in indies" class="col-md-4 col__project">
 				<br>
 				<div class="game" 
 				@mouseenter="hover = true"
 				@mouseleave="hover = false">
 				<div class="rank">{{idx+=1}}</div>
 				<div class="front">
-					<img :src="`${imageUrlFor(project.mainImage.asset)}`" alt="game">
+					<img :src="`${imageUrlFor(indie.mainImage.asset)}`" alt="game">
 
 					<h3 v-if="hover"  class="name text-capitalize">
-						{{project.title}}
+						{{indie.title}}
 					</h3>
 
-					<div v-else v-for="cat in project.categories">
+					<div v-else v-for="cat in indie.categories">
 						<div v-for="category in categories">
 							<h3 class="name" v-if="cat._ref === category._id">
 								{{category.title}}
@@ -27,33 +27,41 @@
 						</div>
 					</div>
 
-					<div v-if="project.members !== null" class="status">
+					<div v-if="indie.members !== null" class="status">
 						<p class="viewers">Members</p>
 						<div class="streamers">
 							<br>
 							<div v-for="person in persons">
-								<div v-for="member in project.members">
+								<div v-for="member in indie.members">
 									<img v-if="member.person._ref === person._id" :src="`${imageUrlFor(person.image)}`">
 								</div>
 							</div>
 						</div>
 					</div>
+
+					<div v-else class="status">
+						<p class="viewers">Members</p>
+						<div class="streamers">
+							<br>
+							<div>
+								<img :src="`${imageUrlFor(persons[3].aboutImage.asset)}`">
+							</div>
+						</div>
+					</div>
 				</div>
 				<div class="back">
-					<div v-for="excerpt in project.excerpt" class="streaming-info">
+					<div v-for="excerpt in indie.excerpt" class="streaming-info">
 						<p class="game-stat truncate">
 							{{excerpt.children[0].text}}
 						</p>
 					</div>
 
-					<button @click="$router.push({path: `/project/${project.slug.current}`})" class="btn">See Detail</button>
+					<button @click="$router.push({path: `/project/${indie.slug.current}`})" class="btn">See Detail</button>
 
-					<div v-if="project.members !== null" class="streamers">
-						<div v-for="person in persons" class="streamer">
-							<div v-for="member in project.members">
-								<img v-if="member.person._ref === person._id" :src="`${imageUrlFor(person.image)}`">
-								<p v-if="member.person._ref === person._id" class="name">{{person.image.alt === "Puji" ? "Me" : person.image.alt}}</p>
-							</div>
+					<div class="streamers">
+						<div class="streamer">
+							<img :src="`${imageUrlFor(persons[3].aboutImage.asset)}`">
+							<p class="name">{{persons[3].image.alt === "Puji" ? "Me" : person.image.alt}}</p>
 						</div>
 					</div>
 				</div>
@@ -81,7 +89,7 @@
 
 
 	export default{
-		props: ['projects',  'persons'],
+		props: ['indies',  'persons'],
 		data(){
 			return{
 				detail: {},

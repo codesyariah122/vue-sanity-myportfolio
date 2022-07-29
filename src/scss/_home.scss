@@ -23,7 +23,7 @@
           }
           .profile-name{
             width: 105%;
-            height: 80%;
+            height: 81.5%;
             background-color: $secondaryBackground;
             font-size: 57px;
             color: #fff!important;
@@ -107,7 +107,7 @@
     }
     .card__avatar{
       position: relative;
-      width: 300px;
+      width: 350px;
       height: 400px;
       color: $bgCardImage;
       background-size: cover;
@@ -115,7 +115,7 @@
       border-radius: 13px;
       overflow: hidden;
       cursor: pointer;
-      margin-left: 1.2rem;
+      margin-left: -.3rem;
       .card__content{
         position: absolute;
         left:0;

@@ -12,13 +12,19 @@
       <div class="card__project-about">
         <Project :projects="projects" :persons="persons"/>
       </div>
+
+      <!-- Free Project -->
+      <div class="card__project-about">
+        <FreeProject :indies="indies" :persons="persons"/>
+      </div>
+
     </div>
   </div>
 </template>
 
 <script>
   import {
-    AboutMe, Project, Loading
+    AboutMe, Project, FreeProject, Loading
   } from '@/components'
 
   import sanity from '@/client'
@@ -54,18 +60,33 @@
     description
   }[0...50]`
 
+  const indieProject = `*[_type == "indieProject"] | order(_createdAt asc) {
+    _id,
+    title,
+    slug,
+    categories,
+    members,
+    startedAt,
+    endedAt,
+    mainImage,
+    excerpt,
+    body
+  }[0...50]`
+
 
   export default {
     name: 'AboutView',
     components: {
       AboutMe,
       Project,
+      FreeProject,
       Loading
     },
     data(){
       return {
         projects: [],
         persons: [],
+        indies: [],
         error: null,
         loading: true
       }
@@ -74,6 +95,7 @@
     created(){
       this.personData(),
       this.projectData(),
+      this.indieProject(),
       this.gsapSetting()
     },
 
@@ -96,6 +118,19 @@
         sanity.fetch(project)
         .then((projects) => {
           this.projects = projects
+          setTimeout(() => {
+            this.loading = false
+          }, 1500)
+        }, (err) => {
+          this.error = err
+        })
+      },
+
+      indieProject() {
+        this.error = this.indies = null
+        sanity.fetch(indieProject)
+        .then((indies) => {
+          this.indies = indies
           setTimeout(() => {
             this.loading = false
           }, 1500)
