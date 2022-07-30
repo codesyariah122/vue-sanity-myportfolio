@@ -45,20 +45,7 @@
 		props: ['repos'],
 		data(){
 			return {
-				class: [1, 2, 3],
-				languages_url: []
-			}
-		},
-
-		mounted(){
-			this.setupLanguages()
-		},
-
-		methods: {
-			setupLanguages() {
-				this.repos.map(d => {
-					this.languages_url = d.languages_url
-				})
+				class: [1, 2, 3]
 			}
 		}
 	}
