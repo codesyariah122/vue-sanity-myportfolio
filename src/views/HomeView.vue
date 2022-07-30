@@ -103,9 +103,10 @@
           per_page: 15,
           sort: 'created'
         }
-       
+
         this.axios.get(`${process.env.GITHUB_API_URL}${process.env.GITHUB_USER}/repos?page=${config.page}&sort=${config.sort}&per_page=${config.per_page}`, {
           headers: {
+            'Accept': 'application/vnd.github.mercy-preview+json',
             'Authorization': process.env.ACCESS_TOKEN
           }
         })
