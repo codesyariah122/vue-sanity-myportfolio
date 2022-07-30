@@ -5,14 +5,21 @@
     </div>
     <div v-else>
       <!-- Person component -->
-      <Person :persons="persons" @image-source="imageUrlFor" :skills="skills" />
+      <div class="container">
+        <Person :persons="persons" @image-source="imageUrlFor" :skills="skills" />
+      </div>
+
+      <!-- github repo lists -->
+      <div class="container">
+        <RepoGithub :repos="repos" :languages_url="languages_url"/>
+      </div>
     </div>
   </div>
 </template>
 
 <script>
   import {
-    Person, Loading
+    Person, RepoGithub, Loading
   } from '@/components'
 
   import sanity from '@/client'
@@ -41,6 +48,7 @@
     name: 'HomeView',
     components: {
       Person,
+      RepoGithub,
       Loading
     },
     data() {
@@ -48,13 +56,15 @@
         persons: [],
         skills: [],
         error: null,
-        loading: true
+        loading: true,
+        repos: []
       }
     },
 
     created() {
       this.personData(),
-      this.skillProgramming()
+      this.skillProgramming(),
+      this.githubRepo()
     },
 
     methods: {
@@ -73,23 +83,45 @@
       },
 
       skillProgramming() {
+        this.loading = true
         this.error = this.skills = null
         sanity.fetch(skill)
         .then((skills) => {
-          console.log(skills)
           this.skills = skills
+          setTimeout(() => {
+            this.loading = false
+          }, 2500)
         }, (err) => {
           this.error = error
         })
+      },
+
+      githubRepo(){
+        this.loading = true
+        const config = {
+          page: 1,
+          per_page: 15,
+          sort: 'created'
+        }
+       
+        this.axios.get(`${process.env.GITHUB_API_URL}${process.env.GITHUB_USER}/repos?page=${config.page}&sort=${config.sort}&per_page=${config.per_page}`)
+        .then(({data}) => {
+          this.repos = data
+          setTimeout(() => {
+            this.loading = false
+          }, 2500)
+        })
+        .catch(err => console.error(err))
       }
+
     }
   }
-  </script>
+</script>
 
-  <style lang="scss">
-    .loader__page{
-      margin-top: 15rem!important;
-      height: 100vh;
-      text-align: center;
-    }
-  </style>
+<style lang="scss">
+  .loader__page{
+    margin-top: 15rem!important;
+    height: 100vh;
+    text-align: center;
+  }
+</style>
