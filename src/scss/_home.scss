@@ -11,7 +11,7 @@
           width: 92%;
           height: 13vh;
           position: relative;
-          margin-left: 1.3rem;
+          margin-left: .8rem;
           video {
             width: 92%;
             height: 79%;
@@ -25,16 +25,16 @@
             width: 105%;
             height: 81.5%;
             background-color: $secondaryBackground;
-            font-size: 45px;
+            font-size: 50px;
             color: #fff!important;
             mix-blend-mode: darken;
           }
           .profile-jobdesk{
             margin-top:-.4rem;
-            font-size: 14px;
-            margin-left: 5px;
+            font-size: 13px;
+            margin-left: -13px;
             letter-spacing: .3px;
-            width: 100%;
+            width: 115%;
           }
         }
       }
@@ -107,7 +107,7 @@
     }
     .card__avatar{
       position: relative;
-      width: 350px;
+      width: 330px;
       height: 400px;
       color: $bgCardImage;
       background-size: cover;

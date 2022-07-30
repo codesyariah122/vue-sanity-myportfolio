@@ -76,7 +76,7 @@
           this.persons = persons
           setTimeout(() => {
             this.loading = false
-          }, 2500)
+          }, 1000)
         }, (error) => {
           this.error = error
         })
@@ -90,7 +90,7 @@
           this.skills = skills
           setTimeout(() => {
             this.loading = false
-          }, 2500)
+          }, 1000)
         }, (err) => {
           this.error = error
         })
@@ -104,12 +104,16 @@
           sort: 'created'
         }
        
-        this.axios.get(`${process.env.GITHUB_API_URL}${process.env.GITHUB_USER}/repos?page=${config.page}&sort=${config.sort}&per_page=${config.per_page}`)
+        this.axios.get(`${process.env.GITHUB_API_URL}${process.env.GITHUB_USER}/repos?page=${config.page}&sort=${config.sort}&per_page=${config.per_page}`, {
+          headers: {
+            'Authorization': process.env.ACCESS_TOKEN
+          }
+        })
         .then(({data}) => {
           this.repos = data
           setTimeout(() => {
             this.loading = false
-          }, 2500)
+          }, 1000)
         })
         .catch(err => console.error(err))
       }

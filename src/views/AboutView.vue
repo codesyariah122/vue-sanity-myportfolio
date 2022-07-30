@@ -108,7 +108,7 @@
           this.persons = persons
           setTimeout(() => {
             this.loading = false
-          }, 2500)
+          }, 1000)
         }, (error) => {
           this.error = error
         })
