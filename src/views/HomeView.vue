@@ -111,6 +111,7 @@
           }
         })
         .then(({data}) => {
+          console.log(data)
           this.repos = data
           setTimeout(() => {
             this.loading = false
