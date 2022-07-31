@@ -268,7 +268,7 @@
 			width: 1200px;
 			grid-gap: 15px;
 			margin: 0 auto;
-			margin-left: -12rem;
+			margin-left: -14rem;
 		}
 		.card{
 			position: relative;
