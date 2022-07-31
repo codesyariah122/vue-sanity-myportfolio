@@ -170,7 +170,7 @@
 		width: 100px;
 		grid-gap: 15px;
 		margin: 0 auto;
-		margin-left: -.8rem;
+		margin-left: -1rem;
 		margin-bottom: 2rem;
 	}
 	.card{
