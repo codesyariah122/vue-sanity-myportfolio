@@ -104,11 +104,9 @@
           sort: 'created'
         }
 
-        this.axios.get(`${process.env.GITHUB_API_URL}${process.env.GITHUB_USER}/repos?page=${config.page}&sort=${config.sort}&per_page=${config.per_page}`, {
-          headers: {
-            'Access-Control-Allow-Origin': '*',
-            'Content-Type': 'application/json',            
-            'Authorization': process.env.ACCESS_TOKEN
+        this.axios.get(`${process.env.VUE_APP_GITHUB_API_URL}${process.env.VUE_APP_GITHUB_USER}/repos?page=${config.page}&sort=${config.sort}&per_page=${config.per_page}`, {
+          headers: {           
+            'Authorization': process.env.VUE_APP_ACCESS_TOKEN
           }
         })
         .then(({data}) => {
