@@ -18,7 +18,7 @@
 		margin-bottom: 5rem;
 		.truncate {
 			display: -webkit-box;
-			-webkit-line-clamp: var(--line-clamp, 4);
+			-webkit-line-clamp: var(--line-clamp, 1);
 			-webkit-box-orient: vertical;
 			word-break: var(--word-break, "none");
 			overflow: hidden;
@@ -119,7 +119,6 @@
 				font-weight: 500;
 				word-spacing: 2px;
 				letter-spacing: 2px;
-
 				span{
 					display:block;
 					font-size:.8rem;
@@ -161,7 +160,7 @@
 			.back{
 				opacity:1;
 				.streamers{
-					width:250px;
+					width:350px;
 					margin-top: 7px;
 					justify-content:space-between;
 				}
