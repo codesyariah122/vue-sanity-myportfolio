@@ -75,7 +75,7 @@
 
 
   export default {
-    name: 'AboutView',
+    name: 'about',
     components: {
       AboutMe,
       Project,
@@ -114,6 +114,7 @@
         })
       },
       projectData() {
+        this.loading = true
         this.error = this.projects = null
         sanity.fetch(project)
         .then((projects) => {
@@ -127,6 +128,7 @@
       },
 
       indieProject() {
+        this.loading = true
         this.error = this.indies = null
         sanity.fetch(indieProject)
         .then((indies) => {

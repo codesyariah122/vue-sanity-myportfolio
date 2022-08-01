@@ -64,7 +64,7 @@
 
 		created(){
 			this.personData(),
-			this.DetailProject()
+			this.detailProject()
 		},
 
 		methods: {
@@ -82,7 +82,7 @@
 					this.error = error
 				})
 			},
-			DetailProject(){
+			detailProject(){
 				this.loading = true
 				this.error = this.detail = null
 				sanity.fetch(project, { slug: this.slug })

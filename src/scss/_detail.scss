@@ -1,5 +1,6 @@
 
 .detail__project-view{
+	margin-top: 5rem;
 	.container{
 		.card__project-detail{
 			background-color: $secondaryBackground;
@@ -93,6 +94,7 @@
 
 @media (min-width: 992px) {
 	.detail__project-view{
+		margin-top: 5rem;
 		.container{
 			.card__project-detail{
 				background-color: $secondaryBackground;

@@ -45,7 +45,7 @@
 
 
   export default {
-    name: 'HomeView',
+    name: 'home',
     components: {
       Person,
       RepoGithub,
