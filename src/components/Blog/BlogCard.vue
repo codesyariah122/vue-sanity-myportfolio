@@ -90,7 +90,6 @@
 </script>
 
 <style lang="scss" scoped>
-
 	span.s1 {
 		position: absolute;
 		top: 51px;
@@ -103,7 +102,7 @@
 	span.s2 {
 		font-weight: 800;
 		position: absolute;
-		right: 18px;
+		right: 23px;
 		font-size: 6rem;
 		text-transform: uppercase;
 		color: $cardBackground;
@@ -112,7 +111,7 @@
 		position: relative;
 		margin: 115px auto;
 		height: 45vh;
-		background-color: $white;
+		background-color: $primaryBackground;
 		-webkit-box-shadow: 10px 10px 93px 0px rgba(0,0,0,0.75);
 		-moz-box-shadow: 10px 10px 93px 0px rgba(0,0,0,0.75);
 		box-shadow: 10px 10px 93px 0px rgba(0,0,0,0.75);
@@ -147,13 +146,13 @@
 			h1 {
 				padding-top: 0px;
 				font-size: 1rem;
-				color: $secondaryBackground;
+				color: $cardBackground;
 				width: 100%;
 				margin-left: 1rem;
 				font-weight: 700;
 			}
 			.author {
-				background-color: #9ECAFF;
+				background-color: $secondNavBg;
 				height: 35px;
 				width: 135px;
 				border-radius: 20px;
@@ -180,14 +179,14 @@
 
 			.separator {
 				margin-top: 10px;
-				border: 1px solid #C3C3C3;
+				border: 1px solid $secondNavBg;;
 			}
 			p {
 				text-align: justify;
 				padding-top: 10px;
 				font-size: 0.95rem;
 				line-height: 150%;
-				color: #4B4B4B;
+				color: $cardBackground;
 				width: 230px;
 				margin-left:-4.5rem;
 				display: -webkit-box;
@@ -213,14 +212,14 @@
 			left: 15px;
 			bottom: 160px;
 			font-size: 3rem;
-			color: #C3C3C3;
+			color: $secondNavBg;;
 		}
 		h6 {
 			position: absolute;
 			left: 18px;
 			bottom: 147px;
 			font-size: 1.3rem;
-			color: #C3C3C3;
+			color: $secondNavBg;;
 		}
 
 		ul {
@@ -275,9 +274,9 @@
 		.card__blog-content {
 			position: relative;
 			margin: 289px 30px;
-			height: 35vh;
+			height: 38vh;
 			width: 100%;
-			background-color: $white;
+			background-color: $primaryBackground;
 			-webkit-box-shadow: 10px 10px 93px 0px rgba(0,0,0,0.75);
 			-moz-box-shadow: 10px 10px 93px 0px rgba(0,0,0,0.75);
 			box-shadow: 10px 10px 93px 0px rgba(0,0,0,0.75);
@@ -312,13 +311,13 @@
 				h1 {
 					padding-top: 15px;
 					font-size: 1rem;
-					color: #4B4B4B;
+					color: $cardBackground;
 					width: 50%;
 					margin-left: 13rem;
 					font-weight: 700;
 				}
 				.author {
-					background-color: #9ECAFF;
+					background-color: $secondNavBg;
 					height: 35px;
 					width: 155px;
 					border-radius: 20px;
@@ -338,39 +337,55 @@
 						margin-right: 6px;
 						text-align: center;
 						font-size: 1rem;
-						color: $black;
+						color: $white;
 						font-weight: 500;
 					}
 				}
 
 				.separator {
 					margin-top: 10px;
-					border: 1px solid #C3C3C3;
+					border: 1px solid $secondNavBg;
 				}
 				p {
 					text-align: justify;
-					padding-top: 10px;
+					padding-top: 21px;
 					font-size: 0.95rem;
 					line-height: 150%;
-					color: #4B4B4B;
-					width: 360px;
-					margin-left:5.5rem;
+					color: $cardBackground;
+					width: 300px;
+					margin-left:8.5rem;
+					text-indent: 3rem;
+					display: -webkit-box;
+					-webkit-line-clamp: var(--line-clamp, 4);
+					-webkit-box-orient: vertical;
+					word-break: var(--word-break, "none");
+					overflow: hidden;
+					hyphens: auto;
+					text-align: var(--align, left);
+					--is-single-line: 1 - Clamp(0, Calc(var(--line-clamp) - 1), var(--line-clamp));
+					--delay: Calc(-1s * (var(--is-single-line, 1) - 1));
+					animation: states 1s var(--delay) paused;
+					@keyframes states {
+						0% {
+							word-break: break-all;
+						}
+					}
 				}
 			}
 
 			h5 {
 				position: absolute;
 				left: 30px;
-				bottom: 12px;
+				bottom: 61px;
 				font-size: 3rem;
-				color: #C3C3C3;
+				color: $secondNavBg;
 			}
 			h6 {
 				position: absolute;
 				left: 30px;
-				bottom: -1px;
+				bottom: 55px;
 				font-size: 1rem;
-				color: #C3C3C3;
+				color: $secondNavBg;
 			}
 
 			ul {
