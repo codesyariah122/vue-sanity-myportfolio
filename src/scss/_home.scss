@@ -194,121 +194,6 @@
     }
 
     @media (min-width: 992px) {
-      .home__view{
-        margin-top: 5rem;
-        .card__profile-home {
-          .profile__board{
-            .profile__info{
-              border-radius: 13px!important;
-              color: $white;
-              margin-top: -.1rem;
-              height: 17vh;
-              background-color: $secondaryBackground!important;
-              box-shadow: 5px 3px 2px 1px $boxShadow;
-              margin-left: 4rem;
-              width: 92%;
-              .showcase {
-                width: 100%;
-                height: 9vh;
-                position: relative;
-                video {
-                  width: 100%;
-                  height: 80%;
-                  position: absolute;
-                  top: 0;
-                  left: 0;
-                  margin-left: -.1rem;
-                  object-fit: cover;
-                }
-                .profile-name{
-                  width: 110%;
-                  height: 80%;
-                  background-color: $secondaryBackground;
-                  font-size: 40px;
-                  color: #fff!important;
-                  mix-blend-mode: darken;
-                  margin-left: -.9rem;
-                }
-                .profile-jobdesk{
-                  margin-top:-.2rem;
-                  font-size: 12px;
-                }
-              }
-              .social__link {
-                margin-top: 2.5rem;
-                margin-left: -2.9rem!important;
-                .list-group {
-                  margin-top: -1.5rem;
-                  margin-bottom: -3rem;
-                  .list-group-item {
-                    border: none;
-                    background-color: transparent!important;
-                    .instagram {
-                      width: 1.2em;
-                      aspect-ratio: 1;
-                      background: radial-gradient(
-                        circle farthest-corner at 28% 100%,
-                        var(--yellow) 0%,
-                        var(--yellow_to) 10%,
-                        var(--orange) 22%,
-                        var(--red) 35%,
-                        transparent 65%
-                        ),
-                      linear-gradient(145deg, var(--blue) 10%, var(--purple) 70%);
-                      border-radius: 0.2em;
-                      position: relative;
-                      display: grid;
-                      place-items: center;
-                      &:before,
-                      &:after {
-                        content: "";
-                        color: var(--white);
-                        position: absolute;
-                        border-radius: inherit;
-                        aspect-ratio: 1;
-                      }
-                      &:before {
-                        border: 0.05em solid;
-                        width: 75%;
-                      }
-                      &:after {
-                        border-radius: 50%;
-                        border: 0.05em solid;
-                        width: 45%;
-                        box-shadow: 0.22em -0.22em 0 -0.18em;
-                      }
-                    }
-                    .fa-whatsapp {
-                      color:#fff;
-                      background:
-                      linear-gradient($whatsappBg,$whatsappBg) 24% 74%/25% 33% no-repeat, radial-gradient($whatsappBg 49.9%,transparent 0)!important;
-                    }
-                    a {
-                      font-size:var(--size)!important;
-                    }
-                  }
-                }
-              }
-            }
-            .skill__block {
-              background-color: $secondaryBackground!important;
-              box-shadow: 5px 6px 2px 1px $boxShadow;
-              border-radius: 13px!important;
-              margin-top: 2rem!important;
-              padding: 30px !important;
-              text-align: left!important;
-              margin-left: 4rem;
-              width: 92%;
-
-              .key__block {
-                img{
-                  filter: drop-shadow(0 0 0.55rem crimson);
-                }
-              }
-            }
-          }
-        }
-      }
       .card__avatar{
         position: relative;
         width: 350px;
@@ -319,7 +204,7 @@
         border-radius: 13px;
         overflow: hidden;
         cursor: pointer;
-        margin-top: 1.3rem;
+        margin-top: -.8rem;
         .card__content{
           position: absolute;
           left:0;
@@ -372,6 +257,116 @@
         &:hover .card__description{
           opacity: 1;
           transition-display: .35s;
+        }
+      }
+      .profile__board{
+        .profile__info{
+          border-radius: 13px!important;
+          color: $white;
+          margin-top: -.1rem;
+          height: 17vh;
+          background-color: $secondaryBackground!important;
+          box-shadow: 5px 3px 2px 1px $boxShadow;
+          margin-left: 4rem;
+          width: 92%;
+          .showcase {
+            width: 100%;
+            height: 9vh;
+            position: relative;
+            video {
+              width: 100%;
+              height: 80%;
+              position: absolute;
+              top: 0;
+              left: 0;
+              margin-left: -.1rem;
+              object-fit: cover;
+            }
+            .profile-name{
+              width: 110%;
+              height: 80%;
+              background-color: $secondaryBackground;
+              font-size: 40px;
+              color: #fff!important;
+              mix-blend-mode: darken;
+              margin-left: -.9rem;
+            }
+            .profile-jobdesk{
+              margin-top:-.2rem;
+              font-size: 12px;
+            }
+          }
+          .social__link {
+            margin-top: 2.5rem;
+            margin-left: -2.9rem!important;
+            .list-group {
+              margin-top: -1.5rem;
+              margin-bottom: -3rem;
+              .list-group-item {
+                border: none;
+                background-color: transparent!important;
+                .instagram {
+                  width: 1.2em;
+                  aspect-ratio: 1;
+                  background: radial-gradient(
+                    circle farthest-corner at 28% 100%,
+                    var(--yellow) 0%,
+                    var(--yellow_to) 10%,
+                    var(--orange) 22%,
+                    var(--red) 35%,
+                    transparent 65%
+                    ),
+                  linear-gradient(145deg, var(--blue) 10%, var(--purple) 70%);
+                  border-radius: 0.2em;
+                  position: relative;
+                  display: grid;
+                  place-items: center;
+                  &:before,
+                  &:after {
+                    content: "";
+                    color: var(--white);
+                    position: absolute;
+                    border-radius: inherit;
+                    aspect-ratio: 1;
+                  }
+                  &:before {
+                    border: 0.05em solid;
+                    width: 75%;
+                  }
+                  &:after {
+                    border-radius: 50%;
+                    border: 0.05em solid;
+                    width: 45%;
+                    box-shadow: 0.22em -0.22em 0 -0.18em;
+                  }
+                }
+                .fa-whatsapp {
+                  color:#fff;
+                  background:
+                  linear-gradient($whatsappBg,$whatsappBg) 24% 74%/25% 33% no-repeat, radial-gradient($whatsappBg 49.9%,transparent 0)!important;
+                }
+                a {
+                  font-size:var(--size)!important;
+                }
+              }
+            }
+          }
+        }
+        .skill__block {
+          background-color: $secondaryBackground!important;
+          box-shadow: 5px 6px 2px 1px $boxShadow;
+          border-radius: 13px!important;
+          margin-top: 2rem!important;
+          padding: 30px !important;
+          text-align: left!important;
+          margin-left: 4rem;
+          width: 92%;
+          
+          .key__block {
+            img{
+              filter: drop-shadow(0 0 0.55rem crimson);
+            }
+          }
         }
       }
 
