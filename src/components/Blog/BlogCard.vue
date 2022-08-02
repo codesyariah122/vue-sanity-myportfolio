@@ -115,11 +115,12 @@
 		-webkit-box-shadow: 10px 10px 93px 0px rgba(0,0,0,0.75);
 		-moz-box-shadow: 10px 10px 93px 0px rgba(0,0,0,0.75);
 		box-shadow: 10px 10px 93px 0px rgba(0,0,0,0.75);
+		margin-left: -15px;
 
 		.thumbnail {
 			float: left;
 			position: relative;
-			left: 50px;
+			left: 70px;
 			top: -30px;
 			height: 150px;
 			width: 230px;
