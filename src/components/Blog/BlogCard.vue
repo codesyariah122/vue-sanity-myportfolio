@@ -34,7 +34,7 @@
 
 		</div>
 
-		<div class="col-md-12 col-sm-12">
+		<div class="col-md-12 col-sm-12 footer__blog">
 			<blockquote class="blockquote-footer">
 				Selamat datang di blog {{persons.name}}, halaman blog ini akan berisi tulisan-tulisan dari saya dan saya tulis sendiri dengan mandiri, yang inshaallah akan saya isi dengan berbagai rubrik  menarik secara random dengan harapan dapat berbagi informasi menarik bagi kalian yang membutuhkan informasi/artikel, baik itu berupa rubrik informasi ilmiah, tips dan trik, tutorial, berita dan atau tulisan dengan rubrik apapun.
 			</blockquote>
@@ -57,12 +57,6 @@
 
 	export default {
 		props: ['posts', 'authors', 'persons'],
-
-		data(){
-			return {
-				
-			}
-		},
 
 		methods: {
 			imageUrlFor(source){
@@ -281,6 +275,7 @@
 			-webkit-box-shadow: 10px 10px 93px 0px rgba(0,0,0,0.75);
 			-moz-box-shadow: 10px 10px 93px 0px rgba(0,0,0,0.75);
 			box-shadow: 10px 10px 93px 0px rgba(0,0,0,0.75);
+			margin-bottom: -10rem;
 
 			.thumbnail {
 				float: left;
@@ -417,6 +412,10 @@
 					font-size: 3rem;
 				}
 			}
+		}
+
+		.footer__blog{
+			margin-top: 17rem;
 		}
 	}
 </style>

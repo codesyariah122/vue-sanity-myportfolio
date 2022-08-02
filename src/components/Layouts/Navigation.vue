@@ -1,10 +1,5 @@
 <template>
 	<div>
-		<!-- <nav>
-			<router-link to="/">Home</router-link> |
-			<router-link to="/about">About</router-link> |
-			<router-link to="/blog">Blog</router-link>
-		</nav> -->
 		<nav class="navbar navbar-expand-lg fixed-top navbar-dark nav-bg">
 			<div class="container-fluid">
 
@@ -47,7 +42,7 @@
 
 		methods: {
 			bodyScroll(){
-				if(this.$isMobile()){					
+				if(this.$isMobile()){
 					document.addEventListener('scroll', (e) => {
 						const scroll = window.scrollY
 						if(scroll > 100){
@@ -55,6 +50,15 @@
 							document.querySelector('.navbar').classList.add("scrolled", "bg-second")
 						}else{
 							this.show = false
+							document.querySelector('.navbar').classList.remove("scrolled", "bg-second")
+						}
+					})
+				}else{
+					document.addEventListener('scroll', (e) => {
+						const scroll = window.scrollY
+						if(scroll > 100){
+							document.querySelector('.navbar').classList.add("scrolled", "bg-second")
+						}else{
 							document.querySelector('.navbar').classList.remove("scrolled", "bg-second")
 						}
 					})
