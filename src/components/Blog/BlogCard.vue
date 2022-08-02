@@ -120,8 +120,8 @@
 		.thumbnail {
 			float: left;
 			position: relative;
-			left: 70px;
-			top: -30px;
+			left: 80px;
+			top: -25px;
 			height: 150px;
 			width: 230px;
 			-webkit-box-shadow: 10px 10px 60px 0px rgba(0,0,0,0.75);
