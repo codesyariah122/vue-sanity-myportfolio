@@ -5,7 +5,7 @@
   <router-view />
 
   <!-- Footer -->
-  <Footer/>
+  <!-- <Footer/> -->
 </template>
 
 <script>

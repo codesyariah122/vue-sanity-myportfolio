@@ -36,7 +36,7 @@
 
 		<div class="col-md-12 col-sm-12 footer__blog">
 			<blockquote class="blockquote-footer">
-				Selamat datang di blog {{persons.name}}, halaman blog ini akan berisi tulisan-tulisan dari saya dan saya tulis sendiri dengan mandiri, yang inshaallah akan saya isi dengan berbagai rubrik  menarik secara random dengan harapan dapat berbagi informasi menarik bagi kalian yang membutuhkan informasi/artikel, baik itu berupa rubrik informasi ilmiah, tips dan trik, tutorial, berita dan atau tulisan dengan rubrik apapun.
+				Selamat datang di blog {{persons.name}}, halaman blog ini akan berisi tulisan-tulisan dari saya yang akan saya tulis sendiri dengan mandiri, yang inshaallah akan saya isi dengan berbagai rubrik  menarik secara random dengan harapan dapat berbagi informasi menarik bagi kalian yang membutuhkan informasi/artikel, baik itu berupa rubrik informasi ilmiah, tips dan trik, tutorial, berita dan atau tulisan dengan rubrik apapun.
 			</blockquote>
 
 			<h4>Salaam ..</h4>
@@ -96,7 +96,7 @@
 	span.s2 {
 		font-weight: 800;
 		position: absolute;
-		right: 23px;
+		right: -.3px;
 		font-size: 6rem;
 		text-transform: uppercase;
 		color: $cardBackground;
@@ -261,7 +261,7 @@
 			font-weight: 800;
 			position: absolute;
 			bottom: 0;
-			right: 0;
+			right: 10px;
 			font-size: 15rem;
 			text-transform: uppercase;
 			color: $cardBackground;

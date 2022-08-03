@@ -27,7 +27,7 @@
 
 						<div class="row justify-content-center mt-3">
 							<div class="col-md-12 col-sm-12 mt-5 mb-5">
-								<Comment :comments="comments"/>
+								<Comment :comments="comments" :_id="_id" @update-comment="updateComment" :config="config"/>
 							</div>
 
 							<div class="col-md-12">
@@ -45,7 +45,7 @@
 </template>
 
 <script>
-	import {onMounted, ref} from 'vue'
+	import {onMounted,reactive, ref} from 'vue'
 	import {useRoute} from "vue-router"
 	import {HeaderBlogDetail, InlineImage, Comment} from '@/components'
 	import sanity from '@/client'
@@ -82,11 +82,13 @@
 			let comments = ref([])
 			let authors = ref([])
 			let mainImage = ref('')
+			let _id = ref('')
+			let loading = ref(null)
 			
-			let config = {
-				loading: ref(null),
-				error: ref(null)
-			}
+			let config = reactive({
+				loading: null,
+				error: null
+			})
 
 			const {
 				params: {slug}
@@ -104,12 +106,14 @@
 					categories,
 					publishedAt,
 					body,
-					'comments': *[_type == "comment" && post._ref == ^._id && approved == true]{
+					'comments': *[_type == "comment" && post._ref == ^._id && approved == true] | order(_createdAt desc){
 						_id, 
-						name, 
+						name,
+						approved,
 						email, 
 						comment, 
-						_createdAt
+						_createdAt,
+						post
 					},
 					'author': *[_type == "author"] {
 						_id,
@@ -121,25 +125,60 @@
 				}[0]`
 			}
 
+			const listen = {
+				comment: `*[slug.current == $slug] {
+					_id,
+					title,
+					slug,
+					author,
+					excerpt,
+					mainImage,
+					categories,
+					publishedAt,
+					body,
+					'comments': *[_type == "comment" && post._ref == ^._id] | order(_createdAt desc){
+						_id, 
+						name,
+						approved,
+						email, 
+						comment, 
+						_createdAt,
+						post
+					}
+				}[0]`
+			}
+
 			function fetchPost(){
-				config.loading.value = true
-				config.error.value = post.value = null 
+				config.loading = true
+				config.error = post.value = [] 
+				config.error = comments.value = []
 				sanity.fetch(query.post, { slug: slug })
 				.then((data) => {
 					post.value = data
 					blocks.value = data.body
-					comments.value = data.comments
 					authors.value = data.author
 					mainImage.value = imageUrlFor(data.mainImage.asset)
-
-					console.log(data.comments[0].comment)
+					_id.value = data._id
+					comments.value = data.comments
 
 					setTimeout(() => {
-						config.loading.value = false
+						config.loading = false
 					}, 2500)
 
 				}, (error) => {
-					config.error.value = error
+					config.error = error
+				})
+			}
+
+			function updateComment(){
+				config.loading = true
+				config.error = comments.value = null
+				sanity.fetch(listen.comment, { slug: slug })
+				.then(update => {
+					setTimeout(() => {
+						comments.value = update.comments
+						config.loading = false
+					}, 5500)
 				})
 			}
 
@@ -159,7 +198,9 @@
 				mainImage,
 				config,
 				imageUrlFor,
-				date
+				_id,
+				date,
+				updateComment
 			}
 		}
 	}
