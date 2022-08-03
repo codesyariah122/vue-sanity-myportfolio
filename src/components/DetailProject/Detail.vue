@@ -14,7 +14,7 @@
 
 					<!-- Block contents here -->
 					<div class="blocks">
-						<SanityBlocks :blocks="blocks" />
+						<SanityBlocks :blocks="blocks" :serializers="serializers"/>
 					</div>
 
 					<!-- gallery project -->
@@ -46,14 +46,10 @@
 	import {Gallery} from '@/components/Molecules'
 
 	export default {
-		props: ['detail', 'blocks'],
+		props: ['detail', 'blocks', 'serializers'],
 		components: {
 			SanityBlocks,
 			Gallery
-		},
-
-		data(){
-			return {}
 		},
 
 		methods: {

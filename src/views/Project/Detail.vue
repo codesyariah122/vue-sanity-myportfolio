@@ -7,7 +7,7 @@
 		<div v-else class="container">
 			<!-- For Blocks -->
 			<div class="card__project-detail">
-				<Detail :detail="detail" :blocks="blocks"/>
+				<Detail :detail="detail" :blocks="blocks" :serializers="serializers"/>
 			</div>
 		</div>
 	</div>
@@ -15,7 +15,7 @@
 
 <script>
 	import sanity from '@/client'
-	import {Loading, Detail} from '@/components'
+	import {Loading, Detail, InlineImage} from '@/components'
 
 	const person = `*[_type == "person"] {
 		_id,
@@ -45,7 +45,11 @@
 
 	export default{
 		name: 'detail-project',
-
+		components:{
+			Loading,
+			Detail,
+			InlineImage
+		},
 		data(){
 			return {
 				slug: this.$route.params.slug,
@@ -53,13 +57,13 @@
 				detail: [],
 				blocks: [],
 				error: null,
-				loading: true
+				loading: true,
+				serializers: {
+					types: {
+						image: InlineImage
+					}
+				}
 			}
-		},
-
-		components:{
-			Loading,
-			Detail
 		},
 
 		created(){
@@ -73,7 +77,6 @@
 				this.error = this.persons = null
 				sanity.fetch(person)
 				.then((persons) => {
-					console.log(persons)
 					this.persons = persons
 					setTimeout(() => {
 						this.loading = false
