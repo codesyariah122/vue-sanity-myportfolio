@@ -96,7 +96,7 @@
 	span.s2 {
 		font-weight: 800;
 		position: absolute;
-		right: -.3px;
+		right: -.1px;
 		font-size: 6rem;
 		text-transform: uppercase;
 		color: $cardBackground;
@@ -104,7 +104,7 @@
 	.card__blog-content {
 		position: relative;
 		margin: 115px auto;
-		height: 45vh;
+		height: 55vh;
 		background-color: $primaryBackground;
 		-webkit-box-shadow: 10px 10px 93px 0px rgba(0,0,0,0.75);
 		-moz-box-shadow: 10px 10px 93px 0px rgba(0,0,0,0.75);
@@ -143,15 +143,15 @@
 				font-size: 1rem;
 				color: $cardBackground;
 				width: 100%;
-				margin-left: 1rem;
+				margin-left: .8rem;
 				font-weight: 700;
 			}
 			.author {
 				background-color: $secondNavBg;
 				height: 35px;
-				width: 135px;
+				width: 165px;
 				border-radius: 20px;
-				margin-left: 1rem;
+				margin-left: .5rem;
 
 				img {
 					padding-top: 5px;
@@ -168,7 +168,7 @@
 					text-align: center;
 					font-size: 1rem;
 					color: $black;
-					font-weight: 500;
+					font-weight: 600;
 				}
 			}
 
@@ -205,14 +205,14 @@
 		h5 {
 			position: absolute;
 			left: 15px;
-			bottom: 160px;
+			bottom: 170px;
 			font-size: 3rem;
 			color: $secondNavBg;;
 		}
 		h6 {
 			position: absolute;
 			left: 18px;
-			bottom: 147px;
+			bottom: 160px;
 			font-size: 1.3rem;
 			color: $secondNavBg;;
 		}
