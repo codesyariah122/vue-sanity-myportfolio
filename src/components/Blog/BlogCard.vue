@@ -86,7 +86,7 @@
 <style lang="scss" scoped>
 	span.s1 {
 		position: absolute;
-		top: 51px;
+		top: 45px;
 		font-size: 6rem;
 		font-weight: 800;
 		text-transform: uppercase;
@@ -178,12 +178,13 @@
 			}
 			p {
 				text-align: justify;
-				padding-top: 10px;
-				font-size: 0.95rem;
+				padding-top: 21px;
+				font-size: 1rem;
 				line-height: 150%;
 				color: $cardBackground;
 				width: 230px;
 				margin-left:-4.5rem;
+				text-indent: 15px;
 				display: -webkit-box;
 				-webkit-line-clamp: var(--line-clamp, 2);
 				-webkit-box-orient: vertical;
