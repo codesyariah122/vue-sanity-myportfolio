@@ -104,7 +104,7 @@
 	.card__blog-content {
 		position: relative;
 		margin: 115px auto;
-		height: 55vh;
+		height: 50vh;
 		background-color: $primaryBackground;
 		-webkit-box-shadow: 10px 10px 93px 0px rgba(0,0,0,0.75);
 		-moz-box-shadow: 10px 10px 93px 0px rgba(0,0,0,0.75);
@@ -205,14 +205,14 @@
 		h5 {
 			position: absolute;
 			left: 15px;
-			bottom: 170px;
+			bottom: 160px;
 			font-size: 3rem;
 			color: $secondNavBg;;
 		}
 		h6 {
 			position: absolute;
 			left: 18px;
-			bottom: 160px;
+			bottom: 150px;
 			font-size: 1.3rem;
 			color: $secondNavBg;;
 		}
