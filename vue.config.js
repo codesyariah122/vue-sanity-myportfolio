@@ -4,6 +4,10 @@ module.exports = {
   pwa: {
     name: "Puji Ermanto ☕",
     themeColor: "#333231",
+    
+    workboxOptions: {
+      skipWaiting: true
+    },
 
     icons: {
       favicon32: 'img/icons/favicon-32x32.png',
@@ -17,8 +21,8 @@ module.exports = {
     loaderOptions: {
       sass: {
         additionalData: `
-          @import "@/scss/_variables.scss";
-          @import "@/scss/_main.scss";
+        @import "@/scss/_variables.scss";
+        @import "@/scss/_main.scss";
         `
       }
     }
