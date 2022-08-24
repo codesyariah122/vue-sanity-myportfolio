@@ -58,13 +58,13 @@
 							<span v-html="persons[3].bio[14].children[0].text"></span>
 
 							<ul class="list-group mb-3">
-								<div v-for="item in 23">
-									<li v-if="item > 15" class="list-group-item" v-html="persons[3].bio[item].children[0].text"></li>
+								<div v-for="item in 24">
+									<li v-if="item > 14" class="list-group-item" v-html="persons[3].bio[item].children[0].text"></li>
 								</div>
 							</ul>
 
 							<h5 class="mt-5">
-								{{persons[3].bio[26].children[0].text}}
+								{{persons[3].bio[27].children[0].text}}
 							</h5>
 
 							<blockquote class="blockquote-footer mt-5">
