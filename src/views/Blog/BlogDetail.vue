@@ -1,11 +1,18 @@
 <template>
-	<div class="blog__view-detail">
+	<div class="blog__view-detail" :style="`${config.loading ? 'height: 100vh;' : ''}`">
 		<div class="container">
 			<div class="row justify-content-center">
-				<div class="col-md-12 col-sm-12 mt-5">
+				<div v-if="config.loading" class="col-md-12 col-sm-12 mt-5 text-center">
+					<div class="d-flex justify-content-center mb-2">
+						<div class="spinner-border text-white" style="width: 5rem; height: 5rem;" role="status">
+							<span class="visually-hidden">Loading...</span>
+						</div>
+					</div>
+					<span class="text-white text-center">Loading dulu gaes ...</span>
+				</div>
+				<div v-else class="col-md-12 col-sm-12 mt-5">
 					<div class="content text-white">
 						<HeaderBlogDetail :detail="post" :artwork="mainImage"/>
-						
 					</div>
 
 					<div class="card__blog-detail">

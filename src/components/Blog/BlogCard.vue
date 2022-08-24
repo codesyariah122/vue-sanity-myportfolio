@@ -21,7 +21,8 @@
 						{{post.excerpt[0].children[0].text}}
 					</p>
 				</div>
-				<div class="links">	
+			
+				<div class="links">
 					<router-link :to="`/blog/${post.slug.current}`">
 						<i class="fas fa-arrow-right"></i>
 					</router-link>
@@ -36,7 +37,7 @@
 
 		<div class="col-md-12 col-sm-12 footer__blog">
 			<blockquote class="blockquote-footer">
-				Selamat datang di blog {{persons.name}}, halaman blog ini akan berisi tulisan-tulisan dari saya yang akan saya tulis sendiri dengan mandiri, yang inshaallah akan saya isi dengan berbagai rubrik  menarik secara random dengan harapan dapat berbagi informasi menarik bagi kalian yang membutuhkan informasi/artikel, baik itu berupa rubrik informasi ilmiah, tips dan trik, tutorial, berita dan atau tulisan dengan rubrik apapun.
+				Selamat datang di blog {{persons.name}}, halaman blog ini akan berisi tulisan-tulisan dari saya yang akan saya tulis sendiri secara mandiri, yang inshaallah akan saya isi dengan berbagai rubrik  menarik secara random dengan harapan dapat berbagi informasi menarik bagi kalian yang membutuhkan informasi/artikel, baik itu berupa rubrik informasi ilmiah, tips dan trik, tutorial, berita dan atau tulisan dengan rubrik apapun.
 			</blockquote>
 
 			<h4>Salaam ..</h4>
@@ -116,7 +117,7 @@
 			position: relative;
 			left: 80px;
 			top: -25px;
-			height: 150px;
+			height: 120px;
 			width: 230px;
 			-webkit-box-shadow: 10px 10px 60px 0px rgba(0,0,0,0.75);
 			-moz-box-shadow: 10px 10px 60px 0px rgba(0,0,0,0.75);
@@ -182,11 +183,11 @@
 				font-size: 1rem;
 				line-height: 150%;
 				color: $cardBackground;
-				width: 230px;
+				width: 250px;
 				margin-left:-4.5rem;
 				text-indent: 15px;
 				display: -webkit-box;
-				-webkit-line-clamp: var(--line-clamp, 2);
+				-webkit-line-clamp: var(--line-clamp, 4);
 				-webkit-box-orient: vertical;
 				word-break: var(--word-break, "none");
 				overflow: hidden;
@@ -206,14 +207,14 @@
 		h5 {
 			position: absolute;
 			left: 15px;
-			bottom: 160px;
+			bottom: 180px;
 			font-size: 3rem;
 			color: $secondNavBg;;
 		}
 		h6 {
 			position: absolute;
 			left: 18px;
-			bottom: 150px;
+			bottom: 170px;
 			font-size: 1.3rem;
 			color: $secondNavBg;;
 		}
@@ -229,21 +230,21 @@
 		}
 		.links{
 			position: absolute;
-			right: 50px;
+			right: 30px;
 			bottom: -35px;
 			box-sizing: border-box;
 			padding-top: 10px;
 			background-color: #1875D0;
-			width: 60px;
-			height: 60px;
+			width: 80px;
+			height: 80px;
 			text-align: center;
 			border-radius: 50%;
 			-webkit-box-shadow: 10px 10px 50px 0px rgba(0,0,0,0.75);
 			-moz-box-shadow: 10px 10px 50px 0px rgba(0,0,0,0.75);
 			box-shadow: 10px 10px 50px 0px rgba(0,0,0,0.75);
 			a{
-				color: $white;
-				font-size: 2rem;
+				color: $white!important;
+				font-size: 3rem;
 			}
 		}
 	}
@@ -284,7 +285,7 @@
 				left: 30px;
 				top: -30px;
 				height: 140px;
-				width: 230px;
+				width: 250px;
 				-webkit-box-shadow: 10px 10px 60px 0px rgba(0,0,0,0.75);
 				-moz-box-shadow: 10px 10px 60px 0px rgba(0,0,0,0.75);
 				box-shadow: 10px 10px 60px 0px rgba(0,0,0,0.75);
@@ -349,7 +350,7 @@
 					font-size: 0.95rem;
 					line-height: 150%;
 					color: $cardBackground;
-					width: 300px;
+					width: 65%;
 					margin-left:8.5rem;
 					text-indent: 3rem;
 					display: -webkit-box;
@@ -397,20 +398,22 @@
 			.links{
 				position: absolute;
 				right: 50px;
-				bottom: -40px;
+				bottom: -60px;
 				box-sizing: border-box;
 				padding-top: 10px;
 				background-color: #1875D0;
-				width: 80px;
-				height: 80px;
+				width: 100px;
+				height: 100px;
 				text-align: center;
 				border-radius: 50%;
 				-webkit-box-shadow: 10px 10px 50px 0px rgba(0,0,0,0.75);
 				-moz-box-shadow: 10px 10px 50px 0px rgba(0,0,0,0.75);
 				box-shadow: 10px 10px 50px 0px rgba(0,0,0,0.75);
+
 				a{
-					color: $white;
-					font-size: 3rem;
+					font-size: 4rem;
+					color: $white!important;
+					font-weight: 700;
 				}
 			}
 		}

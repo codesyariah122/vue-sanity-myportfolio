@@ -1,6 +1,6 @@
 <template>
 	<div class="grid">
-		<figure class="effect-lily">
+		<figure class="effect-lily" style="width: 100%;">
 			<img :src="artwork" alt="img12"/>
 			<figcaption>
 				<div>
