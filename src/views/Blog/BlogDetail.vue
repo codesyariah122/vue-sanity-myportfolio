@@ -94,7 +94,8 @@
 			
 			let config = reactive({
 				loading: null,
-				error: null
+				error: null,
+				loading_comment: null
 			})
 
 			const {
@@ -178,14 +179,13 @@
 			}
 
 			function updateComment(){
-				config.loading = true
 				config.error = comments.value = null
 				sanity.fetch(listen.comment, { slug: slug })
 				.then(update => {
+					console.log(update)
 					setTimeout(() => {
 						comments.value = update.comments
-						config.loading = false
-					}, 5500)
+					}, 2500)
 				})
 			}
 

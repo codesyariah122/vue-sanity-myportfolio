@@ -6,15 +6,27 @@
 					<div class="p-3 header__comment">
 						<h6>Comments</h6>
 					</div>
+					
+					<form @submit.prevent="SendComment">						
+						<span v-if="validation.name" class="text-danger">
+							{{validation.name}}
+						</span>
 
-					<form @submit.prevent="SendComment">
 						<div class="input__coment d-flex flex-row align-items-center p-3 form-color">
 							<input type="text" class="form-control" placeholder="Enter your name..." v-model="post.name"> 
 						</div>
 
+						<span v-if="validation.email" class="text-danger">
+							{{validation.email}}
+						</span>
+
 						<div class="input__coment d-flex flex-row align-items-center p-3 form-color">
-							<input type="email" required class="form-control" placeholder="Enter your email..." v-model="post.email"> 
+							<input type="email" class="form-control" placeholder="Enter your email..." v-model="post.email"> 
 						</div>
+
+						<span v-if="validation.comment" class="text-danger mb-2">
+							{{validation.comment}}
+						</span>
 
 						<div class="input__coment d-flex flex-row align-items-center p-3 form-color">
 							<textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Enter your comment..." v-model="post.comment"></textarea> 
@@ -22,7 +34,11 @@
 
 						<div class="d-grid gap-2">							
 							<button type="submit" class="btn btn-md btn-block btn-primary rounded-pill">
-								Send Comment
+								<span v-if="post.loading">
+									<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+									Loading...
+								</span>
+								<span>Send Comment</span>
 							</button> 
 						</div>
 					</form>
@@ -37,7 +53,14 @@
 
 					<div v-else>
 						<div v-if="comments.length > 0" class="comment__block">
-							<div v-for="comment in comments" class="d-flex flex-row p-3 contents">
+							<div v-if="post.loading">
+								<div class="d-flex justify-content-center mb-2">
+									<div class="spinner-border text-white" role="status">
+										<span class="visually-hidden">Loading...</span>
+									</div>
+								</div>
+							</div>
+							<div v-else v-for="comment in comments" class="d-flex flex-row p-3 contents">
 								<img src="https://i.imgur.com/zQZSWrt.jpg" width="40" height="40" class="rounded-circle user__avatar">
 								<div class="w-100">
 									<div class="d-flex justify-content-between align-items-center">
@@ -95,44 +118,62 @@
 			let post = reactive({
 				name: '',
 				email: '',
-				comment: ''
+				comment: '',
+				loading: null
 			})
+
+			let validation = ref([])
 
 			function date(val){
 				return moment(val).fromNow()
 			}
 
 			function SendComment(){
-				const send = {
-					_type: 'comment',
-					name: post.name,
-					approved: true,
-					email: post.email,
-					comment: post.comment,
-					post: {
-						_ref: props._id,
-						_type: 'reference'
+				post.loading = true
+				if(post.name === "" && post.email === "" && post.comment === ""){
+					validation.value= {
+						name: "Nama wajib di isi !",
+						email: "Email wajib di isi !",
+						comment: "Isi comment kamu terlebih dahulu"
 					}
+					setTimeout(() => {
+						post.loading = false
+					}, 1500)
+				}else{
+					validation.value = {}
+					const send = {
+						_type: 'comment',
+						name: post.name,
+						approved: true,
+						email: post.email,
+						comment: post.comment,
+						post: {
+							_ref: props._id,
+							_type: 'reference'
+						}
+					}
+
+					sanity.create(send)
+					.then((data) => {
+						emit('update-comment')
+						setTimeout(() => {
+							post.name = ''
+							post.email = ''
+							post.comment = ''
+							post.loading = false
+						}, 2500)
+					},(error) => {
+						console.log(error.response)
+					})
 				}
 
-				sanity.create(send)
-				.then((data) => {
-					emit('update-comment')
-					setTimeout(() => {
-						post.name = ''
-						post.email = ''
-						post.comment = ''
-					}, 2500)
-				},(error) => {
-					console.log(error.response)
-				})
-				
 			}
 
 			return {
 				date,
 				post,
-				SendComment
+				SendComment,
+				validation
 			}
 		}
 	}
