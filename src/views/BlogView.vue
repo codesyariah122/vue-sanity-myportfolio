@@ -1,8 +1,8 @@
 <template>
-	<div class="blog__view">
+	<div class="blog__view" :style="`${loading ? 'height: 100vh;' : ''}`">
 		<div class="container">
 			<div class="card__blog">
-				<BlogCard :posts="posts" :authors="authors" :persons="persons"/>
+				<BlogCard :posts="posts" :authors="authors" :persons="persons" :loading="loading"/>
 			</div>
 		</div>
 	</div>

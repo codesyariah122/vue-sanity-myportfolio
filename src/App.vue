@@ -4,7 +4,6 @@
 
   <router-view />
 
-  <!-- Footer -->
   <!-- <Footer/> -->
 </template>
 
@@ -15,6 +14,20 @@
     components:{
       Navigation,
       Footer
+    },
+
+    mounted(){
+      this.closeCollapsed()
+    },
+
+    methods: {
+      closeCollapsed(){
+        let bsCollapse = document.querySelector('.navbar-collapse')
+        document.body.addEventListener('click', () => {
+          // alert("okk")
+          bsCollapse.classList.remove('show')
+        })
+      }
     }
   }
 </script>

@@ -1,5 +1,13 @@
 <template>
-	<div class="row justify-content-center">
+	<div v-if="loading" class="row justify-content-center">
+		<div class="d-flex justify-content-center mb-2">
+			<div class="spinner-border text-white" style="width: 5rem; height: 5rem;" role="status">
+				<span class="visually-hidden">Loading...</span>
+			</div>
+		</div>
+		<span class="text-white text-center">Loading dulu gaes ...</span>
+	</div>
+	<div v-else class="row justify-content-center">
 		<div class="col-md-8 col-sm-12">
 			<div class="fond"> 
 				<span class="s1">blog </span>
@@ -21,7 +29,7 @@
 						{{post.excerpt[0].children[0].text}}
 					</p>
 				</div>
-			
+
 				<div class="links">
 					<router-link :to="`/blog/${post.slug.current}`">
 						<i class="fas fa-arrow-right"></i>
@@ -57,7 +65,7 @@
 
 
 	export default {
-		props: ['posts', 'authors', 'persons'],
+		props: ['posts', 'authors', 'persons', 'loading'],
 
 		methods: {
 			imageUrlFor(source){
