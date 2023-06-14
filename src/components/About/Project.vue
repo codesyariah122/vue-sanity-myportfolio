@@ -9,8 +9,8 @@
 			<div v-for="(project, idx) in projects" class="col-md-4 col__project">
 				<br>
 				<div class="game" 
-				@mouseenter="hover = true"
-				@mouseleave="hover = false">
+					@mouseenter="hover = true"
+					@mouseleave="hover = false">
 				<div class="rank">{{idx+=1}}</div>
 				<div class="front">
 					<img :src="`${imageUrlFor(project.mainImage.asset)}`" alt="game">

@@ -1,6 +1,6 @@
 <template>
 	<div class="container">
-		<div class="row no-gutters">
+		<div class="row justify-content-center">
 			<div class="col-lg-12 col-sm-12 col__detail-project">
 				<div v-if="error" class="error">
 					{{ error }}
@@ -29,6 +29,14 @@
 								<div>
 									Gallery project belum ada !
 								</div>
+							</div>
+						</div>
+					</div>
+
+					<div v-if="detail.linksVideo" class="row justify-content-center no-gallery">
+						<div v-for="(link, idx) in detail.linksVideo" :key="idx" class="col-lg-12 col-sm-12 mb-4">
+							<div class="embed-responsive embed-responsive-16by9">
+								<iframe class="embed-responsive-item" :src="`${link}`" allowfullscreen></iframe>
 							</div>
 						</div>
 					</div>

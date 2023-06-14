@@ -40,7 +40,8 @@
 		mainImage,
 		imagesGallery,
 		excerpt,
-		body
+		body,
+		linksVideo
 	}[0]`
 
 	export default{
@@ -90,6 +91,7 @@
 				this.error = this.detail = null
 				sanity.fetch(project, { slug: this.slug })
 				.then((detail) => {
+					console.log(detail)
 					this.detail = detail
 					this.blocks = detail.body
 					setTimeout(() => {
