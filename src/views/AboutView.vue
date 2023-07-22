@@ -41,7 +41,7 @@
     bio
   }[0...50]`
 
-  const project = `*[_type == "sampleProject"] | order(_createdAt asc) {
+  const project = `*[_type == "sampleProject"] | order(_createdAt desc) {
     _id,
     title,
     slug,
@@ -60,7 +60,7 @@
     description
   }[0...50]`
 
-  const indieProject = `*[_type == "indieProject"] | order(_createdAt asc) {
+  const indieProject = `*[_type == "indieProject"] | order(_createdAt desc) {
     _id,
     title,
     slug,

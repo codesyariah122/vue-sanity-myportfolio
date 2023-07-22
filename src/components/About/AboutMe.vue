@@ -37,6 +37,9 @@
 								</span>
 							</blockquote>
 						</div>
+						<div>
+							<a href="https://github.com/codesyariah122/codesyariah122/blob/main/pujiermanto-cv.pdf" target="_blank" class="btn btn-success btn-sm rounded-pill btn-block text-white btn__detail mt-2 p-2">Download My New CV</a>
+						</div>
 					</div>
 
 					<div class="col-md-12 col-sm-12" :style="`${$isMobile() ? '' :'margin-left: 21rem; margin-top: 2.5rem;'}`">
@@ -62,6 +65,8 @@
 									<li v-if="item > 15" class="list-group-item" v-html="persons[3].bio[item].children[0].text"></li>
 								</div>
 							</ul>
+
+
 
 							<h5 class="mt-5">
 								{{persons[3].bio[27].children[0].text}}

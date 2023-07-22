@@ -12,7 +12,16 @@
               {{persons[3].bio[2].children[0].text}}<br>
               {{persons[3].bio[3].children[0].text}}
             </p>
-            <button class="btn btn-primary btn-sm rounded-pill btn-block btn__detail"><router-link to="/about">See Detail</router-link></button>
+            <div class="container">
+              <div class="row">
+                <div class="col-md-6">                  
+                  <button class="btn btn-primary btn-sm rounded-pill btn-block btn__detail"><router-link to="/about">See Detail</router-link></button>
+                </div>
+                <div class="col-md-6">
+                  <a href="https://github.com/codesyariah122/codesyariah122/blob/main/pujiermanto-cv.pdf" target="_blank" class="btn btn-success btn-sm rounded-pill btn-block text-white btn__detail ml-4">My New CV</a>
+                </div>
+              </div>
+            </div>
           </div>
         </article>
       </div>
