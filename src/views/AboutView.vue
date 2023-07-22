@@ -60,7 +60,7 @@
     description
   }[0...50]`
 
-  const indieProject = `*[_type == "indieProject"] | order(_createdAt desc) {
+  const indieProject = `*[_type == "indieProject"] | order(_publishedAt asc) {
     _id,
     title,
     slug,

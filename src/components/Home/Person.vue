@@ -12,14 +12,12 @@
               {{persons[3].bio[2].children[0].text}}<br>
               {{persons[3].bio[3].children[0].text}}
             </p>
-            <div class="container">
-              <div class="row">
-                <div class="col-md-6 col-sm-12 mb-12">                  
-                  <button class="btn btn-primary btn-sm rounded-pill btn-block btn__detail"><router-link to="/about">See Detail</router-link></button>
-                </div>
-                <div class="col-md-6 col-sm-12">
-                  <a href="https://github.com/codesyariah122/codesyariah122/blob/main/pujiermanto-cv.pdf" target="_blank" class="btn btn-success btn-sm rounded-pill btn-block text-white btn__detail">My New CV</a>
-                </div>
+            <div class="d-flex flex-row bd-highlight mb-3 gap-2">
+              <div>                  
+                <button class="btn btn-primary btn-sm rounded-pill btn-block btn__detail"><router-link to="/about">See Detail</router-link></button>
+              </div>
+              <div>
+                <a href="https://github.com/codesyariah122/codesyariah122/blob/main/pujiermanto-cv.pdf" target="_blank" class="btn btn-success btn-sm rounded-pill btn-block text-white btn__detail ml-4">My New CV</a>
               </div>
             </div>
           </div>
