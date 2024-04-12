@@ -1,89 +1,131 @@
 <template>
-  <div>
-    <div v-if="loading" class="container mt-5">
-      <div class="d-flex justify-content-center">
-        <div class="spinner-grow text-primary" role="status" style="width: 3rem; height: 3rem;">
-          <span class="visually-hidden">Loading...</span>
-        </div>
-      </div>
+  <div class="home__view">
+    <div v-if="loading" class="container loader__page">
+      <Loading :persons="persons"/>
     </div>
     <div v-else>
       <!-- Person component -->
-      <Person :persons="persons" @image-source="imageUrlFor"/>
+      <div class="container">
+        <Person :persons="persons" @image-source="imageUrlFor" :skills="skills" />
+      </div>
 
-      <!-- Projectt component -->
-      <Project :projects="projects"/>
+      <!-- github repo lists -->
+      <div class="container">
+        <RepoGithub :repos="repos" :languages_url="languages_url"/>
+      </div>
     </div>
   </div>
 </template>
 
 <script>
-  import {Person, Project} from '@/components'
+  import {
+    Person, RepoGithub, Loading
+  } from '@/components'
 
   import sanity from '@/client'
 
-  const person = `*[_type == "person"]{
+  const person = `*[_type == "person"] {
     _id,
     name,
+    slug,
+    jobdesk,
     contactInfo,
     image,
     excerpt,
     bio
   }[0...50]`
 
-  const project = `*[_type == "sampleProject"] | order(_createdAt asc) {
+  const skill = `*[_type == "skillProgramming"] | order(_createdAt asc) {
     _id,
     title,
-    slug,
-    startedAt,
-    endedAt,
-    mainImage,
-    excerpt,
-    body
+    percentage,
+    color,
+    mainImage
   }[0...50]`
 
 
   export default {
-    name: 'HomeView',
+    name: 'home',
     components: {
       Person,
-      Project
+      RepoGithub,
+      Loading
     },
-    data(){
+    data() {
       return {
         persons: [],
-        projects: [],
+        skills: [],
         error: null,
-        loading: true
+        loading: true,
+        repos: []
       }
     },
 
-    created(){
+    created() {
       this.personData(),
-      this.projectData()
+      this.skillProgramming(),
+      this.githubRepo()
     },
 
     methods: {
-      personData(){
+      personData() {
         this.loading = true
         this.error = this.persons = null
         sanity.fetch(person)
-        .then((persons) =>{
+        .then((persons) => {
           this.persons = persons
           setTimeout(() => {
-            this.loading=false
-          }, 1500)
-        },(error) => {this.error = error})
+            this.loading = false
+          }, 1000)
+        }, (error) => {
+          this.error = error
+        })
       },
-      projectData(){
-        this.error = this.projects = null
-        sanity.fetch(project)
-        .then((projects) => {
-          console.log(projects)
-          this.projects = projects
-        }, (err) => {this.error = error})
+
+      skillProgramming() {
+        this.loading = true
+        this.error = this.skills = null
+        sanity.fetch(skill)
+        .then((skills) => {
+          this.skills = skills
+          setTimeout(() => {
+            this.loading = false
+          }, 1000)
+        }, (err) => {
+          this.error = error
+        })
+      },
+
+      githubRepo(){
+        this.loading = true
+        const config = {
+          page: 1,
+          per_page: 15,
+          sort: 'created'
+        }
+
+        this.axios.get(`${process.env.VUE_APP_GITHUB_API_URL}${process.env.VUE_APP_GITHUB_USER}/repos?page=${config.page}&sort=${config.sort}&per_page=${config.per_page}`, {
+          headers: {           
+            'Authorization': process.env.VUE_APP_ACCESS_TOKEN
+          }
+        })
+        .then(({data}) => {
+          this.repos = data
+          setTimeout(() => {
+            this.loading = false
+          }, 1000)
+        })
+        .catch(err => console.error(err))
       }
+
     }
   }
 </script>
 
+<style lang="scss">
+  .loader__page{
+    margin-top: 15rem!important;
+    height: 100vh;
+    text-align: center;
+  }
+</style>

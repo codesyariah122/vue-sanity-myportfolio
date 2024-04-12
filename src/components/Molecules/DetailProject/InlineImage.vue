@@ -1,38 +1,22 @@
 <template>
 	<div>
-		
+		<img :src="imageUrlFor(asset._ref).url()" class="img-fluid">
 	</div>
 </template>
 
 <script>
 	import sanity from '@/client'
-
 	import imageUrlBuilder from '@sanity/image-url'
-
 	const imageBuilder = imageUrlBuilder(sanity)
 
-	import moment from 'moment'
-
 	export default {
-		props: ['projects'],
-		data(){
-			return{
-				detail: {},
-				img: ''
-			}
-		},
+		props: ['asset'],
+
+		mounted(){console.log(this.asset)},
+
 		methods: {
 			imageUrlFor(source){
 				return imageBuilder.image(source)
-			},
-
-			showDetail(data, img){
-				this.detail = data
-				this.img = this.imageUrlFor(img)
-			},
-
-			date(val){
-				return moment(val).format("LL")
 			}
 		}
 	}

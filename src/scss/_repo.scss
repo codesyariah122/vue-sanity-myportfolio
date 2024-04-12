@@ -1,0 +1,153 @@
+.card__profile-home{
+	.repo__block{
+		background-color: $secondaryBackground!important;
+		box-shadow: 5px 6px 2px 1px $boxShadow;
+		border-radius: 13px!important;
+		margin-top: 3rem!important;
+		margin-bottom: 3rem;
+		padding: 30px !important;
+		text-align: left!important;
+		margin-left: .4rem;
+		width: 95%;
+
+		.heading {
+			margin-top: 3rem;
+			font-family: 'Poppins';
+			color: $white;
+			text-align: center;
+		}
+
+		.heading__title {
+			font-weight: 600;
+		}
+
+		.heading__credits {
+			margin: 10px 0px;
+			color: $credit;
+			font-size: 21px;
+			transition: all 0.5s;
+		}
+
+		.heading__link {
+			text-decoration: none;
+		}
+
+		.heading__credits .heading__link {
+			color: inherit;
+		}
+		.github__board{
+			margin-top: 2rem;
+			.github__story{
+				.cards__repo {
+					display: flex;
+					flex-wrap: wrap;
+					justify-content: space-between;
+
+					.card__repo {
+						margin: 20px;
+						padding: 20px;
+						width: 500px;
+						min-height: 200px;
+						display: grid;
+						grid-template-rows: 20px 50px 1fr 50px;
+						border-radius: 10px;
+						box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.25);
+						transition: all 0.2s;
+					}
+
+					.card__repo:hover {
+						box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.4);
+						transform: scale(1.01);
+					}
+
+					.card__link,
+					.card__exit,
+					.card__icon {
+						position: relative;
+						text-decoration: none;
+						color: rgba(255, 255, 255, 0.9);
+					}
+
+					.card__link::after {
+						position: absolute;
+						top: 25px;
+						left: 0;
+						content: "";
+						width: 0%;
+						height: 3px;
+						background-color: rgba(255, 255, 255, 0.6);
+						transition: all 0.5s;
+					}
+
+					.card__link:hover::after {
+						width: 100%;
+					}
+
+					.card__exit {
+						grid-row: 1/2;
+						justify-self: end;
+					}
+
+					.card__icon {
+						grid-row: 2/3;
+						font-size: 30px;
+						margin-top: -1.7rem;
+					}
+
+					.card__title {
+						grid-row: 3/4;
+						font-weight: 400;
+						color: #ffffff;
+						margin-top: -2rem;
+					}
+
+					.card__apply {
+						grid-row: 7/5;
+						align-self: center;
+						margin-top: 1rem;
+					}
+
+					.content{
+						color: $white;
+						grid-row: 4/4;
+						height: 50px;
+					}
+
+					.truncate {
+						display: -webkit-box;
+						-webkit-line-clamp: var(--line-clamp, 1);
+						-webkit-box-orient: vertical;
+						word-break: var(--word-break, "none");
+						overflow: hidden;
+						hyphens: auto;
+						text-align: var(--align, left);
+						--is-single-line: 1 - Clamp(0, Calc(var(--line-clamp) - 1), var(--line-clamp));
+						--delay: Calc(-1s * (var(--is-single-line, 1) - 1));
+						animation: states 1s var(--delay) paused;
+						@keyframes states {
+							0% {
+								word-break: break-all;
+							}
+						}
+					}
+
+					@each $num,$theme in $themeColours {
+						.card-#{$num} {
+							background: radial-gradient($theme)
+						}
+					}
+
+					@media (max-width: 1600px) {
+						.card__profile-home{
+							.repo__block{
+								.cards__repo {
+									justify-content: center;
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}

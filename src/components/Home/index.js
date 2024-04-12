@@ -1,7 +1,7 @@
 import Person from './Person'
-import Project from './Project'
+import RepoGithub from './RepoGithub'
 
 export {
 	Person,
-	Project
+	RepoGithub
 }

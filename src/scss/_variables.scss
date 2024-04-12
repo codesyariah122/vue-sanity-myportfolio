@@ -1,4 +1,72 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@400&display=swap");
+@import url('https://fonts.googleapis.com/css?family=Inconsolata|Merriweather');
+
+:root {
+  --size: 3vmin;
+  --white: #fff;
+  --blue: #3051f1;
+  --purple: #c92bb7;
+  --red: #f73344;
+  --orange: #fa8e37;
+  --yellow: #fcdf8f;
+  --yellow_to: #fbd377;
+   --clr-dark:rgb(13,17,19);
+  --clr-light:#fff;
+  --clr-secondary:#0A84FF;
+}
+
 $white: #fff;
+$primary: #F2DAD7;
+$secondary: #D1A39E;
+$light: #CECDCA;
+$dark: #474545;
+$ease: all 0.3s ease-in-out;
+$textBg: rgb(110, 82, 82);
 $black: #000;
+$cardBackground: #212529;
 $primaryBackground: #bacad9;
+$secondaryBackground: #000;
+$bgApp:#040404;
+$bgBoard: silver;
+$active: lightslategray;
+$bgCardImage: #a18a56;
+$secondBgCardImage: rgba(140, 112, 120, 0.7);
+$secondNavBg: rgba(140, 112, 120, 0.9);
+$cardTextColor: #6A515E;
+$cardHoverBg:#333231;
+$boxShadow: $cardBackground;
+$blue: #3051f1;
+$purple: #c92bb7;
+$red: #f73344;
+$orange: #fa8e37;
+$yellow: #fcdf8f;
+$yellow_to: #fbd377;
+$base_color: #1fe4f5;
+$second_color: #3fbafe;
+$whatsappBg: #3AC371;
+$body: 'Inconsolata', monospace;
+$big: 'Merriweather', serif;
+$max-img-width: 600px;
+$max-img-height: 400px;
+$amount: 30;
+$themeColours: (
+    "1": (#1fe4f5, #3fbafe),
+    "2": (#fbc1cc, #fa99b2),
+    "3": (#fa99b2, #76b2fe),
+    "4": (#b69efe, #60efbc),
+    "5": (#58d5c9, #f588d8),
+    "6": (#c0a3e5, #f588d8),
+    "7": (#c0a3e5, #c92bb7),
+    "8": (#fa8e37, #a18a56),
+    "9": (#1fe4f5, #3fbafe),
+    "10": (#fbc1cc, #fa99b2),
+    "11": (#76b2fe, #b69efe),
+    "12": (#60efbc, #58d5c9),
+    "13": (#f588d8, #c0a3e5),
+    "14": (#f588d8, #c0a3e5),
+    "15": (#c92bb7, #fa8e37)
+);
+$credit: #888888;
+$card_comment: rgba(45, 46, 45, 0.3);
+

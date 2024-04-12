@@ -1,0 +1,153 @@
+.blog__view{
+	margin-top: 7rem;
+	margin-bottom: 5rem;
+	
+	.card__blog{
+		background-color: $secondaryBackground!important;
+		box-shadow: 5px 6px 2px 1px $boxShadow;
+		border-radius: 13px!important;
+		margin-top: 3rem!important;
+		padding: 30px !important;
+		text-align: left!important;
+		margin-left: .4rem;
+		width: 95%;
+
+		blockquote{
+			color: $white;
+			font-family: 'Raleway';
+			text-align: justify;
+		}
+		h4{
+			margin-top: 3rem;
+			color: $white;
+			font-family: 'Poppins';
+			font-size: 1.5rem;
+		}
+	}
+}
+
+.blog__view-detail{
+	margin-top: 3rem;
+	margin-bottom: 5rem;
+	.content{
+		.grid{
+			figure{
+				width: 345px;
+				margin-left: -.9rem;
+			}
+		}
+	}
+
+	.card__blog-detail{
+		background-color: $secondaryBackground!important;
+		box-shadow: 5px 6px 2px 1px $boxShadow;
+		border-radius: 13px!important;
+		margin-top: -17rem!important;
+		padding: 30px !important;
+		text-align: left!important;
+		margin-left: -.2rem;
+		width: 100%;
+
+		.block{
+			color: $white;
+			text-align: justify;
+			letter-spacing: 1px;
+			margin-top: 11rem;
+		}
+
+		.author__content{
+			margin-top: 3rem;		
+			.author__image{
+				border-radius: 50%;
+				width: 50px;
+				height: 50px;
+			}
+			h5, h6{
+				font-size: .9rem;
+				color: $white;
+				letter-spacing: 2px;
+				margin-left: .8rem;
+			}
+		}
+	}
+}
+
+@media (min-width: 991px) and (max-width:1200px) {}
+
+@media (min-width: 992px) {
+	.blog__view{
+		margin-top: 12rem;
+		margin-bottom: 15rem;
+
+		.card__blog{
+			background-color: $secondaryBackground!important;
+			box-shadow: 5px 6px 2px 1px $boxShadow;
+			border-radius: 13px!important;
+			margin-top: 3rem!important;
+			padding: 30px !important;
+			text-align: left!important;
+			margin-left: 1.3rem;
+			width: 95%;
+		}
+	}
+
+	.blog__view-detail{
+		margin-top: 23rem;
+		margin-bottom: 5rem;
+		.content{
+			.grid{
+				figure{
+					margin-top: -21rem;
+					margin-left: -.9rem;
+					width: auto;
+					margin-left: 15rem;
+					figcaption{
+						h2{
+							margin-top: 1rem;
+						}
+						p{
+							margin-top: 1rem;
+							color: $primaryBackground;
+						}
+					}
+				}
+			}
+		}
+
+		.card__blog-detail{
+			background-color: $secondaryBackground!important;
+			box-shadow: 5px 6px 2px 1px $boxShadow;
+			border-radius: 13px!important;
+			margin-top: -17rem!important;
+			padding: 30px !important;
+			text-align: left!important;
+			margin-left: .5rem;
+			width: 100%;
+
+			.block{
+				color: $white;
+				text-align: justify;
+				letter-spacing: 1px;
+				margin-top: 15rem;
+			}
+
+			.author__content{
+				margin-top: 3rem;
+				margin-bottom: 1rem;
+				margin-left: -7rem;	
+				.author__image{
+					border-radius: 50%;
+					width: 50px;
+					height: 50px;
+				}
+				h5, h6{
+					font-size: .9rem;
+					color: $white;
+					letter-spacing: 2px;
+					margin-left: -9rem;
+					margin-top: .5rem;
+				}
+			}
+		}
+	}
+}

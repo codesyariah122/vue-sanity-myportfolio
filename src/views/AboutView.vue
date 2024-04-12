@@ -1,78 +1,164 @@
 <template>
-  <div class="about">
-    <h1>This is an about page</h1>
-    <pre>
-      {{blogs}}
-    </pre>
+  <div class="about__view">
+    <div v-if="loading" class="container loader__page">
+      <Loading :persons="persons"/>
+    </div>
+    <div class="container">
+      <!-- Profile Content -->
+      <div class="card__profile-about">
+        <AboutMe :persons="persons" :projects="projects"/>
+      </div>
+      <!-- Project Content -->
+      <div class="card__project-about">
+        <Project :projects="projects" :persons="persons"/>
+      </div>
 
+      <!-- Free Project -->
+      <div class="card__project-about">
+        <FreeProject :indies="indies" :persons="persons"/>
+      </div>
+
+    </div>
   </div>
 </template>
 
 <script>
+  import {
+    AboutMe, Project, FreeProject, Loading
+  } from '@/components'
+
   import sanity from '@/client'
 
-  const blog = `*[_type == "post"]|order(created_at desc){
-    _id,
-    title,
-    "slug": slug.current,
-    "author": author->name,
-    mainImage,
-    categories,
-    publishedAt,
-    body
-  }[0...50]`
-
-  const author = `*[_type == "author"]{
+  const person = `*[_type == "person"] {
     _id,
     name,
     slug,
+    jobdesk,
+    contactInfo,
     image,
+    aboutImage,
+    excerpt,
     bio
+  }[0...50]`
+
+  const project = `*[_type == "sampleProject"] | order(_createdAt desc) {
+    _id,
+    title,
+    slug,
+    categories,
+    members,
+    startedAt,
+    endedAt,
+    mainImage,
+    excerpt,
+    body
+  }[0...50]`
+
+  const category = `*[_type == "category"]{
+    _id,
+    title,
+    description
+  }[0...50]`
+
+  const indieProject = `*[_type == "indieProject"] | order(_publishedAt asc) {
+    _id,
+    title,
+    slug,
+    categories,
+    members,
+    startedAt,
+    endedAt,
+    mainImage,
+    excerpt,
+    body
   }[0...50]`
 
 
   export default {
-    name: 'AboutView',
-    
+    name: 'about',
+    components: {
+      AboutMe,
+      Project,
+      FreeProject,
+      Loading
+    },
     data(){
       return {
-        blogs: [],
-        authors: [],
+        projects: [],
+        persons: [],
+        indies: [],
         error: null,
         loading: true
       }
     },
 
     created(){
-      this.blogData(),
-      this.authorData()
+      this.personData(),
+      this.projectData(),
+      this.indieProject(),
+      this.gsapSetting()
     },
 
     methods: {
-      blogData(){
+      personData() {
         this.loading = true
-        this.error = this.blogs = null
-        sanity.fetch(blog)
-        .then((blogs) =>{
-          console.log(blogs)
-          this.blogs = blogs
+        this.error = this.persons = null
+        sanity.fetch(person)
+        .then((persons) => {
+          this.persons = persons
           setTimeout(() => {
-            this.loading=false
+            this.loading = false
+          }, 1000)
+        }, (error) => {
+          this.error = error
+        })
+      },
+      projectData() {
+        this.loading = true
+        this.error = this.projects = null
+        sanity.fetch(project)
+        .then((projects) => {
+          this.projects = projects
+          setTimeout(() => {
+            this.loading = false
           }, 1500)
-        },(error) => {this.error = error})
+        }, (err) => {
+          this.error = err
+        })
       },
 
-      authorData(){
+      indieProject() {
         this.loading = true
-        this.error = this.authors = null
-        sanity.fetch(author)
-        .then((authors) =>{
-          this.authors = authors
+        this.error = this.indies = null
+        sanity.fetch(indieProject)
+        .then((indies) => {
+          this.indies = indies
           setTimeout(() => {
-            this.loading=false
+            this.loading = false
           }, 1500)
-        },(error) => {this.error = error})
+        }, (err) => {
+          this.error = err
+        })
+      },
+
+      gsapSetting() {
+        let tl = gsap.timeline();
+
+        console.log("Puji Was Here");
+
+        tl.from(".card__profile-about", {
+          stagger: 0.2,
+          opacity: 0,
+          x: -20,
+        })
+
+        tl.from(".card__project-about", {
+          stagger: 0.2,
+          opacity: 0,
+          x: -50
+        })
       }
+
     }
   }
 </script>
