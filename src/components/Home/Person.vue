@@ -135,7 +135,6 @@
           </div>
         </div>
       </div>
-
     </div>
   </div>
 </div>
@@ -150,9 +149,7 @@
   const imageBuilder = imageUrlBuilder(sanity)
 
   export default {
-    props: ['persons',
-      'image',
-      'skills'],
+    props: ['persons', 'image', 'skills'],
 
     data() {
       return {
@@ -162,15 +159,14 @@
     },
 
     mounted() {
-      this.ProfileAvatar(),
-      this.gsapSetting()
+      this.ProfileAvatar();
+      this.gsapSetting();
     },
 
     methods: {
       imageUrlFor(source) {
         return imageBuilder.image(source)
       },
-
 
       ProfileAvatar() {
         this.persons.map(d => {
