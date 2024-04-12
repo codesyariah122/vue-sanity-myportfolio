@@ -7,12 +7,12 @@
 						<div class="box">
 							<div class="card">
 								<div class="imgBx">
-									<img :src="`${imageUrlFor(persons[5].aboutImage)}`" alt="images"/>
+									<img :src="`${imageUrlFor(persons[0].aboutImage)}`" alt="images"/>
 								</div>
 								<div class="details">
-									<h2>{{persons[5].name}}<br>
+									<h2>{{persons[0].name}}<br>
 										<span>
-											{{persons[5].aboutImage.caption}}
+											{{persons[0].aboutImage.caption}}
 										</span>
 									</h2>
 								</div>
@@ -21,17 +21,17 @@
 					</div>
 					<div class="col-md-6 col-sm-6">
 						<div class="card__profiles">
-							<h3> {{persons[5].bio[0].children[0].text}} </h3>
+							<h3> {{persons[0].bio[0].children[0].text}} </h3>
 							<br>
 							<blockquote class="blockquote-footer text-italic">
-								{{persons[5].bio[2].children[0].text}} ...
+								{{persons[0].bio[2].children[0].text}} ...
 							</blockquote>
-							<blockquote v-for="text in persons[5].bio[3].children">
+							<blockquote v-for="text in persons[0].bio[3].children">
 								<span v-if="text.text !== 'codesyariah122 Blog'">
 									{{text.text}}
 								</span>
 								<span v-else>
-									<a :href="persons[5].bio[3].markDefs[0].href" target="_blank">
+									<a :href="persons[0].bio[3].markDefs[0].href" target="_blank">
 										{{text.text}}
 									</a>
 								</span>
@@ -44,36 +44,36 @@
 
 					<div class="col-md-12 col-sm-12" :style="`${$isMobile() ? '' :'margin-left: 21rem; margin-top: 2.5rem;'}`">
 						<div class="card__profiles-col2">
-							<span v-html="persons[5].bio[4].children[0].text"></span>
+							<span v-html="persons[0].bio[4].children[0].text"></span>
 							<br>
 							<span>
-								{{persons[5].bio[6].children[0].text}}
+								{{persons[0].bio[6].children[0].text}}
 							</span>
 
 							<ul class="list-group mb-3">
 								<div v-for="item in 11">
-									<li v-if="item > 7" class="list-group-item" v-html="persons[5].bio[item].children[0].text"></li>
+									<li v-if="item > 7" class="list-group-item" v-html="persons[0].bio[item].children[0].text"></li>
 								</div>
 							</ul>
 
 							<br>
 
-							<span v-html="persons[5].bio[14].children[0].text"></span>
+							<span v-html="persons[0].bio[14].children[0].text"></span>
 
 							<ul class="list-group mb-3">
 								<div v-for="item in 24">
-									<li v-if="item > 15" class="list-group-item" v-html="persons[5].bio[item].children[0].text"></li>
+									<li v-if="item > 15" class="list-group-item" v-html="persons[0].bio[item].children[0].text"></li>
 								</div>
 							</ul>
 
 
 
 							<h5 class="mt-5">
-								{{persons[5].bio[27].children[0].text}}
+								{{persons[0].bio[27].children[0].text}}
 							</h5>
 
 							<blockquote class="blockquote-footer mt-5">
-								{{persons[5].aboutImage.alt}}
+								{{persons[0].aboutImage.alt}}
 							</blockquote>
 						</div>
 					</div>
